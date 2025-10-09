@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "CS4700_SurvivalGame.sln"
+    "dotnet.defaultSolution": "NoMansLand.sln"
 }
