@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Ground
+  - Tree
+  - LightingOverlay
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 3855508261
+    locked: 0
   - name: Layer 1
     uniqueID: 2425651459
     locked: 0
@@ -49,4 +52,10 @@ TagManager:
     locked: 0
   - name: Layer 3
     uniqueID: 4189426099
+    locked: 0
+  - name: Tree
+    uniqueID: 3211599759
+    locked: 0
+  - name: LightingOverlay
+    uniqueID: 3397931147
     locked: 0
