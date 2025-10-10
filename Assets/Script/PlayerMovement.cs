@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         moveInput = context.ReadValue<Vector2>();
+        
         animator.SetFloat("InputX", moveInput.x); // the x input is whatever moveinput we use for x
         animator.SetFloat("InputY", moveInput.y); // the y input also follows the same rule
     }
