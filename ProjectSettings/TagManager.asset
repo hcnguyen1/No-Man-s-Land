@@ -15,7 +15,7 @@ TagManager:
   - Tree
   - LightingOverlay
   - Shadow
-  - 
+  - Decoration
   - 
   - 
   - 
@@ -44,6 +44,12 @@ TagManager:
   - name: Ground
     uniqueID: 3855508261
     locked: 0
+  - name: Decoration
+    uniqueID: 1886112401
+    locked: 0
+  - name: Tree
+    uniqueID: 3211599759
+    locked: 0
   - name: Layer 1
     uniqueID: 2425651459
     locked: 0
@@ -52,9 +58,6 @@ TagManager:
     locked: 0
   - name: Layer 3
     uniqueID: 4189426099
-    locked: 0
-  - name: Tree
-    uniqueID: 3211599759
     locked: 0
   - name: LightingOverlay
     uniqueID: 3397931147
