@@ -8,6 +8,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryMenu;
     private Actions controls;
     private bool menuActive;
+    [SerializeField] public ItemSlot[] itemSlot; // the array of item slots now it becomes a inventory.
 
     void Awake()
     {
@@ -17,13 +18,16 @@ public class InventoryManager : MonoBehaviour
 
     void OnEnable()
     {
-        controls.Enable();
+        if (controls != null)
+            controls.Enable();
     }
 
     void OnDisable()
     {
-        controls.Disable();
+        if (controls != null)
+            controls.Disable();
     }
+
 
     private void ToggleInventory()
     {
@@ -33,6 +37,24 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(string itemName, int quantity, Sprite itemSprite)
     {
-        Debug.Log("itemName = " + itemName + "quantity = " + quantity + "item sprite = " + itemSprite);
+
+        for (int i = 0; i < itemSlot.Length; i++)
+        {
+            if (itemSlot[i] == null) continue;
+            if (itemSlot[i].isFull && itemSlot[i].itemName == itemName)
+            {
+                itemSlot[i].AddQuantity(quantity);
+                return;
+            }
+        }
+
+        for (int i = 0; i < itemSlot.Length; i++)
+        {
+            if (itemSlot[i].isFull == false)
+            {
+                itemSlot[i].AddItem(itemName, quantity, itemSprite);
+                return;
+            }
+        }
     }
 }
