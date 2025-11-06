@@ -10,6 +10,7 @@ public class Item : MonoBehaviour
     [SerializeField] private int quantity;
     [SerializeField] private Sprite sprite;
 
+    [TextArea] [SerializeField] private string itemDescription;
     private InventoryManager inventoryManager;
     void Start()
     {
@@ -20,7 +21,7 @@ public class Item : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            inventoryManager.AddItem(itemName, quantity, sprite);
+            inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
             Destroy(gameObject);
         }
     }
