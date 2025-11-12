@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Item
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -62,4 +63,10 @@ TagManager:
     locked: 0
   - name: LightingOverlay
     uniqueID: 3397931147
+    locked: 0
+  - name: Enemy
+    uniqueID: 1615210391
+    locked: 0
+  - name: Player
+    uniqueID: 3586856203
     locked: 0
