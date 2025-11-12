@@ -43,7 +43,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         quantityText.text = quantity.ToString(); // the string value of the int is assigned to the TMPro which is in text form. confusing i know
         quantityText.enabled = true;
         itemImage.sprite = itemSprite;
-        itemImage.enabled = true;
+
     }
 
     public void AddQuantity(int amount)
@@ -60,7 +60,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         itemSprite = null;
         isFull = false;
         itemImage.sprite = null;
-        itemImage.enabled = false;
         quantityText.text = "";
         quantityText.enabled = false;
     }
