@@ -96,6 +96,8 @@ MonoBehaviour:
   itemSprite: {fileID: 0}
   isFull: 0
   itemDescription: 
+  emptySprite: {fileID: 21300000, guid: 1082f9e1ebf27734db29ad13b84be76b, type: 3}
+  maxNumberOfItems: 99
   quantityText: {fileID: 2137536950719743653}
   itemImage: {fileID: 8644459123003671205}
   itemDescriptionImage: {fileID: 0}
@@ -302,7 +304,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e8843149cff3c1c448b0cb3a6ae35148, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6768e9f15a19fb44ea12f9f4e0cfc37c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

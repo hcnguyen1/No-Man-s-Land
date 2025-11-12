@@ -12,6 +12,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public Sprite itemSprite;
     public bool isFull;
     public string itemDescription;
+    [SerializeField] public Sprite emptySprite;
+
+    [SerializeField] private int maxNumberOfItems;
 
     [SerializeField] private TMP_Text quantityText;
 
@@ -32,19 +35,38 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         inventoryManager = GameObject.Find("UI").GetComponent<InventoryManager>();
     }
 
-    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+{
+    if (isFull)
     {
-        this.itemName = itemName;
-        this.quantity = quantity;
-        this.itemSprite = itemSprite;
-        this.itemDescription = itemDescription;
-        isFull = true;
-
-        quantityText.text = quantity.ToString(); // the string value of the int is assigned to the TMPro which is in text form. confusing i know
-        quantityText.enabled = true;
-        itemImage.sprite = itemSprite;
-
+        return quantity;
     }
+
+    this.itemName = itemName;
+    this.itemSprite = itemSprite;
+    itemImage.sprite = itemSprite;
+    this.itemDescription = itemDescription;
+
+    this.quantity += quantity;
+    // Update quantity
+    quantityText.text = this.quantity.ToString();
+    quantityText.enabled = (this.quantity > 0);
+
+    if (this.quantity >= maxNumberOfItems)
+    {
+        isFull = true;
+        int extraItems = this.quantity - maxNumberOfItems;
+        this.quantity = maxNumberOfItems;
+        quantityText.text = maxNumberOfItems.ToString();
+        return extraItems;
+    }
+    else
+    {
+        isFull = false;
+    }
+    return 0;
+}
+
 
     public void AddQuantity(int amount)
     {
@@ -58,7 +80,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         itemName = "";
         quantity = 0;
         itemSprite = null;
-        isFull = false;
+        isFull = isFull = (this.quantity >= maxNumberOfItems);
         itemImage.sprite = null;
         quantityText.text = "";
         quantityText.enabled = false;
@@ -83,16 +105,86 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public void OnLeftClick()
     {
-        inventoryManager.DeselectAllSlots();
-        selectedShader.SetActive(true);
-        thisItemSelected = true;
-        ItemDescriptionNameText.text = itemName;
-        ItemDescriptionText.text = itemDescription;
-        itemDescriptionImage.sprite = itemSprite;
+        if (thisItemSelected)
+        {
+            bool usable = inventoryManager.UseItem(itemName);
+            if (usable == true)
+            {
+                this.quantity -= 1;
+                isFull = (this.quantity >= maxNumberOfItems);
+                ;
+                quantityText.text = this.quantity.ToString();
+                if (this.quantity <= 0)
+                {
+                    EmptySlot();
+                }
+            }
+        }
+        else
+        {
+            inventoryManager.DeselectAllSlots();
+            selectedShader.SetActive(true);
+            thisItemSelected = true;
+            ItemDescriptionNameText.text = itemName;
+            ItemDescriptionText.text = itemDescription;
+            itemDescriptionImage.sprite = itemSprite;
+            if (itemDescriptionImage.sprite == null)
+            {
+                itemDescriptionImage.sprite = emptySprite;
+            }
+        }
+
     }
 
     public void OnRightClick()
     {
+
+        if (string.IsNullOrEmpty(itemName) || quantity <= 0)
+            return;
+
+        GameObject itemToDrop = new GameObject(itemName);
+        Item newItem = itemToDrop.AddComponent<Item>();
+        newItem.quantity = 1;
+        newItem.itemName = itemName;
+        newItem.sprite = itemSprite;
+        newItem.itemDescription = itemDescription;
+
+        // the item can now drop back on the floor
+        SpriteRenderer sr = itemToDrop.AddComponent<SpriteRenderer>();
+        sr.sprite = itemSprite;
+        sr.sortingOrder = 5;
+        sr.sortingLayerName = "Player";
+
+        // gives item a collider 
+        BoxCollider2D collider = itemToDrop.AddComponent<BoxCollider2D>();
+        collider.isTrigger = true;
+
+        // location of the dropped item, can modify the left and right, with 0 being center.
+        Vector2 randomOffset = Random.insideUnitCircle.normalized * .5f; // 1 unit distance in a random direction
+        itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(randomOffset.x, randomOffset.y, 0);
+        //item size 
+        itemToDrop.transform.localScale = new Vector3(0.25f, 0.25f, 1f);
+
+        this.quantity -= 1;
+        isFull = (this.quantity >= maxNumberOfItems);
+        quantityText.text = this.quantity.ToString();
+        if (this.quantity <= 0)
+        {
+            EmptySlot();
+        }
+
+    }
+
+
+    private void EmptySlot()
+    {
+        quantityText.enabled = false;
+        itemImage.sprite = emptySprite;
+
+        ItemDescriptionNameText.text = "";
+        ItemDescriptionText.text = "";
+        itemDescriptionImage.sprite = emptySprite;
+
 
     }
 }
