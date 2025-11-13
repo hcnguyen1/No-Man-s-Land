@@ -29,6 +29,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     private InventoryManager inventoryManager;
 
+    // for how to drag the item around
+    public event Action<InventoryManager> OnItemClicked, OnItemDropped, OnItemBeginDrag, OnItemEndDrag, OnRightMouseBtnClick;
+
+    private bool isEmpty = true;
+
     void Start()
     {
         quantityText.enabled = false;
