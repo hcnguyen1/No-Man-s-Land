@@ -68,14 +68,14 @@ public int AddItem(string itemName, int quantity, Sprite itemSprite, string item
 }
 
 
-    public void AddQuantity(int amount)
+    public void AddQuantity(int amount) // adds item on top of already existing item
     {
         quantity += amount;
         quantityText.text = quantity.ToString();
         quantityText.enabled = true;
     }
 
-    public void ClearSlot()
+    public void ClearSlot() // clears the slot
     {
         itemName = "";
         quantity = 0;
@@ -91,7 +91,7 @@ public int AddItem(string itemName, int quantity, Sprite itemSprite, string item
 
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData) // maps clicks to each function below
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
@@ -175,8 +175,7 @@ public int AddItem(string itemName, int quantity, Sprite itemSprite, string item
 
     }
 
-
-    private void EmptySlot()
+    private void EmptySlot() // for empty slots in inventory
     {
         quantityText.enabled = false;
         itemImage.sprite = emptySprite;
