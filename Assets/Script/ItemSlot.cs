@@ -108,6 +108,21 @@ public int AddItem(string itemName, int quantity, Sprite itemSprite, string item
         }
     }
 
+    public void OnBeginDrag() {
+        if (isEmpty) {
+            return;
+        }
+        OnItemBeginDrag?.Invoke(this);
+    }
+
+    public void OnDrop() {
+        OnItemDropped?.Invoke(inventoryManager);
+    }
+
+    public void OnEndDrag() {
+        OnItemEndDrag?.Invoke(this);
+    }
+
     public void OnLeftClick()
     {
         if (thisItemSelected)

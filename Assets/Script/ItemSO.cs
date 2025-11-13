@@ -10,6 +10,8 @@ public class ItemSO : ScriptableObject  // this is not monobehavior but can pers
     // cannot use start and update and will have to use other scripts 
 
     public string itemName;
+    public Sprite icon;
+    [TextArea] public string itemDescription;
     public StatToChange statToChange = new StatToChange();
     public int amountToChangeStat;
 
