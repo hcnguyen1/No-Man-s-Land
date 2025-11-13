@@ -9,6 +9,15 @@ public class Player : Entity
     private Vector2 moveInput;
     private Animator animator;
 
+    public float maxHunger;
+    public float hunger;
+    public float maxThirst;
+    public float thirst;
+
+    // Hunger and Thirst Decay Rates
+    public float hungerDecayRate;
+    public float thirstDecayRate;
+
     public bool canOpenCraftingMenu;
     [SerializeField] private GameObject craftingMenu;
     [SerializeField] private GameObject craftButton;
@@ -18,11 +27,17 @@ public class Player : Entity
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        health = maxHealth;
+        hunger = maxHunger;
+        thirst = maxThirst;
+
     }
     void Update()
     {
         rb.velocity = moveInput * moveSpeed;
 
+        decayHungerAndThirst();
 
         // this lets us open the crafting menu by letting us press the craft button in our inventories when next to craft bench. 
         if (canOpenCraftingMenu)
@@ -72,6 +87,17 @@ public class Player : Entity
         {
             canOpenCraftingMenu = false;
         }
+    }
+
+    private void decayHungerAndThirst()
+    {
+        hunger -= hungerDecayRate * Time.deltaTime;
+        thirst -= thirstDecayRate * Time.deltaTime;
+
+        hunger = Mathf.Clamp(hunger, 0, maxHunger);
+        thirst = Mathf.Clamp(thirst, 0, maxThirst);
+
+        Debug.Log($"Hunger: {hunger}, Thirst: {thirst}");
     }
 }
 

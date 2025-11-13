@@ -5,7 +5,7 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] protected int health;
+    public float maxHealth, health;
     [SerializeField] protected int attackPower;
     [SerializeField] protected float movementSpeed;
     [SerializeField] protected float attackCooldown;
@@ -33,6 +33,8 @@ public class Entity : MonoBehaviour
 
     public virtual void Die()
     {
+        // Debug log of that entity's name has died
+        Debug.Log($"{gameObject.name} has died.");
         Destroy(gameObject);
     }
 }

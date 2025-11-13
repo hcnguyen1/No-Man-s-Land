@@ -69,13 +69,11 @@ public class Orc1 : Entity
     {
         if (collision.CompareTag("Player"))
         {
-            /* Once, Player script is ready, uncomment this
-            var player = collision.GetComponent<Player>(); // Player : Entity script have TakeDamage method
+            var player = collision.GetComponent<Player>();
             if (player != null)
             {
                 player.TakeDamage(attackPower);
             }
-            */
         }
     }
 
