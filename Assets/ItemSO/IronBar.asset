@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ea7b120a082776489d9f2b919d468c4, type: 3}
-  m_Name: Rock
+  m_Name: IronBar
   m_EditorClassIdentifier: 
-  itemName: Rock
+  itemName: IronBar
+  icon: {fileID: 2228565047318208369, guid: 21b8cb85f2fca0c41a810a7ab4ba8415, type: 3}
+  itemDescription: 'An Iron Bar smelted from a furnace. Can be used to create weapons
+    and armor. '
   statToChange: 0
   amountToChangeStat: 0
   attributeToChange: 0

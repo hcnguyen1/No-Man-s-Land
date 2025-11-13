@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -112,7 +113,7 @@ public int AddItem(string itemName, int quantity, Sprite itemSprite, string item
         if (isEmpty) {
             return;
         }
-        OnItemBeginDrag?.Invoke(this);
+        OnItemBeginDrag?.Invoke(inventoryManager);
     }
 
     public void OnDrop() {
@@ -120,7 +121,7 @@ public int AddItem(string itemName, int quantity, Sprite itemSprite, string item
     }
 
     public void OnEndDrag() {
-        OnItemEndDrag?.Invoke(this);
+        OnItemEndDrag?.Invoke(inventoryManager);
     }
 
     public void OnLeftClick()
@@ -180,7 +181,7 @@ public int AddItem(string itemName, int quantity, Sprite itemSprite, string item
         collider.isTrigger = true;
 
         // location of the dropped item, can modify the left and right, with 0 being center.
-        Vector2 randomOffset = Random.insideUnitCircle.normalized * .5f; // 1 unit distance in a random direction
+        Vector2 randomOffset = UnityEngine.Random.insideUnitCircle.normalized * .5f; // 1 unit distance in a random direction
         itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(randomOffset.x, randomOffset.y, 0);
         //item size 
         itemToDrop.transform.localScale = new Vector3(0.25f, 0.25f, 1f);

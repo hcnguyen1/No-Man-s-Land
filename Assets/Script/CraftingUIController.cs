@@ -23,7 +23,7 @@ public class CraftingUIController : MonoBehaviour
 
     private CraftingRecipe selectedRecipe;
     private ItemSlot draggedItemSlot; // Track which slot is being dragged from
-
+    
     void Start()
     {
         if (bench == null)
