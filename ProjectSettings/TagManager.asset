@@ -20,7 +20,7 @@ TagManager:
   - LightingOverlay
   - Shadow
   - Decoration
-  - 
+  - Item
   - 
   - 
   - 
@@ -68,6 +68,9 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 1615210391
+    locked: 0
+  - name: Item
+    uniqueID: 2986883855
     locked: 0
   - name: Player
     uniqueID: 3586856203

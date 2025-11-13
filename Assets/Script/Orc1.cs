@@ -23,13 +23,18 @@ public class Orc1 : Entity
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Collider2D mainCollider = GetComponent<Collider2D>();
 
         // Start with all hitboxes disabled
         hitboxes = new List<Collider2D>();
         foreach (Collider2D hitbox in GetComponentsInChildren<Collider2D>())
         {
-            hitbox.enabled = false;
-            hitboxes.Add(hitbox);
+            // Only disable child hitboxes, not the main collider
+            if (hitbox != mainCollider)
+            {
+                hitbox.enabled = false;
+                hitboxes.Add(hitbox);
+            }
         }
 
         if (player != null)
@@ -56,10 +61,7 @@ public class Orc1 : Entity
                 StartCoroutine(Attack());
             }
         }
-        else
-        {
-            ChasePlayer();
-        }
+        ChasePlayer();
     }
 
     private void ChasePlayer()

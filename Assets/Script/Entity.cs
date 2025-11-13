@@ -18,7 +18,7 @@ public class Entity : MonoBehaviour
 
     protected virtual void Initialize()
     {
-        // Can be overridden by child classes
+        health = maxHealth;
     }
 
     public virtual void TakeDamage(int damage)
