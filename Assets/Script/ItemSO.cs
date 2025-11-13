@@ -16,7 +16,6 @@ public class ItemSO : ScriptableObject  // this is not monobehavior but can pers
     public AttributeToChange attributeToChange = new AttributeToChange();
     public int amountToChangeAttribute;
 
-
     public bool UseItem()
     {
         if (statToChange == StatToChange.health)

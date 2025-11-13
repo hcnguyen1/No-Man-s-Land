@@ -1,0 +1,1828 @@
+fileFormatVersion: 2
+guid: 7b16763471a4bc445a5bbae740e97b3e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4211997647424359809
+    second: PixelArtMiningCrafting_0
+  - first:
+      213: -6545915875556658076
+    second: PixelArtMiningCrafting_1
+  - first:
+      213: 3841107092406893519
+    second: PixelArtMiningCrafting_2
+  - first:
+      213: 9148578561804753553
+    second: PixelArtMiningCrafting_3
+  - first:
+      213: -4356112491500657157
+    second: PixelArtMiningCrafting_0
+  - first:
+      213: 1296584795317275587
+    second: PixelArtMiningCrafting_1
+  - first:
+      213: -3206252633784225835
+    second: PixelArtMiningCrafting_2
+  - first:
+      213: 6921245929066508867
+    second: PixelArtMiningCrafting_3
+  - first:
+      213: -330982615963961267
+    second: PixelArtMiningCrafting_4
+  - first:
+      213: 6277560513047129208
+    second: PixelArtMiningCrafting_4
+  - first:
+      213: 4989669025872025246
+    second: PixelArtMiningCrafting_5
+  - first:
+      213: 399698923596360477
+    second: PixelArtMiningCrafting_6
+  - first:
+      213: -3553304900733446816
+    second: PixelArtMiningCrafting_7
+  - first:
+      213: 4681982337771028302
+    second: PixelArtMiningCrafting_8
+  - first:
+      213: 4174935613021107529
+    second: PixelArtMiningCrafting_9
+  - first:
+      213: 6870136138936509144
+    second: PixelArtMiningCrafting_10
+  - first:
+      213: -7829614210929577519
+    second: PixelArtMiningCrafting_11
+  - first:
+      213: -3826331402509863867
+    second: PixelArtMiningCrafting_12
+  - first:
+      213: 4013267878405300376
+    second: PixelArtMiningCrafting_13
+  - first:
+      213: 3050086085284159374
+    second: PixelArtMiningCrafting_14
+  - first:
+      213: 4196190618580860993
+    second: PixelArtMiningCrafting_15
+  - first:
+      213: -1144561603693686661
+    second: PixelArtMiningCrafting_16
+  - first:
+      213: -738213320223120578
+    second: PixelArtMiningCrafting_17
+  - first:
+      213: -2078963383326176843
+    second: PixelArtMiningCrafting_18
+  - first:
+      213: -5901234328962983650
+    second: PixelArtMiningCrafting_19
+  - first:
+      213: 5755394385025463927
+    second: PixelArtMiningCrafting_5
+  - first:
+      213: -3828572325591003677
+    second: PixelArtMiningCrafting_6
+  - first:
+      213: -730639613694946012
+    second: PixelArtMiningCrafting_7
+  - first:
+      213: -3785576400963102343
+    second: PixelArtMiningCrafting_8
+  - first:
+      213: 442266415504991999
+    second: PixelArtMiningCrafting_9
+  - first:
+      213: 2237365433268951052
+    second: PixelArtMiningCrafting_10
+  - first:
+      213: -7605202749876472045
+    second: PixelArtMiningCrafting_11
+  - first:
+      213: 2748532070131238960
+    second: PixelArtMiningCrafting_12
+  - first:
+      213: 4202276892667719905
+    second: PixelArtMiningCrafting_13
+  - first:
+      213: -2505923056266650476
+    second: PixelArtMiningCrafting_14
+  - first:
+      213: 6164133440875609449
+    second: PixelArtMiningCrafting_15
+  - first:
+      213: 3563868936681257406
+    second: PixelArtMiningCrafting_16
+  - first:
+      213: 2120084525946919101
+    second: PixelArtMiningCrafting_17
+  - first:
+      213: -5035110167121623928
+    second: PixelArtMiningCrafting_18
+  - first:
+      213: 4044410147829231988
+    second: PixelArtMiningCrafting_19
+  - first:
+      213: 1451244388356038625
+    second: PixelArtMiningCrafting_20
+  - first:
+      213: -3465144140921463380
+    second: PixelArtMiningCrafting_20
+  - first:
+      213: -6864960419572221929
+    second: PixelArtMiningCrafting_21
+  - first:
+      213: 8065690417471297273
+    second: PixelArtMiningCrafting_22
+  - first:
+      213: 869238807343987177
+    second: PixelArtMiningCrafting_21
+  - first:
+      213: -8007424966221964157
+    second: PixelArtMiningCrafting_22
+  - first:
+      213: 3435044925216191096
+    second: PixelArtMiningCrafting_23
+  - first:
+      213: 1328373448650601180
+    second: PixelArtMiningCrafting_24
+  - first:
+      213: 937357703282102591
+    second: PixelArtMiningCrafting_25
+  - first:
+      213: 8417956659947526115
+    second: PixelArtMiningCrafting_26
+  - first:
+      213: 2911127757983897585
+    second: PixelArtMiningCrafting_27
+  - first:
+      213: 7001487283266600203
+    second: PixelArtMiningCrafting_28
+  - first:
+      213: 8313454572459544797
+    second: PixelArtMiningCrafting_29
+  - first:
+      213: -8270484299007597063
+    second: PixelArtMiningCrafting_30
+  - first:
+      213: 5249665877331139856
+    second: PixelArtMiningCrafting_31
+  - first:
+      213: -2493440346915691590
+    second: PixelArtMiningCrafting_32
+  - first:
+      213: -484198756128852169
+    second: PixelArtMiningCrafting_33
+  - first:
+      213: 848968763988299486
+    second: PixelArtMiningCrafting_34
+  - first:
+      213: 8472111135612302987
+    second: PixelArtMiningCrafting_35
+  - first:
+      213: -2653967812615516580
+    second: PixelArtMiningCrafting_36
+  - first:
+      213: 5276302188252641735
+    second: PixelArtMiningCrafting_37
+  - first:
+      213: -1303764091562629244
+    second: PixelArtMiningCrafting_38
+  - first:
+      213: -4684646731101719197
+    second: PixelArtMiningCrafting_39
+  - first:
+      213: -5951329495126472874
+    second: PixelArtMiningCrafting_40
+  - first:
+      213: 7835425942490724986
+    second: PixelArtMiningCrafting_41
+  - first:
+      213: -7982128314444782598
+    second: PixelArtMiningCrafting_42
+  - first:
+      213: -7901272942276256318
+    second: PixelArtMiningCrafting_43
+  - first:
+      213: -4950379804836253707
+    second: PixelArtMiningCrafting_44
+  - first:
+      213: 9060759135209938896
+    second: PixelArtMiningCrafting_45
+  - first:
+      213: -5553656236912209883
+    second: PixelArtMiningCrafting_46
+  - first:
+      213: 6173873603728925701
+    second: PixelArtMiningCrafting_47
+  - first:
+      213: 7927865213308789666
+    second: PixelArtMiningCrafting_48
+  - first:
+      213: -808097438957566295
+    second: PixelArtMiningCrafting_49
+  - first:
+      213: 3963557993186171469
+    second: PixelArtMiningCrafting_50
+  - first:
+      213: -4812567282570011097
+    second: PixelArtMiningCrafting_51
+  - first:
+      213: 436558784724975221
+    second: PixelArtMiningCrafting_52
+  - first:
+      213: 3344256945651064905
+    second: PixelArtMiningCrafting_53
+  - first:
+      213: 8385767802892038290
+    second: PixelArtMiningCrafting_54
+  - first:
+      213: -7258225933004857567
+    second: PixelArtMiningCrafting_55
+  - first:
+      213: 7306887834335661669
+    second: PixelArtMiningCrafting_56
+  - first:
+      213: -6386043895299072751
+    second: PixelArtMiningCrafting_57
+  - first:
+      213: -6664275106253531191
+    second: PixelArtMiningCrafting_58
+  - first:
+      213: 3906814646278259557
+    second: PixelArtMiningCrafting_59
+  - first:
+      213: -6796763375590827393
+    second: PixelArtMiningCrafting_60
+  - first:
+      213: -5801392256712773581
+    second: PixelArtMiningCrafting_61
+  - first:
+      213: -6114991013182836505
+    second: PixelArtMiningCrafting_62
+  - first:
+      213: -3558807734932107878
+    second: PixelArtMiningCrafting_63
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf52676c4cafb83c0800000000000000
+      internalID: 4211997647424359809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb0f0270056ef110800000000000000
+      internalID: -6545915875556658076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df612f873a1183d0800000000000000
+      internalID: 3841107092406893519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342b02d80843d0060800000000000000
+      internalID: 9148578561804753553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c6134d6006e1750800000000000000
+      internalID: -330982615963961267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77678b523b44fdf40800000000000000
+      internalID: 4989669025872025246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3edc14821cd2edac0800000000000000
+      internalID: 399698923596360477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42552e6742f3cd5f0800000000000000
+      internalID: -3553304900733446816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9791e76f15ee67bc0800000000000000
+      internalID: 4681982337771028302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6a24036fe332600800000000000000
+      internalID: 4174935613021107529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c08dbbae108bc0f10800000000000000
+      internalID: 6870136138936509144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317f9c0a464e47690800000000000000
+      internalID: -7829614210929577519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03801fdfa5fb42620800000000000000
+      internalID: -3826331402509863867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e0ba4bb19c715a30800000000000000
+      internalID: 4013267878405300376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_14
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49cd3ccd14c293dd0800000000000000
+      internalID: 3050086085284159374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_15
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d3f7b94b66b8550800000000000000
+      internalID: 4196190618580860993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb97fec6ae7657130800000000000000
+      internalID: -1144561603693686661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db85ed6c4ad0c6d10800000000000000
+      internalID: -738213320223120578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88402cbeaf1bf1ab0800000000000000
+      internalID: -2078963383326176843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_19
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 471b85be991a02830800000000000000
+      internalID: -5901234328962983650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cad99d053c559efc0800000000000000
+      internalID: 1451244388356038625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_21
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9f8b00718201c00800000000000000
+      internalID: -6864960419572221929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_22
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38cdeba1b69efd090800000000000000
+      internalID: 8065690417471297273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_23
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 872f40be82bbbaf20800000000000000
+      internalID: 3435044925216191096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd231ef0d945f6210800000000000000
+      internalID: 1328373448650601180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_25
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f311b936dd9220d00800000000000000
+      internalID: 937357703282102591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_26
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e75ec26bf692d470800000000000000
+      internalID: 8417956659947526115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_27
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7d866a547666820800000000000000
+      internalID: 2911127757983897585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_28
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0d3582b6974a2160800000000000000
+      internalID: 7001487283266600203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_29
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd05cc713e25f5370800000000000000
+      internalID: 8313454572459544797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_30
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5e4355956593d80800000000000000
+      internalID: -8270484299007597063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_31
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ddfcf2d4f8ad840800000000000000
+      internalID: 5249665877331139856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3a67d1735856dd0800000000000000
+      internalID: -2493440346915691590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_33
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737f044fbc7c749f0800000000000000
+      internalID: -484198756128852169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_34
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edecce2c79428cb00800000000000000
+      internalID: 848968763988299486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_35
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b867dcfc03cf29570800000000000000
+      internalID: 8472111135612302987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_36
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5e4bb3f5563b2bd0800000000000000
+      internalID: -2653967812615516580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_37
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c93a6a92e0393940800000000000000
+      internalID: 5276302188252641735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_38
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487ef73677918ede0800000000000000
+      internalID: -1303764091562629244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_39
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 365bc7e4e9accfeb0800000000000000
+      internalID: -4684646731101719197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6578ead0b51a86da0800000000000000
+      internalID: -5951329495126472874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_41
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a3a0e71660dbc60800000000000000
+      internalID: 7835425942490724986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_42
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af36ee1d698c93190800000000000000
+      internalID: -7982128314444782598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_43
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdd73a2f1a095290800000000000000
+      internalID: -7901272942276256318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_44
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ffa775bbc7bc4bb0800000000000000
+      internalID: -4950379804836253707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_45
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df50917d684ebd70800000000000000
+      internalID: 9060759135209938896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_46
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 520173ab3137de2b0800000000000000
+      internalID: -5553656236912209883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_47
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5046c6ef4510ea550800000000000000
+      internalID: 6173873603728925701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3627a686f650e60800000000000000
+      internalID: 7927865213308789666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_49
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a6080729af09c4f0800000000000000
+      internalID: -808097438957566295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_50
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a9586bef2610730800000000000000
+      internalID: 3963557993186171469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_51
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e5fb8fd83563db0800000000000000
+      internalID: -4812567282570011097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_52
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ebb17d6e7fe0600800000000000000
+      internalID: 436558784724975221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_53
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9402a2339ff296e20800000000000000
+      internalID: 3344256945651064905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_54
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 290b944136b306470800000000000000
+      internalID: 8385767802892038290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_55
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f97bb38f9954b90800000000000000
+      internalID: -7258225933004857567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56e433395c7476560800000000000000
+      internalID: 7306887834335661669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_57
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d95a479e63067a0800000000000000
+      internalID: -6386043895299072751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_58
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c79746891db383a0800000000000000
+      internalID: -6664275106253531191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_59
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56385bab83bc73630800000000000000
+      internalID: 3906814646278259557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_60
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a168f78bb0da1a0800000000000000
+      internalID: -6796763375590827393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_61
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 330fee7ca705d7fa0800000000000000
+      internalID: -5801392256712773581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_62
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e0f7867210332ba0800000000000000
+      internalID: -6114991013182836505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelArtMiningCrafting_63
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d857f68339c9ec0800000000000000
+      internalID: -3558807734932107878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 20fdd17dcefa653408d3797744e2f7f6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PixelArtMiningCrafting_5: 4989669025872025246
+      PixelArtMiningCrafting_36: -2653967812615516580
+      PixelArtMiningCrafting_1: -6545915875556658076
+      PixelArtMiningCrafting_27: 2911127757983897585
+      PixelArtMiningCrafting_30: -8270484299007597063
+      PixelArtMiningCrafting_38: -1303764091562629244
+      PixelArtMiningCrafting_44: -4950379804836253707
+      PixelArtMiningCrafting_29: 8313454572459544797
+      PixelArtMiningCrafting_17: -738213320223120578
+      PixelArtMiningCrafting_31: 5249665877331139856
+      PixelArtMiningCrafting_49: -808097438957566295
+      PixelArtMiningCrafting_60: -6796763375590827393
+      PixelArtMiningCrafting_6: 399698923596360477
+      PixelArtMiningCrafting_52: 436558784724975221
+      PixelArtMiningCrafting_59: 3906814646278259557
+      PixelArtMiningCrafting_37: 5276302188252641735
+      PixelArtMiningCrafting_34: 848968763988299486
+      PixelArtMiningCrafting_8: 4681982337771028302
+      PixelArtMiningCrafting_15: 4196190618580860993
+      PixelArtMiningCrafting_10: 6870136138936509144
+      PixelArtMiningCrafting_45: 9060759135209938896
+      PixelArtMiningCrafting_35: 8472111135612302987
+      PixelArtMiningCrafting_39: -4684646731101719197
+      PixelArtMiningCrafting_11: -7829614210929577519
+      PixelArtMiningCrafting_61: -5801392256712773581
+      PixelArtMiningCrafting_57: -6386043895299072751
+      PixelArtMiningCrafting_26: 8417956659947526115
+      PixelArtMiningCrafting_23: 3435044925216191096
+      PixelArtMiningCrafting_42: -7982128314444782598
+      PixelArtMiningCrafting_56: 7306887834335661669
+      PixelArtMiningCrafting_20: 1451244388356038625
+      PixelArtMiningCrafting_58: -6664275106253531191
+      PixelArtMiningCrafting_43: -7901272942276256318
+      PixelArtMiningCrafting_33: -484198756128852169
+      PixelArtMiningCrafting_0: 4211997647424359809
+      PixelArtMiningCrafting_28: 7001487283266600203
+      PixelArtMiningCrafting_3: 9148578561804753553
+      PixelArtMiningCrafting_40: -5951329495126472874
+      PixelArtMiningCrafting_41: 7835425942490724986
+      PixelArtMiningCrafting_18: -2078963383326176843
+      PixelArtMiningCrafting_53: 3344256945651064905
+      PixelArtMiningCrafting_21: -6864960419572221929
+      PixelArtMiningCrafting_51: -4812567282570011097
+      PixelArtMiningCrafting_2: 3841107092406893519
+      PixelArtMiningCrafting_7: -3553304900733446816
+      PixelArtMiningCrafting_16: -1144561603693686661
+      PixelArtMiningCrafting_63: -3558807734932107878
+      PixelArtMiningCrafting_22: 8065690417471297273
+      PixelArtMiningCrafting_12: -3826331402509863867
+      PixelArtMiningCrafting_62: -6114991013182836505
+      PixelArtMiningCrafting_50: 3963557993186171469
+      PixelArtMiningCrafting_9: 4174935613021107529
+      PixelArtMiningCrafting_24: 1328373448650601180
+      PixelArtMiningCrafting_48: 7927865213308789666
+      PixelArtMiningCrafting_4: -330982615963961267
+      PixelArtMiningCrafting_25: 937357703282102591
+      PixelArtMiningCrafting_19: -5901234328962983650
+      PixelArtMiningCrafting_46: -5553656236912209883
+      PixelArtMiningCrafting_55: -7258225933004857567
+      PixelArtMiningCrafting_32: -2493440346915691590
+      PixelArtMiningCrafting_14: 3050086085284159374
+      PixelArtMiningCrafting_54: 8385767802892038290
+      PixelArtMiningCrafting_47: 6173873603728925701
+      PixelArtMiningCrafting_13: 4013267878405300376
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
