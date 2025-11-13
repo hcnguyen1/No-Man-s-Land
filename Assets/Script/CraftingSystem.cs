@@ -39,12 +39,12 @@ public class CraftingSystem
         GetItem(x, y).amountToChangeStat--;
     }
 
-    private void removeItem(int x, int y)
+    private void removeItem(int x, int y) // removes the item 
     {
         SetItem(null, x, y);
     }
 
-    private bool TryAddItem(ItemSO item, int x, int y)
+    private bool TryAddItem(ItemSO item, int x, int y) // attempts to add item if not full 
     {
         if (isEmpty(x, y))
         {
