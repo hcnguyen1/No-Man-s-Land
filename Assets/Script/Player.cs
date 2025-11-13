@@ -18,7 +18,7 @@ public class Player : Entity
     public float hungerDecayRate;
     public float thirstDecayRate;
 
-    public bool canOpenCraftingMenu;
+    public bool canOpenCraftingMenu = false;
     [SerializeField] private GameObject craftingMenu;
     [SerializeField] private GameObject craftButton;
 
@@ -40,7 +40,7 @@ public class Player : Entity
         decayHungerAndThirst();
 
         // this lets us open the crafting menu by letting us press the craft button in our inventories when next to craft bench. 
-        if (canOpenCraftingMenu)
+        if (canOpenCraftingMenu == true)
         {
             craftButton.SetActive(true);
         }
