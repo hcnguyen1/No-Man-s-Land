@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : Entity
 {
     [SerializeField] private float moveSpeed = 5f;
     private Rigidbody2D rb;
