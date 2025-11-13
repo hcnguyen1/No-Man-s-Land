@@ -11,12 +11,27 @@ public class Orc1 : Entity
     // Variable to collect all the child hitboxes
     private List<Collider2D> hitboxes;
 
+    // Track if Orc is attacking to prevent spam
+    private bool isAttacking;
+    private bool hasDealtDamage;
+    private float lastAttackTime = -Mathf.Infinity; // Track time of last attack
+
+    [SerializeField] private float attackAnimationDuration = 0.26f; // Duration of attack animation
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        
+
+        // Start with all hitboxes disabled
+        hitboxes = new List<Collider2D>();
+        foreach (Collider2D hitbox in GetComponentsInChildren<Collider2D>())
+        {
+            hitbox.enabled = false;
+            hitboxes.Add(hitbox);
+        }
+
         if (player != null)
         {
             playerTransform = player.transform;
@@ -33,15 +48,20 @@ public class Orc1 : Entity
         {
             return;
         }
-        ChasePlayer();
-
         // If Orc is within attack range of player 
         if (Vector2.Distance(transform.position, playerTransform.position) <= attackRange)
         {
-            StartCoroutine(Attack());
+            if (!isAttacking && Time.time >= lastAttackTime + attackCooldown) 
+            {
+                StartCoroutine(Attack());
+            }
+        }
+        else
+        {
+            ChasePlayer();
         }
     }
-    
+
     private void ChasePlayer()
     {
         Vector2 pos = rb.position;
@@ -59,28 +79,37 @@ public class Orc1 : Entity
     // Orc Attack
     private IEnumerator Attack()
     {
+        isAttacking = true;
+        hasDealtDamage = false; // Reset damage flag at start of attack
         animator.SetBool("isAttacking", true);
-        yield return new WaitForSeconds(attackCooldown);
+
+        yield return new WaitForSeconds(attackAnimationDuration);
+        
         animator.SetBool("isAttacking", false);
+        lastAttackTime = Time.time; // Update last attack time
+        isAttacking = false;
     }
 
     // When hitbox collides with player
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && isAttacking && !hasDealtDamage)
         {
-            var player = collision.GetComponent<Player>();
+            Entity player = collision.GetComponent<Entity>();
             if (player != null)
             {
                 player.TakeDamage(attackPower);
+                hasDealtDamage = true; // Ensure damage is only dealt once per attack
+                Debug.Log("Orc has dealt damage to Player.");
             }
         }
     }
 
     // Orc Death
-    private void Die()
+    protected override void Die()
     {
         Debug.Log("Orc1 dies.");
+        base.Die();
     }
 
     // Orc Attack Range Visualization

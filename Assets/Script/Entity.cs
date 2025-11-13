@@ -31,7 +31,7 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public virtual void Die()
+    protected virtual void Die()
     {
         // Debug log of that entity's name has died
         Debug.Log($"{gameObject.name} has died.");
