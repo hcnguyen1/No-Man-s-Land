@@ -34,8 +34,6 @@ public class Player : Entity
             craftingMenu.SetActive(false);
             craftButton.SetActive(false);
         }
-
-
     }
 
     public void OpenCraftingMenu()
