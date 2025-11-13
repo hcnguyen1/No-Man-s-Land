@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Stats")]
+    [SerializeField] protected int health;
+    [SerializeField] protected int attackPower;
+    [SerializeField] protected float movementSpeed;
+    [SerializeField] protected float attackCooldown;
+    [SerializeField] protected float attackRange;
+
+    protected virtual void Awake()
     {
-        
+        Initialize();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected virtual void Initialize()
     {
-        
+        // Can be overridden by child classes
+    }
+
+    public virtual void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            health = 0;
+            Die();
+        }
+    }
+
+    public virtual void Die()
+    {
+        Destroy(gameObject);
     }
 }
