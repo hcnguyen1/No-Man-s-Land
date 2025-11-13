@@ -8,6 +8,9 @@ public class Orc1 : Entity
     private Rigidbody2D rb;
     private Animator animator;
 
+    // Variable to collect all the child hitboxes
+    private List<Collider2D> hitboxes;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,11 +28,18 @@ public class Orc1 : Entity
 
     private void FixedUpdate()
     {
+        // Chases the player
         if (playerTransform == null)
         {
             return;
         }
         ChasePlayer();
+
+        // If Orc is within attack range of player 
+        if (Vector2.Distance(transform.position, playerTransform.position) <= attackRange)
+        {
+            StartCoroutine(Attack());
+        }
     }
     
     private void ChasePlayer()
@@ -46,13 +56,30 @@ public class Orc1 : Entity
         animator.SetBool("isWalking", true);
     }
 
-    // Orc Attack Animation
-    private void Attack()
+    // Orc Attack
+    private IEnumerator Attack()
     {
-        Debug.Log("Orc1 attacks with power: " + attackPower);
+        animator.SetBool("isAttacking", true);
+        yield return new WaitForSeconds(attackCooldown);
+        animator.SetBool("isAttacking", false);
     }
 
-    // Orc Death Animation
+    // When hitbox collides with player
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            /* Once, Player script is ready, uncomment this
+            var player = collision.GetComponent<Player>(); // Player : Entity script have TakeDamage method
+            if (player != null)
+            {
+                player.TakeDamage(attackPower);
+            }
+            */
+        }
+    }
+
+    // Orc Death
     private void Die()
     {
         Debug.Log("Orc1 dies.");
