@@ -96,8 +96,6 @@ public class Player : Entity
 
         hunger = Mathf.Clamp(hunger, 0, maxHunger);
         thirst = Mathf.Clamp(thirst, 0, maxThirst);
-
-        Debug.Log($"Hunger: {hunger}, Thirst: {thirst}");
     }
 }
 

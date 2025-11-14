@@ -40,7 +40,8 @@ public class Orc1 : Entity
         if (player != null)
         {
             playerTransform = player.transform;
-        } else
+        }
+        else
         {
             Debug.LogError("Player object not found in the scene.");
         }
@@ -56,7 +57,7 @@ public class Orc1 : Entity
         // If Orc is within attack range of player 
         if (Vector2.Distance(transform.position, playerTransform.position) <= attackRange)
         {
-            if (!isAttacking && Time.time >= lastAttackTime + attackCooldown) 
+            if (!isAttacking && Time.time >= lastAttackTime + attackCooldown)
             {
                 StartCoroutine(Attack());
             }
@@ -86,7 +87,7 @@ public class Orc1 : Entity
         animator.SetBool("isAttacking", true);
 
         yield return new WaitForSeconds(attackAnimationDuration);
-        
+
         animator.SetBool("isAttacking", false);
         lastAttackTime = Time.time; // Update last attack time
         isAttacking = false;
@@ -120,4 +121,5 @@ public class Orc1 : Entity
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
+
 }
