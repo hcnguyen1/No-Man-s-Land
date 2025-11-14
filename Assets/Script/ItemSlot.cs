@@ -87,9 +87,10 @@ public int AddItem(string itemName, int quantity, Sprite itemSprite, string item
         quantity = 0;
         itemSprite = null;
         isFull = isFull = (this.quantity >= maxNumberOfItems);
-        itemImage.sprite = null;
+        itemImage.sprite = emptySprite;
         quantityText.text = "";
         quantityText.enabled = false;
+        EmptySlot(); // also will empty the slot just in case
     }
 
     void Update()
