@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     [SerializeField] public string itemName;
     [SerializeField] public int quantity;
     [SerializeField] public Sprite sprite;
@@ -17,7 +15,7 @@ public class Item : MonoBehaviour
 
     void Start()
     {
-        inventoryManager = GameObject.Find("UI").GetComponent<InventoryManager>();
+        inventoryManager = FindObjectOfType<InventoryManager>();
         StartCoroutine(EnablePickupAfterDelay()); // Start delay on spawn
     }
 
@@ -34,6 +32,9 @@ public class Item : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            if (inventoryManager == null)
+                inventoryManager = FindObjectOfType<InventoryManager>();
+
             int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
 
             if (leftOverItems <= 0)
