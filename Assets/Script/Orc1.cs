@@ -83,10 +83,10 @@ public class Orc1 : Entity
     private IEnumerator Attack()
     {
         isAttacking = true;
-        hasDealtDamage = false; // Reset damage flag at start of attack
+        hasDealtDamage = false; // Have not dealt damage yet this attack
         animator.SetBool("isAttacking", true);
 
-        yield return new WaitForSeconds(attackAnimationDuration);
+        yield return new WaitForSeconds(attackAnimationDuration); // Duration of attack animation
 
         animator.SetBool("isAttacking", false);
         lastAttackTime = Time.time; // Update last attack time

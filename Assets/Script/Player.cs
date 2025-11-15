@@ -35,6 +35,9 @@ public class Player : Entity
     }
     void Update()
     {
+
+        if (Time.timeScale == 0f) return; // Pause movement when game is paused
+
         rb.velocity = moveInput * moveSpeed;
 
         decayHungerAndThirst();
