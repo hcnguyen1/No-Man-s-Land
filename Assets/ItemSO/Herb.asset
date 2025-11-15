@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea7b120a082776489d9f2b919d468c4, type: 3}
   m_Name: Herb
   m_EditorClassIdentifier: 
-  itemName: 
-  icon: {fileID: 0}
-  itemDescription: 
+  itemName: Herb
+  icon: {fileID: 1776535236546867962, guid: 21b8cb85f2fca0c41a810a7ab4ba8415, type: 3}
+  itemDescription: 'a herb found in the wild. '
   statToChange: 0
   amountToChangeStat: 0
   attributeToChange: 0

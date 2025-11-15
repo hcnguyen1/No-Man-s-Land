@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea7b120a082776489d9f2b919d468c4, type: 3}
   m_Name: EmptySyringe
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Empty Syringe
   icon: {fileID: -424605495, guid: e28f80d4ab0208645a87cf460d657efb, type: 3}
-  itemDescription: 
+  itemDescription: an empty syringe
   statToChange: 0
   amountToChangeStat: 0
   attributeToChange: 0

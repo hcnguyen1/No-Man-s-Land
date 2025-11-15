@@ -40,13 +40,8 @@ public class CraftingBench : MonoBehaviour
 
     void Update()
     {
-        if (!playerNearby) return;
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (craftingUI != null)
-                craftingUI.SetActive(!craftingUI.activeSelf);
-        }
+        // Removed E key handling - crafting menu is now opened with K key via TabManager
+        // This allows the inventory (E key) to work properly when near the bench
     }
 
     public CraftingSystem GetCraftingSystem()

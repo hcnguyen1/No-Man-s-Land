@@ -10,259 +10,176 @@ public class CraftingUIController : MonoBehaviour
     public CraftingBench bench;
     public InventoryManager inventoryManager;
     public CraftingRecipe[] recipes;
-
-    [Header("UI Elements")]
-    public TMP_Text craftableRecipeText;
-    public Image craftableTableImage;
-    public Button craftButton;
-    public GameObject craftingMenu;
-
-    [Header("Crafting Grid UI")]
-    public Image[] craftingGridImages; // Array of 9 Images for 3x3 grid
-    public TMP_Text[] craftingGridQuantityTexts; // Array of 9 quantity texts
-
-    private CraftingRecipe selectedRecipe;
-    private ItemSlot draggedItemSlot; // Track which slot is being dragged from
     
+    [Header("UI Elements")]
+    public GameObject craftingMenu;
+    public Transform recipeListContainer;  // Parent object for recipe buttons (Content)
+    public GameObject recipeButtonPrefab;  // Prefab for each recipe button
+    
+    private CraftingRecipe selectedRecipe;
+
     void Start()
     {
-        if (bench == null)
-            bench = FindObjectOfType<CraftingBench>();
-        if (inventoryManager == null)
-            inventoryManager = FindObjectOfType<InventoryManager>();
-
-        if (craftingMenu != null)
-            craftingMenu.SetActive(false);
-
-        // Subscribe to ItemSlot drag/drop events
+        // Delay refresh to let InventoryManager.Start() run first
+        Invoke("RefreshRecipeList", 0.1f);
         SubscribeToItemSlots();
-
-        UpdateCraftable();
+    }
+    
+    void SubscribeToItemSlots()
+    {
+        if (inventoryManager == null) return;
+        
+        foreach (var slot in inventoryManager.itemSlot)
+        {
+            if (slot != null)
+                slot.OnItemClicked += OnInventoryItemClicked;
+        }
+    }
+    
+    void OnInventoryItemClicked(InventoryManager manager)
+    {
+        // When crafting menu is open, clicking inventory items could show info
+        // For now, we just let the recipe selection handle the display
     }
 
     void Update()
     {
-        // If the crafting menu is visible, refresh what can be crafted
-        if (craftingMenu != null && craftingMenu.activeSelf)
+        // Removed constant refresh - only refresh when needed
+    }
+
+    public void RefreshRecipeList()
+    {
+        if (recipeListContainer == null || recipes == null) return;
+        
+        // Clear existing buttons
+        foreach (Transform child in recipeListContainer)
         {
-            UpdateCraftable();
-            RefreshGridUI();
+            Destroy(child.gameObject);
+        }
+        
+        // Create button for each recipe
+        foreach (var recipe in recipes)
+        {
+            if (recipe == null) continue;
+            
+            GameObject buttonObj = Instantiate(recipeButtonPrefab, recipeListContainer);
+            Button button = buttonObj.GetComponent<Button>();
+            
+            // Find child components in the prefab
+            Image resultIcon = buttonObj.transform.Find("ResultIcon")?.GetComponent<Image>();
+            TextMeshProUGUI recipeName = buttonObj.transform.Find("RecipeNameText")?.GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI ingredientsText = buttonObj.transform.Find("IngredientsText")?.GetComponent<TextMeshProUGUI>();
+            
+            // Set result icon
+            if (resultIcon != null && recipe.result.icon != null)
+            {
+                resultIcon.sprite = recipe.result.icon;
+            }
+            
+            // Set recipe name
+            if (recipeName != null)
+            {
+                recipeName.text = recipe.result.itemName;
+            }
+            
+            // Build ingredients text
+            if (ingredientsText != null)
+            {
+                string ingredients = "Required: ";
+                for (int i = 0; i < recipe.ingredients.Length; i++)
+                {
+                    if (recipe.ingredients[i].item != null)
+                    {
+                        ingredients += recipe.ingredients[i].item.itemName + " x" + recipe.ingredients[i].amount;
+                        if (i < recipe.ingredients.Length - 1) ingredients += ", ";
+                    }
+                }
+                ingredientsText.text = ingredients;
+            }
+            
+            // Check if player has ingredients
+            bool canCraft = HasIngredients(recipe);
+            
+            if (button != null)
+            {
+                button.interactable = canCraft;
+                button.onClick.AddListener(() => CraftRecipe(recipe));
+            }
         }
     }
 
-    private void SubscribeToItemSlots()
+    bool HasIngredients(CraftingRecipe recipe)
     {
-        // Find all ItemSlot components and subscribe to their events
-        ItemSlot[] allSlots = inventoryManager.itemSlot;
-        if (allSlots != null)
+        if (inventoryManager == null || recipe == null) return false;
+        
+        foreach (var ingredient in recipe.ingredients)
         {
-            foreach (var slot in allSlots)
+            if (ingredient.item == null) continue;
+            
+            int totalAmount = 0;
+            foreach (var slot in inventoryManager.itemSlot)
             {
-                if (slot != null)
+                if (slot.itemName == ingredient.item.itemName)
                 {
-                    slot.OnItemBeginDrag += OnInventoryItemBeginDrag;
-                    slot.OnItemDropped += OnInventoryItemDropped;
-                    slot.OnItemEndDrag += OnInventoryItemEndDrag;
+                    totalAmount += slot.quantity;
                 }
             }
+            
+            if (totalAmount < ingredient.amount)
+                return false;
         }
+        
+        return true;
     }
 
-    private void OnInventoryItemBeginDrag(InventoryManager inv)
+    void CraftRecipe(CraftingRecipe recipe)
     {
-        // Find the selected slot
-        draggedItemSlot = FindSelectedItemSlot();
-        if (draggedItemSlot == null) return;
-        // Visual feedback could go here
-    }
-
-    private void OnInventoryItemDropped(InventoryManager inv)
-    {
-        // Check if mouse is over a crafting grid cell
-        // For now, we'll use a simple approach: click on a grid cell button to place the item
-    }
-
-    private void OnInventoryItemEndDrag(InventoryManager inv)
-    {
-        draggedItemSlot = null;
-    }
-
-    private ItemSlot FindSelectedItemSlot()
-    {
-        ItemSlot[] allSlots = inventoryManager.itemSlot;
-        if (allSlots != null)
+        if (recipe == null || inventoryManager == null) return;
+        
+        if (!HasIngredients(recipe))
         {
-            foreach (var slot in allSlots)
-            {
-                if (slot != null && slot.thisItemSelected)
-                    return slot;
-            }
-        }
-        return null;
-    }
-
-    // Called by grid cell buttons to place item into crafting grid
-    public void PlaceItemIntoGrid(int cellIndex)
-    {
-        if (bench == null) return;
-        var system = bench.GetCraftingSystem();
-        if (system == null) return;
-
-        var slot = FindSelectedItemSlot();
-        if (slot == null || string.IsNullOrEmpty(slot.itemName) || slot.quantity <= 0)
+            Debug.Log("Not enough ingredients!");
             return;
-
-        // Convert cellIndex (0-8) to x, y (0-2, 0-2)
-        int x = cellIndex % 3;
-        int y = cellIndex / 3;
-
-        // Find the ItemSO for this item
-        ItemSO itemSO = FindItemSO(slot.itemName);
-        if (itemSO == null) return;
-
-        // Try to place 1 item into the grid cell
-        bool success = system.TryAddToCell(itemSO, 1, x, y);
-        if (success)
+        }
+        
+        // Remove ingredients from inventory
+        foreach (var ingredient in recipe.ingredients)
         {
-            // Decrease inventory slot quantity
-            slot.AddQuantity(-1);
-            if (slot.quantity <= 0)
+            if (ingredient.item == null) continue;
+            
+            int amountToRemove = ingredient.amount;
+            foreach (var slot in inventoryManager.itemSlot)
             {
-                slot.ClearSlot();
-            }
-        }
-
-        RefreshGridUI();
-    }
-
-    // Called by grid cell buttons to remove item from grid
-    public void RemoveItemFromGrid(int cellIndex)
-    {
-        if (bench == null) return;
-        var system = bench.GetCraftingSystem();
-        if (system == null) return;
-
-        int x = cellIndex % 3;
-        int y = cellIndex / 3;
-
-        var cell = system.GetCell(x, y);
-        if (cell.IsEmpty) return;
-
-        // Return 1 item to inventory
-        if (inventoryManager != null && cell.item != null)
-        {
-            inventoryManager.AddItem(cell.item.itemName, 1, cell.item.icon, cell.item.itemDescription);
-        }
-
-        // Decrease grid quantity
-        system.SetCell(cell.item, cell.quantity - 1, x, y);
-        if (cell.quantity - 1 <= 0)
-        {
-            system.ClearCell(x, y);
-        }
-
-        RefreshGridUI();
-    }
-
-    public void UpdateCraftable()
-    {
-        selectedRecipe = null;
-        craftableRecipeText.text = "";
-        craftableTableImage.sprite = null;
-        craftButton.interactable = false;
-
-        if (bench == null) return;
-        var system = bench.GetCraftingSystem();
-        if (system == null || recipes == null) return;
-
-        foreach (var r in recipes)
-        {
-            if (system.MatchesRecipe(r))
-            {
-                selectedRecipe = r;
-                craftableRecipeText.text = r.result.itemName + " x" + r.resultQuantity;
-                if (r.result.icon != null)
-                    craftableTableImage.sprite = r.result.icon;
-                craftButton.interactable = true;
-                return;
-            }
-        }
-    }
-
-    public void OnCraftButton()
-    {
-        if (selectedRecipe == null) return;
-        if (bench == null) return;
-
-        var system = bench.GetCraftingSystem();
-        if (system == null) return;
-
-        bool applied = system.ApplyRecipe(selectedRecipe);
-        if (!applied) return;
-
-        // Add crafted result to player inventory
-        if (inventoryManager != null && selectedRecipe.result != null)
-        {
-            inventoryManager.AddItem(selectedRecipe.result.itemName, selectedRecipe.resultQuantity, selectedRecipe.result.icon, selectedRecipe.result.itemDescription);
-        }
-
-        RefreshGridUI();
-        UpdateCraftable();
-    }
-
-    private void RefreshGridUI()
-    {
-        if (bench == null || craftingGridImages == null || craftingGridImages.Length == 0)
-            return;
-
-        var system = bench.GetCraftingSystem();
-        if (system == null) return;
-
-        for (int i = 0; i < 9 && i < craftingGridImages.Length; i++)
-        {
-            int x = i % 3;
-            int y = i / 3;
-
-            var cell = system.GetCell(x, y);
-            if (cell.IsEmpty)
-            {
-                craftingGridImages[i].sprite = null;
-                if (craftingGridQuantityTexts != null && i < craftingGridQuantityTexts.Length)
+                if (slot.itemName == ingredient.item.itemName && amountToRemove > 0)
                 {
-                    craftingGridQuantityTexts[i].text = "";
-                    craftingGridQuantityTexts[i].enabled = false;
-                }
-            }
-            else
-            {
-                craftingGridImages[i].sprite = cell.item.icon;
-                if (craftingGridQuantityTexts != null && i < craftingGridQuantityTexts.Length)
-                {
-                    craftingGridQuantityTexts[i].text = cell.quantity.ToString();
-                    craftingGridQuantityTexts[i].enabled = (cell.quantity > 0);
+                    int removeFromSlot = Mathf.Min(slot.quantity, amountToRemove);
+                    slot.AddQuantity(-removeFromSlot);
+                    amountToRemove -= removeFromSlot;
                 }
             }
         }
-    }
-
-    private ItemSO FindItemSO(string itemName)
-    {
-        if (inventoryManager == null || inventoryManager.itemSOs == null)
-            return null;
-
-        foreach (var so in inventoryManager.itemSOs)
-        {
-            if (so != null && so.itemName == itemName)
-                return so;
-        }
-        return null;
+        
+        // Add result to inventory
+        inventoryManager.AddItem(
+            recipe.result.itemName,
+            recipe.resultQuantity,
+            recipe.result.icon,
+            recipe.result.itemDescription
+        );
+        
+        Debug.Log($"Crafted {recipe.result.itemName} x{recipe.resultQuantity}");
+        
+        // Refresh UI
+        RefreshRecipeList();
     }
 
     public void ToggleMenu()
     {
-        if (craftingMenu == null) return;
-        craftingMenu.SetActive(!craftingMenu.activeSelf);
-        if (craftingMenu.activeSelf)
-            UpdateCraftable();
+        if (craftingMenu != null)
+        {
+            craftingMenu.SetActive(!craftingMenu.activeSelf);
+            if (craftingMenu.activeSelf)
+                RefreshRecipeList();
+        }
     }
 }
