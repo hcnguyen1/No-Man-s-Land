@@ -34,7 +34,7 @@ public class PlayerUIManager : MonoBehaviour
     {
 
         // Pause Menu and Game Over Menu Toggles
-        if (player != null && player.health <= 0 && !isGameOver)
+        if (player == null || player.health <= 0 && !isGameOver)
         {
             ToggleGameOverMenu();
             return;
@@ -92,7 +92,7 @@ public class PlayerUIManager : MonoBehaviour
         {
             PauseMenuUI.SetActive(isPaused);
         }
-
+        
         Time.timeScale = isPaused ? 0f : 1f;
     }
 
@@ -105,7 +105,7 @@ public class PlayerUIManager : MonoBehaviour
             GameOverUI.SetActive(true);
         }
 
-
+        SetBarToZero();
         Time.timeScale = 0f;
     }
 
