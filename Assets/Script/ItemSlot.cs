@@ -79,6 +79,12 @@ public int AddItem(string itemName, int quantity, Sprite itemSprite, string item
         quantity += amount;
         quantityText.text = quantity.ToString();
         quantityText.enabled = true;
+        
+        // If quantity reaches 0 or below, clear the slot
+        if (quantity <= 0)
+        {
+            ClearSlot();
+        }
     }
 
     public void ClearSlot() // clears the slot
@@ -154,6 +160,9 @@ public int AddItem(string itemName, int quantity, Sprite itemSprite, string item
             {
                 itemDescriptionImage.sprite = emptySprite;
             }
+            
+            // Notify listeners (like CraftingUIController) that item was clicked
+            OnItemClicked?.Invoke(inventoryManager);
         }
 
     }

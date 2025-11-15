@@ -12,6 +12,18 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField] public ItemSO[] itemSOs;
 
+    [Header("Test Items")]
+    public ItemSO emptySyringe;
+    public ItemSO herb;
+
+    void Start()
+    {
+        if (emptySyringe != null)
+            AddItem(emptySyringe.itemName, 1, emptySyringe.icon, emptySyringe.itemDescription);
+        if (herb != null)
+            AddItem(herb.itemName, 1, herb.icon, herb.itemDescription);
+    }
+
     void Awake()
     {
         controls = new Actions();

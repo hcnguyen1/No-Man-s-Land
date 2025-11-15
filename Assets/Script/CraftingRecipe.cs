@@ -9,8 +9,6 @@ public class CraftingRecipe : ScriptableObject
     {
         public ItemSO item;
         public int amount;
-        public int x; // 0..2
-        public int y; // 0..2
     }
 
     public ItemSO result;

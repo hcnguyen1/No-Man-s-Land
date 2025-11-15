@@ -19,8 +19,6 @@ public class Player : Entity
     public float thirstDecayRate;
 
     public bool canOpenCraftingMenu = false;
-    [SerializeField] private GameObject craftingMenu;
-    [SerializeField] private GameObject craftButton;
 
 
     void Start()
@@ -41,22 +39,6 @@ public class Player : Entity
         rb.velocity = moveInput * moveSpeed;
 
         decayHungerAndThirst();
-
-        // this lets us open the crafting menu by letting us press the craft button in our inventories when next to craft bench. 
-        if (canOpenCraftingMenu == true)
-        {
-            craftButton.SetActive(true);
-        }
-        else
-        {
-            craftingMenu.SetActive(false);
-            craftButton.SetActive(false);
-        }
-    }
-
-    public void OpenCraftingMenu()
-    {
-        craftingMenu.SetActive(true);
     }
 
     public void Move(InputAction.CallbackContext context)

@@ -22,17 +22,27 @@ public class ItemSO : ScriptableObject  // this is not monobehavior but can pers
     {
         if (statToChange == StatToChange.health)
         {
+            Player player = GameObject.FindWithTag("Player")?.GetComponent<Player>();
+            if (player != null)
+            {
+                player.health += amountToChangeStat;
+                player.health = Mathf.Clamp(player.health, 0, player.maxHealth);
+                Debug.Log($"Restored {amountToChangeStat} health. Current health: {player.health}");
+                return true;
+            }
         }
 
         if (statToChange == StatToChange.stamina)
         { 
+            // Stamina logic can be added here later
         }
 
         if (statToChange == StatToChange.none)
         {
+            return false;
         }
 
-        return false; // just filler to make function work properly as a boolean. 
+        return false;
     }
 
     public enum StatToChange
