@@ -4678,6 +4678,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308566119}
   m_CullTransparentMesh: 1
+--- !u!114 &1308566123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308566119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d484bb6d5534aaa46977166dc8907725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1316436291
 GameObject:
   m_ObjectHideFlags: 0
@@ -4688,8 +4700,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1316436295}
   - component: {fileID: 1316436294}
-  - component: {fileID: 1316436293}
   - component: {fileID: 1316436292}
+  - component: {fileID: 1316436296}
   m_Layer: 0
   m_Name: EnterLevel1
   m_TagString: Untagged
@@ -4742,20 +4754,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1316436293
---- !u!114 &1308566123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-
-  m_GameObject: {fileID: 1316436291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d484bb6d5534aaa46977166dc8907725, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1316436294
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4824,20 +4822,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_GameObject: {fileID: 1308566119}
+--- !u!114 &1316436296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316436291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Script: {fileID: 11500000, guid: c2153d56eb2990a4f8771c721b815c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreLayout: 1
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
 --- !u!1 &1324797025
 GameObject:
   m_ObjectHideFlags: 0
