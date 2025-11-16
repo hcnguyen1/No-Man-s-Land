@@ -682,7 +682,7 @@ PrefabInstance:
     - target: {fileID: 4450278444035415754, guid: d97a779d63125fe448041144c5a406b6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00088978
+      value: 0.00088500977
       objectReference: {fileID: 0}
     - target: {fileID: 4450278444035415754, guid: d97a779d63125fe448041144c5a406b6,
         type: 3}
@@ -1075,7 +1075,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0004107319}
+  m_AnchoredPosition: {x: 0, y: 0.000029022549}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &221205201 stripped
@@ -4907,7 +4907,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1316436292
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8295,7 +8295,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 315159219}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999786
+  m_Size: 0.9999926
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
