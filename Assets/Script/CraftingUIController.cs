@@ -62,8 +62,18 @@ public class CraftingUIController : MonoBehaviour
         {
             if (recipe == null) continue;
             
+            // Check if player has ingredients
+            bool canCraft = HasIngredients(recipe);
+            
             GameObject buttonObj = Instantiate(recipeButtonPrefab, recipeListContainer);
             Button button = buttonObj.GetComponent<Button>();
+            CanvasGroup canvasGroup = buttonObj.GetComponent<CanvasGroup>();
+            
+            // Add CanvasGroup if it doesn't exist
+            if (canvasGroup == null)
+            {
+                canvasGroup = buttonObj.AddComponent<CanvasGroup>();
+            }
             
             // Find child components in the prefab
             Image resultIcon = buttonObj.transform.Find("ResultIcon")?.GetComponent<Image>();
@@ -97,8 +107,11 @@ public class CraftingUIController : MonoBehaviour
                 ingredientsText.text = ingredients;
             }
             
-            // Check if player has ingredients
-            bool canCraft = HasIngredients(recipe);
+            // Dim button if can't craft
+            if (canvasGroup != null)
+            {
+                canvasGroup.alpha = canCraft ? 1f : 0.5f;
+            }
             
             if (button != null)
             {

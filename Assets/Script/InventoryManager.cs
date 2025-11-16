@@ -12,16 +12,23 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField] public ItemSO[] itemSOs;
 
-    [Header("Test Items")]
-    public ItemSO emptySyringe;
-    public ItemSO herb;
+    [Header("Testing - Starting Items")]
+    [Tooltip("Items that will be added to inventory on start (for testing)")]
+    public ItemSO[] startingItems;
 
     void Start()
     {
-        if (emptySyringe != null)
-            AddItem(emptySyringe.itemName, 1, emptySyringe.icon, emptySyringe.itemDescription);
-        if (herb != null)
-            AddItem(herb.itemName, 1, herb.icon, herb.itemDescription);
+        // Add starting items for testing
+        if (startingItems != null && startingItems.Length > 0)
+        {
+            foreach (ItemSO item in startingItems)
+            {
+                if (item != null)
+                {
+                    AddItem(item.itemName, 1, item.icon, item.itemDescription);
+                }
+            }
+        }
     }
 
     void Awake()
@@ -47,6 +54,50 @@ public class InventoryManager : MonoBehaviour
     {
         menuActive = !menuActive;
         InventoryMenu.SetActive(menuActive);
+        
+        // Close character menu when opening inventory
+        if (menuActive)
+        {
+            TabManager tabManager = FindObjectOfType<TabManager>();
+            if (tabManager != null && tabManager.characterMenu != null)
+            {
+                tabManager.characterMenu.SetActive(false);
+            }
+        }
+        else
+        {
+            // When closing inventory, also close crafting menu
+            TabManager tabManager = FindObjectOfType<TabManager>();
+            if (tabManager != null && tabManager.craftingMenu != null)
+            {
+                tabManager.craftingMenu.SetActive(false);
+                // Re-enable description components
+                if (tabManager.itemDescriptionImage != null)
+                    tabManager.itemDescriptionImage.enabled = true;
+                if (tabManager.itemDescriptionBackground != null)
+                    tabManager.itemDescriptionBackground.enabled = true;
+                if (tabManager.itemDescriptionNameText != null)
+                    tabManager.itemDescriptionNameText.enabled = true;
+                if (tabManager.itemDescriptionText != null)
+                    tabManager.itemDescriptionText.enabled = true;
+            }
+        }
+    }
+
+    public void OpenInventory()
+    {
+        if (!InventoryMenu.activeSelf)
+        {
+            menuActive = true;
+            InventoryMenu.SetActive(true);
+            
+            // Close character menu when opening inventory
+            TabManager tabManager = FindObjectOfType<TabManager>();
+            if (tabManager != null && tabManager.characterMenu != null)
+            {
+                tabManager.characterMenu.SetActive(false);
+            }
+        }
     }
 
     public bool UseItem(string itemName)
@@ -66,7 +117,7 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i = 0; i < itemSlot.Length; i++)
         {
-            if (itemSlot[i].isFull == false && itemSlot[i].itemName == itemName || itemSlot[i].quantity == 0)
+            if ((itemSlot[i].isFull == false && itemSlot[i].itemName == itemName) || itemSlot[i].quantity == 0)
             {
                 int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
                 if (leftOverItems > 0) // you want to let the items flow to the next slot rather than not letting your character pick up anymore.

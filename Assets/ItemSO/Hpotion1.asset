@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ea7b120a082776489d9f2b919d468c4, type: 3}
-  m_Name: Hsyringe1
+  m_Name: Hpotion1
   m_EditorClassIdentifier: 
-  itemName: Low Health Syringe
-  icon: {fileID: 4967458654632529779, guid: 21b8cb85f2fca0c41a810a7ab4ba8415, type: 3}
-  itemDescription: A thin health syringe that can restore some of your life..
+  itemName: Low Health Potion
+  icon: {fileID: 21300000, guid: 8f456a166513f0f4a836106f7b81f0b2, type: 3}
+  itemDescription: A basic low health potion that will slightly restore your health
   statToChange: 1
-  amountToChangeStat: 0
-  isHealOverTime: 1
+  amountToChangeStat: 25
+  isHealOverTime: 0
   healPerTick: 5
   tickInterval: 1
   totalTicks: 10

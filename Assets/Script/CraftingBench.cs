@@ -33,15 +33,12 @@ public class CraftingBench : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNearby = false;
-            if (craftingUI != null)
-                craftingUI.SetActive(false);
+            // TabManager handles closing the crafting menu via Player.canOpenCraftingMenu
         }
     }
 
     void Update()
     {
-        // Removed E key handling - crafting menu is now opened with K key via TabManager
-        // This allows the inventory (E key) to work properly when near the bench
     }
 
     public CraftingSystem GetCraftingSystem()

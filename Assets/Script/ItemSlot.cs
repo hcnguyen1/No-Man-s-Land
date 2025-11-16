@@ -37,8 +37,21 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     void Start()
     {
-        quantityText.enabled = false;
         inventoryManager = GameObject.Find("UI").GetComponent<InventoryManager>();
+        UpdateQuantityDisplay();
+    }
+
+    private void UpdateQuantityDisplay()
+    {
+        if (quantity > 0)
+        {
+            quantityText.text = quantity.ToString();
+            quantityText.enabled = true;
+        }
+        else
+        {
+            quantityText.enabled = false;
+        }
     }
 
 public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
@@ -54,22 +67,23 @@ public int AddItem(string itemName, int quantity, Sprite itemSprite, string item
     this.itemDescription = itemDescription;
 
     this.quantity += quantity;
-    // Update quantity
-    quantityText.text = this.quantity.ToString();
-    quantityText.enabled = (this.quantity > 0);
-
+    
     if (this.quantity >= maxNumberOfItems)
     {
         isFull = true;
         int extraItems = this.quantity - maxNumberOfItems;
         this.quantity = maxNumberOfItems;
         quantityText.text = maxNumberOfItems.ToString();
+        quantityText.enabled = true;
         return extraItems;
     }
     else
     {
         isFull = false;
     }
+    
+    // Update quantity display
+    UpdateQuantityDisplay();
     return 0;
 }
 
@@ -150,6 +164,10 @@ public int AddItem(string itemName, int quantity, Sprite itemSprite, string item
         }
         else
         {
+            // Only show item details if slot has an item
+            if (string.IsNullOrEmpty(itemName) || quantity <= 0)
+                return;
+                
             inventoryManager.DeselectAllSlots();
             selectedShader.SetActive(true);
             thisItemSelected = true;
