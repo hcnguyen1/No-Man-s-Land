@@ -50,6 +50,12 @@ public class TabManager : MonoBehaviour
             }
         }
 
+        // ESC key - Close all menus
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            CloseAllMenus();
+        }
+
         // Keyboard shortcuts
         if (Input.GetKeyDown(KeyCode.C))
             ToggleCharacterMenu();
