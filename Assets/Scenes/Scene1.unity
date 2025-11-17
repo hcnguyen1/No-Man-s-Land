@@ -1164,7 +1164,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 154613789}
   m_Father: {fileID: 467779726}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -6732,6 +6733,32 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b630654adc87c4a4f9bfee50da5f4367, type: 3}
+--- !u!1 &1460759306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8371384415774318150, guid: 5daed3bd66d3437418db2d6d918decf9,
+    type: 3}
+  m_PrefabInstance: {fileID: 8490215808393644787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1460759313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460759306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbfa38304d47c864d8315b1ec8603a99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDirection: isEast
+  isCurrentlyRunning: 0
+  isCrouching: 0
+  rollTime: 0.5
+  isRunning: 0
+  isRunningBackwards: 0
+  isStrafingLeft: 0
+  isStrafingRight: 0
 --- !u!1 &1489378489
 GameObject:
   m_ObjectHideFlags: 0
@@ -9696,6 +9723,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 662031052100987335, guid: 5daed3bd66d3437418db2d6d918decf9,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 662031052100987335, guid: 5daed3bd66d3437418db2d6d918decf9,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1100469947964212895, guid: 5daed3bd66d3437418db2d6d918decf9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9756,6 +9793,31 @@ PrefabInstance:
       propertyPath: craftingMenu
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1954184340459370606, guid: 5daed3bd66d3437418db2d6d918decf9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954184340459370606, guid: 5daed3bd66d3437418db2d6d918decf9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
+      value: 09af1fe1-5f1c-490f-9329-b25dd117c2f6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954184340459370606, guid: 5daed3bd66d3437418db2d6d918decf9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: 3f64b245-1ec2-4a9a-8cfa-876927d22657
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954184340459370606, guid: 5daed3bd66d3437418db2d6d918decf9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      value: Player/Craft[/Keyboard/k]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954184340459370606, guid: 5daed3bd66d3437418db2d6d918decf9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: Player/Character[/Keyboard/c]
+      objectReference: {fileID: 0}
     - target: {fileID: 5116869669734093612, guid: 5daed3bd66d3437418db2d6d918decf9,
         type: 3}
       propertyPath: m_Controller
@@ -9812,7 +9874,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2106050994}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8371384415774318150, guid: 5daed3bd66d3437418db2d6d918decf9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1460759313}
   m_SourcePrefab: {fileID: 100100000, guid: 5daed3bd66d3437418db2d6d918decf9, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
