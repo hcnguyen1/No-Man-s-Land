@@ -92,7 +92,7 @@ public class Player : Entity
         hitbox.SetActive(false);
     }
 
-    // This method is called when a new scene is loaded and ensures the player persists across scenes
+    // The same player will exist across every level
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
