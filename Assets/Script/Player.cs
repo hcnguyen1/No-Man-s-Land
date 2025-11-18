@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class Player : Entity
 {
+    public GameObject hitbox;
     [SerializeField] private float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -79,5 +80,16 @@ public class Player : Entity
         hunger = Mathf.Clamp(hunger, 0, maxHunger);
         thirst = Mathf.Clamp(thirst, 0, maxThirst);
     }
+
+
+    public void EnableHitbox()
+    {
+        hitbox.SetActive(true);
+    }
+    public void DisableHitbox()
+    {
+        hitbox.SetActive(false);
+    }
+
 }
 
