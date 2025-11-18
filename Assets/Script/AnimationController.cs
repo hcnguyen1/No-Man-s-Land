@@ -270,6 +270,8 @@ public class AnimationController : MonoBehaviour
         int attackType = Random.Range(0, 2);  // Generates 0 or 1
         string attackParam = (attackType == 0 ? "AttackAttack" : "Attack2") + direction;
 
+        Debug.Log($"Attack Animation: {attackParam} | Running: {isRunning} | Direction: {direction}");
+
         animator.SetBool(attackParam, true);
 
         // Set the specific attacking flags based on whether the character is running or not
