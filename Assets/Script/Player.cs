@@ -49,6 +49,13 @@ public class Player : Entity
         Vector2 move = playerInput.actions["Move"].ReadValue<Vector2>();
         if (move != Vector2.zero)
             lastMoveDir = move.normalized;
+
+        if (Input.GetMouseButtonDown(0)) // Left mouse button
+        {
+            animator.SetBool("isAttacking", true);
+            animator.SetFloat("AttackX", lastMoveDir.x); // Use your last input direction
+            animator.SetFloat("AttackY", lastMoveDir.y);
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -105,7 +112,7 @@ public class Player : Entity
 
     private void OnFire(InputAction.CallbackContext context)
     {
-        Debug.Log("Left click attack triggered!");
+        Debug.Log("Fire action performed!");
         animator.SetBool("isAttacking", true);
         animator.SetFloat("AttackX", lastMoveDir.x);
         animator.SetFloat("AttackY", lastMoveDir.y);
