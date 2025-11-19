@@ -22,6 +22,13 @@ public class Player : Entity
 
     public bool canOpenCraftingMenu = false;
 
+    private PlayerInput playerInput;
+    private Vector2 lastMoveDir = Vector2.down; // Default facing down
+
+    void Awake()
+    {
+        playerInput = GetComponent<PlayerInput>();
+    }
 
     void Start()
     {
@@ -31,13 +38,17 @@ public class Player : Entity
         health = maxHealth;
         hunger = maxHunger;
         thirst = maxThirst;
-
     }
     void Update()
     {
         rb.velocity = moveInput * moveSpeed;
 
         decayHungerAndThirst();
+
+        // Update lastMoveDir based on movement input
+        Vector2 move = playerInput.actions["Move"].ReadValue<Vector2>();
+        if (move != Vector2.zero)
+            lastMoveDir = move.normalized;
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -90,6 +101,20 @@ public class Player : Entity
     public void DisableHitbox()
     {
         hitbox.SetActive(false);
+    }
+
+    private void OnFire(InputAction.CallbackContext context)
+    {
+        Debug.Log("Left click attack triggered!");
+        animator.SetBool("isAttacking", true);
+        animator.SetFloat("AttackX", lastMoveDir.x);
+        animator.SetFloat("AttackY", lastMoveDir.y);
+    }
+
+    // Call this from an Animation Event at the end of your attack animation
+    public void EndAttack()
+    {
+        animator.SetBool("isAttacking", false);
     }
 
     // The same player will exist across every level
