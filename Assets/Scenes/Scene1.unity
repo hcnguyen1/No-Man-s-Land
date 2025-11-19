@@ -4676,7 +4676,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -754, y: 393}
+  m_AnchoredPosition: {x: 853, y: 511}
   m_SizeDelta: {x: 209.6373, y: 60.5292}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1064764868
@@ -5870,7 +5870,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -544.36, y: 393}
+  m_AnchoredPosition: {x: 852, y: 461}
   m_SizeDelta: {x: 209.6373, y: 60.5292}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1398442380
@@ -6159,7 +6159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -334.72, y: 393}
+  m_AnchoredPosition: {x: 854, y: 411}
   m_SizeDelta: {x: 209.6373, y: 60.5292}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1409605432
@@ -6723,7 +6723,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDirection: isEast
   isCurrentlyRunning: 0
-  isCrouching: 0
   rollTime: 0.5
   isRunning: 0
   isRunningBackwards: 0
