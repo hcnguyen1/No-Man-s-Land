@@ -27,7 +27,11 @@ public class Player : Entity
     private Vector2 lastMoveDir = Vector2.down; // Default facing down
 
 
+
+    // HEALTH ITEMS 
     public ItemSO healthPotion;
+
+    public ItemSO healthSyringe;
     void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -35,10 +39,10 @@ public class Player : Entity
 
     private void OnUseHealthPotion(InputAction.CallbackContext context)
     {
-        if (healthPotion != null)
-        {
-            healthPotion.UseItem();
-        }
+        if (healthPotion != null && healthPotion.UseItem())
+            return;
+        if (healthSyringe != null)
+            healthSyringe.UseItem();
     }
 
     void Start()

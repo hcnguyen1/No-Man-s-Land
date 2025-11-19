@@ -4427,13 +4427,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991652704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_BoundingShape2D: {fileID: 982740632}
-  m_Damping: 0.5
+  m_Damping: 1.01
   m_MaxWindowSize: -1
   m_Padding: 0
 --- !u!1 &995750066
@@ -8237,7 +8237,7 @@ Transform:
   m_GameObject: {fileID: 1951694138}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.23080023, y: -0.10531, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9729,7 +9729,7 @@ PrefabInstance:
     - target: {fileID: 1131423990753330622, guid: 5daed3bd66d3437418db2d6d918decf9,
         type: 3}
       propertyPath: maxHealth
-      value: 5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1131423990753330622, guid: 5daed3bd66d3437418db2d6d918decf9,
         type: 3}
@@ -9764,6 +9764,12 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 1131423990753330622, guid: 5daed3bd66d3437418db2d6d918decf9,
         type: 3}
+      propertyPath: healthSyringe
+      value: 
+      objectReference: {fileID: 11400000, guid: e53a96fb657753f469c92e5957e251ca,
+        type: 2}
+    - target: {fileID: 1131423990753330622, guid: 5daed3bd66d3437418db2d6d918decf9,
+        type: 3}
       propertyPath: hungerDecayRate
       value: 0.5
       objectReference: {fileID: 0}
@@ -9774,8 +9780,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1954184340459370606, guid: 5daed3bd66d3437418db2d6d918decf9,
         type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954184340459370606, guid: 5daed3bd66d3437418db2d6d918decf9,
+        type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1954184340459370606, guid: 5daed3bd66d3437418db2d6d918decf9,
         type: 3}
@@ -9789,6 +9800,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1954184340459370606, guid: 5daed3bd66d3437418db2d6d918decf9,
         type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionId
+      value: 5343bb87-e990-4007-ac73-5cb879d5cfd1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954184340459370606, guid: 5daed3bd66d3437418db2d6d918decf9,
+        type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_ActionName
       value: Player/Craft[/Keyboard/k]
       objectReference: {fileID: 0}
@@ -9796,6 +9812,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ActionEvents.Array.data[15].m_ActionName
       value: Player/Character[/Keyboard/c]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954184340459370606, guid: 5daed3bd66d3437418db2d6d918decf9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionName
+      value: Player/UseHealthPotion[/Keyboard/h]
       objectReference: {fileID: 0}
     - target: {fileID: 5116869669734093612, guid: 5daed3bd66d3437418db2d6d918decf9,
         type: 3}
