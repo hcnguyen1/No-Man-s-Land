@@ -37,7 +37,12 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     void Start()
     {
-        inventoryManager = GameObject.Find("UI").GetComponent<InventoryManager>();
+        // Find InventoryManager anywhere in the scene, even if nested under Player
+        inventoryManager = FindObjectOfType<InventoryManager>();
+        if (inventoryManager == null)
+        {
+            Debug.LogError("InventoryManager not found! Make sure it exists in the scene.");
+        }
         UpdateQuantityDisplay();
     }
 

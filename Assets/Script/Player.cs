@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Player : Entity
 // Assign your health potion ItemSO in the Inspector
@@ -68,7 +69,8 @@ public class Player : Entity
         if (move != Vector2.zero)
             lastMoveDir = move.normalized;
 
-        if (Input.GetMouseButtonDown(0)) // Left mouse button
+        // Only allow attack if not clicking on UI
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             animator.SetBool("isAttacking", true);
             animator.SetFloat("AttackX", lastMoveDir.x); // Use your last input direction

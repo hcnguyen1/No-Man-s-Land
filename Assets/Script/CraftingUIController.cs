@@ -147,6 +147,8 @@ public class CraftingUIController : MonoBehaviour
 
     void CraftRecipe(CraftingRecipe recipe)
     {
+        Debug.Log("CraftRecipe called for: " + (recipe != null ? recipe.result.itemName : "null recipe"));
+        
         if (recipe == null || inventoryManager == null) return;
         
         if (!HasIngredients(recipe))
