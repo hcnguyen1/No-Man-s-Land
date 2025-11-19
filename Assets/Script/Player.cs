@@ -176,7 +176,6 @@ public class Player : Entity
             animator.SetBool("isAttacking", false);
         }
     }
-
 }
 
 

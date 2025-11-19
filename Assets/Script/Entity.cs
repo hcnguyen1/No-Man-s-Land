@@ -37,4 +37,7 @@ public class Entity : MonoBehaviour
         Debug.Log($"{gameObject.name} has died.");
         Destroy(gameObject);
     }
+
+    // Getter for attackPower
+    public int AttackPower => attackPower;
 }
