@@ -30,11 +30,12 @@ public class Player : Entity
 
     // HEALTH ITEMS 
     public ItemSO healthPotion;
-
     public ItemSO healthSyringe;
+    private InventoryManager inventoryManager;
     void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
+        // inventoryManager should be assigned in the Inspector for reliability
     }
 
     private void OnUseHealthPotion(InputAction.CallbackContext context)
@@ -59,6 +60,8 @@ public class Player : Entity
         rb.velocity = moveInput * moveSpeed;
 
         decayHungerAndThirst();
+
+        CheckAndResetAttackState();
 
         // Update lastMoveDir based on movement input
         Vector2 move = playerInput.actions["Move"].ReadValue<Vector2>();
@@ -163,6 +166,17 @@ public class Player : Entity
             Debug.Log("Player spawned at Level1 at (" + locationX + ", " + locationY + ")");
         }
     }
+
+    // checks to see if your character is stuck in isAttacking Lock 
+    private void CheckAndResetAttackState()
+    {
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        if (stateInfo.IsName("Attack") && animator.GetBool("isAttacking") == true && stateInfo.normalizedTime > 1f)
+        {
+            animator.SetBool("isAttacking", false);
+        }
+    }
+
 }
 
 
