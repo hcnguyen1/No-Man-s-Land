@@ -7,9 +7,8 @@ public class AnimationController : MonoBehaviour
     private Animator animator;
     public string currentDirection = "isEast"; // Default direction
     public bool isCurrentlyRunning; //for debugging purposes
-    public bool isCrouching = false;
-
-    public float rollTime = 0.5f; //the time it takes to peform a roll before swtiching back to default animation.
+    // Only keep roll time for roll animation
+    public float rollTime = 0.5f;
 
     void Start()
     {
@@ -29,58 +28,10 @@ public class AnimationController : MonoBehaviour
         }
         HandleMovement();
         HandleAttackAttack();
-
-        //Other input actions:
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-
-            if (isCrouching == false)
-            {
-                TriggerCrouchIdleAnimation();
-                isCrouching = true;
-            }
-            else
-            {
-                isCrouching = false;
-                // Reset the crouch idle parameters after a delay or at the end of the animation
-                ResetCrouchIdleParameters();
-            }
-        }
-        else if (Input.GetKey(KeyCode.Alpha1))
-        {
-            TriggerSpecialAbility1Animation();
-        }
-        else if (Input.GetKey(KeyCode.Alpha2))
-        {
-            TriggerSpecialAbility2Animation();
-        }
-        else if (Input.GetKey(KeyCode.Alpha3))
-        {
-            TriggerCastSpellAnimation();
-        }
-        else if (Input.GetKey(KeyCode.Alpha4))
-        {
-            TriggerKickAnimation();
-        }
-        else if (Input.GetKey(KeyCode.Alpha5))
-        {
-            TriggerPummelAnimation();
-        }
-        else if (Input.GetKey(KeyCode.Alpha6))
-        {
-            TriggerAttackSpinAnimation();
-        }
-        else if (Input.GetKey(KeyCode.LeftShift) && isCurrentlyRunning)
-        {
-            TriggerFlipAnimation();
-        }
-        else if (Input.GetKey(KeyCode.LeftControl) && isCurrentlyRunning)
+        // Only handle roll (Left Control) as extra action
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             TriggerRollAnimation();
-        }
-        else if (Input.GetKey(KeyCode.LeftAlt) && isCurrentlyRunning)
-        {
-            TriggerSlideAnimation();
         }
 
     }
@@ -107,85 +58,46 @@ public class AnimationController : MonoBehaviour
 
     void HandleMovement()
     {
-        // Calculate direction based on mouse position
-        Vector3 mouseScreenPosition = Input.mousePosition;
-        mouseScreenPosition.z = Camera.main.transform.position.z - transform.position.z;
-        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
-        Vector3 directionToMouse = mouseWorldPosition - transform.position;
-        directionToMouse.Normalize(); // Normalize the direction vector
-
-        // Determine the closest cardinal or intercardinal direction
-        float angle = Mathf.Atan2(directionToMouse.y, directionToMouse.x) * Mathf.Rad2Deg;
-        if (angle < 0) angle += 360;
-
-        string newDirection = DetermineDirectionFromAngle(angle);
-        UpdateDirection(newDirection);
-        string movementDirection = newDirection.Substring(2); // Remove "is" from the direction name
-
-        // Capture movement input states
-        isRunning = Input.GetKey(KeyCode.W);
-        isRunningBackwards = Input.GetKey(KeyCode.S);
-        isStrafingLeft = Input.GetKey(KeyCode.A);
-        isStrafingRight = Input.GetKey(KeyCode.D);
-
-        // Set general movement boolean
-        isCurrentlyRunning = isRunning || isRunningBackwards || isStrafingLeft || isStrafingRight;
-
-        // Reset all directional movement parameters
-        ResetAllMovementBools();
-
-        // Update animator with movement conditions
-        animator.SetBool("isRunning", isRunning);
-        animator.SetBool("isRunningBackwards", isRunningBackwards);
-        animator.SetBool("isStrafingLeft", isStrafingLeft);
-        animator.SetBool("isStrafingRight", isStrafingRight);
-        animator.SetBool("isCrouchRunning", isRunning);
-
-        // Set specific movement animations
-        if (isCrouching)
+        // Calculate direction based on WASD input only (no mouse)
+        Vector2 input = Vector2.zero;
+        if (Input.GetKey(KeyCode.W)) input += Vector2.up;
+        if (Input.GetKey(KeyCode.S)) input += Vector2.down;
+        if (Input.GetKey(KeyCode.A)) input += Vector2.left;
+        if (Input.GetKey(KeyCode.D)) input += Vector2.right;
+        // Revert to original: set Move[Direction] booleans for 8-directional walk
+        string[] directions = new string[] { "North", "NorthEast", "East", "SouthEast", "South", "SouthWest", "West", "NorthWest" };
+        foreach (string dir in directions)
         {
-            SetMovementAnimation(isRunning, "CrouchRun", movementDirection);
+            animator.SetBool($"Move{dir}", false);
         }
-        else
+        animator.SetBool("isWalking", false);
+        if (input != Vector2.zero)
         {
-            SetMovementAnimation(isRunning, "Move", movementDirection);
-            SetMovementAnimation(isRunningBackwards, "RunBackwards", movementDirection);
-            SetMovementAnimation(isStrafingLeft, "StrafeLeft", movementDirection);
-            SetMovementAnimation(isStrafingRight, "StrafeRight", movementDirection);
-            SetMovementAnimation(isRunningBackwards, "Move", movementDirection);
-            SetMovementAnimation(isStrafingLeft, "Move", movementDirection);
-            SetMovementAnimation(isStrafingRight, "Move", movementDirection);
+            float angle = Mathf.Atan2(input.y, input.x) * Mathf.Rad2Deg;
+            if (angle < 0) angle += 360;
+            string moveDir = "East";
+            if ((angle >= 330 || angle < 15)) moveDir = "East";
+            else if ((angle >= 15 && angle < 60)) moveDir = "NorthEast";
+            else if ((angle >= 60 && angle < 120)) moveDir = "North";
+            else if ((angle >= 120 && angle < 165)) moveDir = "NorthWest";
+            else if ((angle >= 165 && angle < 195)) moveDir = "West";
+            else if ((angle >= 195 && angle < 240)) moveDir = "SouthWest";
+            else if ((angle >= 240 && angle < 300)) moveDir = "South";
+            else if ((angle >= 300 && angle < 345)) moveDir = "SouthEast";
+            animator.SetBool($"Move{moveDir}", true);
+            animator.SetBool("isWalking", true);
+            currentDirection = $"is{moveDir}";
         }
     }
 
     void SetMovementAnimation(bool isActive, string baseKey, string direction)
     {
-        if (isActive)
-        {
-            string animationKey = $"{baseKey}{direction}";
-            animator.SetBool(animationKey, true);
-        }
+        // No longer needed for simplified movement
     }
 
     void ResetAllMovementBools()
     {
-        string[] directions = new string[] { "North", "South", "East", "West", "NorthEast", "NorthWest", "SouthEast", "SouthWest" };
-        foreach (string baseKey in new string[] { "Move", "RunBackwards", "StrafeLeft", "StrafeRight" })
-        {
-            foreach (string direction in directions)
-            {
-                animator.SetBool($"{baseKey}{direction}", false);
-            }
-        }
-
-        animator.SetBool("CrouchRunNorth", false);
-        animator.SetBool("CrouchRunSouth", false);
-        animator.SetBool("CrouchRunEast", false);
-        animator.SetBool("CrouchRunWest", false);
-        animator.SetBool("CrouchRunNorthEast", false);
-        animator.SetBool("CrouchRunNorthWest", false);
-        animator.SetBool("CrouchRunSouthEast", false);
-        animator.SetBool("CrouchRunSouthWest", false);
+        // No longer needed for simplified movement
     }
 
 
@@ -230,12 +142,11 @@ public class AnimationController : MonoBehaviour
 
     void HandleAttackAttack()
     {
-        // Check if the left mouse button is currently being held down
-        if (Input.GetMouseButton(1))
+        // Attack only when right mouse button is pressed down (no delay, no hold lockout)
+        if (Input.GetMouseButtonDown(1))
         {
             Debug.Log("Right-click detected - Triggering attack");
             bool isRunning = isCurrentlyRunning;
-            // Determine the current direction and trigger the appropriate attack attack or attack run attack
             if (animator.GetBool("isNorth"))
                 TriggerAttack(isRunning, "North");
             else if (animator.GetBool("isSouth"))
@@ -253,16 +164,14 @@ public class AnimationController : MonoBehaviour
             else if (animator.GetBool("isSouthWest"))
                 TriggerAttack(isRunning, "SouthWest");
         }
-        // Check if the left mouse button was released
-        else if (Input.GetMouseButtonUp(1))
+        // Always reset attack parameters on release
+        if (Input.GetMouseButtonUp(1))
         {
             Debug.Log("Right-click released - Resetting attack");
-            // Reset attack attack parameters and return to idle state
             ResetAttackAttackParameters();
-            // No need to explicitly set the idle state here since it should naturally follow from resetting the attack parameters
-            // and the movement handling logic already sets the appropriate idle direction based on the last known direction.
         }
     }
+
 
     void TriggerAttack(bool isRunning, string direction)
     {

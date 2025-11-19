@@ -39,27 +39,19 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 directionToMouse = (mousePosition - (Vector2)transform.position).normalized;
 
-        float angle = Mathf.Atan2(directionToMouse.y, directionToMouse.x) * Mathf.Rad2Deg;
-        lastAngle = SnapAngleToEightDirections(angle);  // Update lastAngle here
-
-        movementDirection = new Vector2(Mathf.Cos(lastAngle * Mathf.Deg2Rad), Mathf.Sin(lastAngle * Mathf.Deg2Rad));
-
-        HandleMovement();
+        // WASD movement (standard 2D movement)
+        float moveX = 0f;
+        float moveY = 0f;
+        if (Input.GetKey(KeyCode.W)) moveY += 1f;
+        if (Input.GetKey(KeyCode.S)) moveY -= 1f;
+        if (Input.GetKey(KeyCode.A)) moveX -= 1f;
+        if (Input.GetKey(KeyCode.D)) moveX += 1f;
+        movementDirection = new Vector2(moveX, moveY).normalized;
 
         // Check if movement keys are pressed
-        bool isMoving = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
-
-        if (isMoving && !isRunning)
-        {
-            isRunning = true;
-        }
-        else if (!isMoving && isRunning)
-        {
-            isRunning = false;
-        }
+        bool isMoving = movementDirection != Vector2.zero;
+        isRunning = isMoving;
 
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -212,38 +204,7 @@ public class PlayerController : MonoBehaviour
 
     void HandleMovement()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            return;
-        }
-        else if (!isCrouching) // Allow strafing only when not crouching, if desired
-        {
-            if (Input.GetKey(KeyCode.S))
-            {
-                movementDirection = -movementDirection; // Move backwards
-            }
-
-            else if (Input.GetKey(KeyCode.A))
-            {
-                float leftAngle = GetPerpendicularAngle(Mathf.Atan2(movementDirection.y, movementDirection.x) * Mathf.Rad2Deg, true);
-                movementDirection = new Vector2(Mathf.Cos(leftAngle * Mathf.Deg2Rad), Mathf.Sin(leftAngle * Mathf.Deg2Rad));
-
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-
-                float rightAngle = GetPerpendicularAngle(Mathf.Atan2(movementDirection.y, movementDirection.x) * Mathf.Rad2Deg, false);
-                movementDirection = new Vector2(Mathf.Cos(rightAngle * Mathf.Deg2Rad), Mathf.Sin(rightAngle * Mathf.Deg2Rad));
-            }
-            else
-            {
-                movementDirection = Vector2.zero; // No movement input
-            }
-        }
-        else
-        {
-            movementDirection = Vector2.zero; // No movement input
-        }
+        // No longer needed; movement is handled directly in Update()
     }
 
     void HandleCrouching()
@@ -385,5 +346,6 @@ public class PlayerController : MonoBehaviour
         }
         yield return null; // Ensures the method correctly implements IEnumerator
     }
+
 
 }
