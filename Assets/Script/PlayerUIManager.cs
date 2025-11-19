@@ -49,7 +49,8 @@ public class PlayerUIManager : MonoBehaviour
         }
 
         // In-game UI Updates
-        if (player == null) {
+        if (player == null)
+        {
             SetBarToZero(); // Edge case: if player is dead, set all bars to zero
             return;
         }
@@ -92,7 +93,7 @@ public class PlayerUIManager : MonoBehaviour
         {
             PauseMenuUI.SetActive(isPaused);
         }
-        
+
         Time.timeScale = isPaused ? 0f : 1f;
     }
 
@@ -119,8 +120,20 @@ public class PlayerUIManager : MonoBehaviour
 
     public void ExitToMainMenu()
     {
-        // Load the main menu scene
+        // Set time scale back to normal for main menu
         Time.timeScale = 1f;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+
+        // Destroy the rest of the DontDestroyOnLoad objects except the main menu manager
+        GameObject dontDestroyOnLoadRoot = null;
+        foreach (GameObject obj in GameObject.FindObjectsOfType<GameObject>())
+        {
+            if (obj.scene.name == null || obj.scene.name == "DontDestroyOnLoad")
+            {
+                Destroy(obj);
+            }
+        }
+
+        // Load Main Menu scene
+        SceneManager.LoadScene("MainMenu");
     }
 }

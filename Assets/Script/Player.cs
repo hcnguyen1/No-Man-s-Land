@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : Entity
 {
@@ -91,5 +92,27 @@ public class Player : Entity
         hitbox.SetActive(false);
     }
 
+    // The same player will exist across every level
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    // Hard-coded player position for Level1 entry
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        int locationX = 2;
+        int locationY = 2;
+        if (scene.name == "Level1")
+        {
+            transform.position = new Vector3(locationX, locationY, 0);
+            Debug.Log("Player spawned at Level1 at (" + locationX + ", " + locationY + ")");
+        }
+    }
 }
 
