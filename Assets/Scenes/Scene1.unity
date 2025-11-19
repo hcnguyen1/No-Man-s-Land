@@ -9758,6 +9758,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131423990753330622, guid: 5daed3bd66d3437418db2d6d918decf9,
         type: 3}
+      propertyPath: healthPotion
+      value: 
+      objectReference: {fileID: 11400000, guid: 1fd8c0deb54feb74db65097fdea891ca,
+        type: 2}
+    - target: {fileID: 1131423990753330622, guid: 5daed3bd66d3437418db2d6d918decf9,
+        type: 3}
       propertyPath: hungerDecayRate
       value: 0.5
       objectReference: {fileID: 0}

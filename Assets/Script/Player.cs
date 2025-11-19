@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class Player : Entity
+// Assign your health potion ItemSO in the Inspector
 {
     public GameObject hitbox;
     [SerializeField] private float moveSpeed = 5f;
@@ -25,9 +26,19 @@ public class Player : Entity
     private PlayerInput playerInput;
     private Vector2 lastMoveDir = Vector2.down; // Default facing down
 
+
+    public ItemSO healthPotion;
     void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
+    }
+
+    private void OnUseHealthPotion(InputAction.CallbackContext context)
+    {
+        if (healthPotion != null)
+        {
+            healthPotion.UseItem();
+        }
     }
 
     void Start()
@@ -128,11 +139,13 @@ public class Player : Entity
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        playerInput.actions["UseHealthPotion"].performed += OnUseHealthPotion;
     }
 
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        playerInput.actions["UseHealthPotion"].performed -= OnUseHealthPotion;
     }
 
     // Hard-coded player position for Level1 entry
@@ -147,4 +160,5 @@ public class Player : Entity
         }
     }
 }
+
 
