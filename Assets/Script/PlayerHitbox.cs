@@ -1,17 +1,13 @@
 using UnityEngine;
 
-public class PlayerHitbox : MonoBehaviour
+public class PlayerHitbox : Player
 {
-    [SerializeField] private int damage = 1;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Entity enemy = collision.GetComponent<Entity>();
-        if (enemy != null && enemy != GetComponentInParent<Player>())
+        if (enemy != null)
         {
-            enemy.TakeDamage(damage);
-            // Optionally, disable hitbox after hit to prevent multi-hit
-            // gameObject.SetActive(false);
+            enemy.TakeDamage(attackPower);
         }
     }
 }
