@@ -89,6 +89,15 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Roll"",
+                    ""type"": ""Button"",
+                    ""id"": ""7f45c9a8-d1e3-4b5c-9e2f-8a3f7b2c1d9e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -353,6 +362,17 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""UseHealthPotion"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8g54d0b9-e2f4-5c6d-af3g-9b4g8c3d2e0f"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Roll"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -947,6 +967,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         m_Player_Craft = m_Player.FindAction("Craft", throwIfNotFound: true);
         m_Player_Character = m_Player.FindAction("Character", throwIfNotFound: true);
         m_Player_UseHealthPotion = m_Player.FindAction("UseHealthPotion", throwIfNotFound: true);
+        m_Player_Roll = m_Player.FindAction("Roll", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1033,6 +1054,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Craft;
     private readonly InputAction m_Player_Character;
     private readonly InputAction m_Player_UseHealthPotion;
+    private readonly InputAction m_Player_Roll;
     public struct PlayerActions
     {
         private @Actions m_Wrapper;
@@ -1044,6 +1066,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         public InputAction @Craft => m_Wrapper.m_Player_Craft;
         public InputAction @Character => m_Wrapper.m_Player_Character;
         public InputAction @UseHealthPotion => m_Wrapper.m_Player_UseHealthPotion;
+        public InputAction @Roll => m_Wrapper.m_Player_Roll;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1074,6 +1097,9 @@ public partial class @Actions: IInputActionCollection2, IDisposable
             @UseHealthPotion.started += instance.OnUseHealthPotion;
             @UseHealthPotion.performed += instance.OnUseHealthPotion;
             @UseHealthPotion.canceled += instance.OnUseHealthPotion;
+            @Roll.started += instance.OnRoll;
+            @Roll.performed += instance.OnRoll;
+            @Roll.canceled += instance.OnRoll;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1099,6 +1125,9 @@ public partial class @Actions: IInputActionCollection2, IDisposable
             @UseHealthPotion.started -= instance.OnUseHealthPotion;
             @UseHealthPotion.performed -= instance.OnUseHealthPotion;
             @UseHealthPotion.canceled -= instance.OnUseHealthPotion;
+            @Roll.started -= instance.OnRoll;
+            @Roll.performed -= instance.OnRoll;
+            @Roll.canceled -= instance.OnRoll;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1288,6 +1317,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         void OnCraft(InputAction.CallbackContext context);
         void OnCharacter(InputAction.CallbackContext context);
         void OnUseHealthPotion(InputAction.CallbackContext context);
+        void OnRoll(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

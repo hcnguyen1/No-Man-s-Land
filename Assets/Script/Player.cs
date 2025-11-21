@@ -22,6 +22,13 @@ public class Player : Entity
     public float hungerDecayRate;
     public float thirstDecayRate;
 
+    // Rolling Mechanic
+    public bool canRoll = true;
+    public bool isRolling = false;
+    public bool isInvincible = false;
+    private float rollCooldownTime = 2f;
+    private float rollCooldownTimer = 0f;
+
     public bool canOpenCraftingMenu = false;
 
     private PlayerInput playerInput;
@@ -58,9 +65,26 @@ public class Player : Entity
     }
     void Update()
     {
-        rb.velocity = moveInput * moveSpeed;
+        decayHungerAndThirst(); // Always decay, even when rolling
 
-        decayHungerAndThirst();
+        // Handle roll cooldown
+        if (!canRoll)
+        {
+            rollCooldownTimer -= Time.deltaTime;
+            if (rollCooldownTimer <= 0f)
+            {
+                canRoll = true;
+            }
+        }
+
+        if (isRolling)
+        {
+            // Keep moving during roll
+            rb.velocity = lastMoveDir * moveSpeed * 1.5f; // 1.5x speed during roll
+            return; // ignore all other input
+        }
+
+        rb.velocity = moveInput * moveSpeed;
 
         CheckAndResetAttackState();
 
@@ -75,6 +99,29 @@ public class Player : Entity
             animator.SetBool("isAttacking", true);
             animator.SetFloat("AttackX", lastMoveDir.x); // Use your last input direction
             animator.SetFloat("AttackY", lastMoveDir.y);
+        }
+
+    }
+
+    private void OnRoll(InputAction.CallbackContext context)
+    {
+        Debug.Log($"OnRoll called! isRolling={isRolling}, canRoll={canRoll}");
+        
+        if (!isRolling && canRoll)
+        {
+            Debug.Log($"Rolling! Direction: ({lastMoveDir.x}, {lastMoveDir.y})");
+            animator.SetFloat("RollX", lastMoveDir.x);
+            animator.SetFloat("RollY", lastMoveDir.y);
+            animator.SetBool("isRolling", true);
+
+            isRolling = true;
+            isInvincible = true;
+            canRoll = false;
+            rollCooldownTimer = rollCooldownTime; // Start 2-second cooldown
+        }
+        else
+        {
+            Debug.Log("Roll blocked - already rolling or on cooldown");
         }
     }
 
@@ -130,6 +177,17 @@ public class Player : Entity
         hitbox.SetActive(false);
     }
 
+    public override void TakeDamage(int damage)
+    {
+        // invincibility during rolls or some other function that can call it. 
+        if (isInvincible)
+        {
+            Debug.Log("Player is invincible! Damage blocked.");
+            return;
+        }
+        base.TakeDamage(damage);
+    }
+
     private void OnFire(InputAction.CallbackContext context)
     {
         Debug.Log("Fire action performed!");
@@ -144,17 +202,29 @@ public class Player : Entity
         animator.SetBool("isAttacking", false);
     }
 
+    public void OnRollEnd()
+    {
+        if (!isRolling) return; // Already ended, ignore duplicate calls
+        
+        Debug.Log("OnRollEnd called - resetting roll state");
+        animator.SetBool("isRolling", false);
+        isRolling = false;
+        isInvincible = false;
+    }
+
     // The same player will exist across every level
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         playerInput.actions["UseHealthPotion"].performed += OnUseHealthPotion;
+        playerInput.actions["Roll"].performed += OnRoll;
     }
 
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
         playerInput.actions["UseHealthPotion"].performed -= OnUseHealthPotion;
+        playerInput.actions["Roll"].performed -= OnRoll;
     }
 
     // Hard-coded player position for Level1 entry
@@ -178,6 +248,8 @@ public class Player : Entity
             animator.SetBool("isAttacking", false);
         }
     }
+
+
 }
 
 
