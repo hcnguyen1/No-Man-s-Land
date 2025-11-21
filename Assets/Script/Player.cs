@@ -28,6 +28,8 @@ public class Player : Entity
     public bool isInvincible = false;
     private float rollCooldownTime = 2f;
     private float rollCooldownTimer = 0f;
+    private float rollDuration = 0.733f; // Match your animation length
+    private float rollTimer = 0f;
 
     public bool canOpenCraftingMenu = false;
 
@@ -81,6 +83,13 @@ public class Player : Entity
         {
             // Keep moving during roll
             rb.velocity = lastMoveDir * moveSpeed * 1.5f; // 1.5x speed during roll
+            
+            // Timer-based roll end (more reliable than animation events)
+            rollTimer -= Time.deltaTime;
+            if (rollTimer <= 0f)
+            {
+                OnRollEnd();
+            }
             return; // ignore all other input
         }
 
@@ -118,6 +127,7 @@ public class Player : Entity
             isInvincible = true;
             canRoll = false;
             rollCooldownTimer = rollCooldownTime; // Start 2-second cooldown
+            rollTimer = rollDuration; // Start roll animation timer
         }
         else
         {
