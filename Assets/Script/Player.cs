@@ -36,24 +36,9 @@ public class Player : Entity
     private PlayerInput playerInput;
     private Vector2 lastMoveDir = Vector2.down; // Default facing down
 
-
-
-    // HEALTH ITEMS 
-    public ItemSO healthPotion;
-    public ItemSO healthSyringe;
-    private InventoryManager inventoryManager;
     void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-        // inventoryManager should be assigned in the Inspector for reliability
-    }
-
-    private void OnUseHealthPotion(InputAction.CallbackContext context)
-    {
-        if (healthPotion != null && healthPotion.UseItem())
-            return;
-        if (healthSyringe != null)
-            healthSyringe.UseItem();
     }
 
     void Start()
@@ -226,14 +211,12 @@ public class Player : Entity
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        playerInput.actions["UseHealthPotion"].performed += OnUseHealthPotion;
         playerInput.actions["Roll"].performed += OnRoll;
     }
 
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-        playerInput.actions["UseHealthPotion"].performed -= OnUseHealthPotion;
         playerInput.actions["Roll"].performed -= OnRoll;
     }
 

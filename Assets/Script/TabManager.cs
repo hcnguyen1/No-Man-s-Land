@@ -13,27 +13,27 @@ public class TabManager : MonoBehaviour
     public Vector2 InactiveTabButtonSize, ActiveTabButtonSize;
 
     [Header("Menu References")]
-    public GameObject characterMenu;
-    public GameObject inventoryMenu;
-    public GameObject craftingMenu;
+    //public GameObject characterMenu;
+    //public GameObject inventoryMenu;
+    //public GameObject craftingMenu;
     public Image itemDescriptionImage; // The item image to hide when crafting
     public Image itemDescriptionBackground; // The background of the description panel
     public TMP_Text itemDescriptionNameText; // The item name text
     public TMP_Text itemDescriptionText; // The item description text
-    
-    private InventoryManager inventoryManager;
+
+    //private InventoryManager inventoryManager;
     private Player player;
 
     void Start()
     {
-        inventoryManager = FindObjectOfType<InventoryManager>();
-        player = FindObjectOfType<Player>();
+        //inventoryManager = FindObjectOfType<InventoryManager>();
+        //player = FindObjectOfType<Player>();
     }
 
     void Update()
     {
         // Close crafting menu if player walks away from bench
-        if (craftingMenu != null && craftingMenu.activeSelf && player != null)
+        /*if (craftingMenu != null && craftingMenu.activeSelf && player != null)
         {
             if (!player.canOpenCraftingMenu)
             {
@@ -48,23 +48,24 @@ public class TabManager : MonoBehaviour
                 if (itemDescriptionText != null)
                     itemDescriptionText.enabled = true;
             }
-        }
+            */
+    }
 
         // ESC key - Close all menus
-        if (Input.GetKeyDown(KeyCode.Escape))
+        /*if (Input.GetKeyDown(KeyCode.Escape))
         {
-            CloseAllMenus();
+            //CloseAllMenus();
         }
 
         // Keyboard shortcuts
-        if (Input.GetKeyDown(KeyCode.C))
-            ToggleCharacterMenu();
+        if (Input.GetKeyDown(KeyCode.C));
+            //ToggleCharacterMenu();
         
-        if (Input.GetKeyDown(KeyCode.K))
-            ToggleCraftingMenu();
+        if (Input.GetKeyDown(KeyCode.K));
+            //ToggleCraftingMenu();
     }
 
-    public void ToggleCharacterMenu()
+    /*public void ToggleCharacterMenu()
     {
         if (characterMenu != null)
         {
@@ -314,5 +315,6 @@ public class TabManager : MonoBehaviour
             TabButtons[TabID].rectTransform.sizeDelta = ActiveTabButtonSize;
         }
     }
+    */
 
 }
