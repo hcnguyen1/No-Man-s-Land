@@ -16,11 +16,10 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Tree
-  - LightingOverlay
-  - Shadow
+  - 
+  - 
+  - 
   - Decoration
-  - Item
   - 
   - 
   - 
@@ -29,9 +28,10 @@ TagManager:
   - 
   - 
   - 
-  - Layer 1
-  - Layer 2
-  - Layer 3
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -51,27 +51,6 @@ TagManager:
   - name: Decoration
     uniqueID: 1886112401
     locked: 0
-  - name: Tree
-    uniqueID: 3211599759
-    locked: 0
-  - name: Layer 1
-    uniqueID: 2425651459
-    locked: 0
-  - name: Layer 2
-    uniqueID: 4250941897
-    locked: 0
-  - name: Layer 3
-    uniqueID: 4189426099
-    locked: 0
-  - name: LightingOverlay
-    uniqueID: 3397931147
-    locked: 0
-  - name: Enemy
-    uniqueID: 1615210391
-    locked: 0
-  - name: Item
-    uniqueID: 2986883855
-    locked: 0
-  - name: Player
-    uniqueID: 3586856203
+  - name: Foreground
+    uniqueID: 1854091853
     locked: 0
