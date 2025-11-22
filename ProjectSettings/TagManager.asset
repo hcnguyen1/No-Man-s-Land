@@ -66,12 +66,9 @@ TagManager:
   - name: LightingOverlay
     uniqueID: 3397931147
     locked: 0
-  - name: Enemy
-    uniqueID: 1615210391
-    locked: 0
   - name: Item
     uniqueID: 2986883855
     locked: 0
-  - name: Player
-    uniqueID: 3586856203
+  - name: Foreground
+    uniqueID: 1854091853
     locked: 0
