@@ -2,23 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
 
-public class ItemSO : ScriptableObject
+namespace Inventory.Model
 {
-    [field: SerializeField] // field: serializes field of a property
-    public bool IsStackable { get; set; }
+    [CreateAssetMenu]
 
-    public int ID => GetInstanceID();
+    public class ItemSO : ScriptableObject
+    {
+        [field: SerializeField] // field: serializes field of a property
+        public bool IsStackable { get; set; } //allows us to see if item is stackable 
 
-    [field: SerializeField]
-    public int MaxStackSize { get; set; } = 1;
-    [field: SerializeField]
-    public string Name { get; set; }
-    [field: SerializeField]
-    [field: TextArea]
-    public string Description { get; set; }
+        public int ID => GetInstanceID();
 
-    [field: SerializeField]
-    public Sprite ItemImage { get; set; }
+        [field: SerializeField]
+        public int MaxStackSize { get; set; } = 1;
+        [field: SerializeField]
+        public string Name { get; set; }
+        [field: SerializeField]
+        [field: TextArea]
+        public string Description { get; set; }
+
+        [field: SerializeField]
+        public Sprite ItemImage { get; set; }
+    }
 }
+

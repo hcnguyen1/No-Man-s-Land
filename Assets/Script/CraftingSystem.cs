@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Inventory.Model;
 public class CraftingSystem
 {
     public const int GRID_SIZE = 3;

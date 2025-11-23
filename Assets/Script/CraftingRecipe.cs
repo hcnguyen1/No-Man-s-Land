@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Inventory.Model;
 
 [CreateAssetMenu(menuName = "Crafting/Recipe")]
 public class CraftingRecipe : ScriptableObject
