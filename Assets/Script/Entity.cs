@@ -24,18 +24,16 @@ public class Entity : MonoBehaviour
     public virtual void TakeDamage(int damage)
     {
         health -= damage;
-        if (health <= 0)
-        {
-            health = 0;
-            Die();
-        }
     }
 
     protected virtual void Die()
     {
         // Debug log of that entity's name has died
-        Debug.Log($"{gameObject.name} has died.");
-        Destroy(gameObject);
+        if (health <= 0)
+        {
+            Debug.Log($"{gameObject.name} has died.");
+            Destroy(gameObject);
+        }
     }
 
     // Getter for attackPower
