@@ -31,7 +31,7 @@ namespace Inventory.Model
         }
 
         //InventoryItem item = new InventoryItem(); // the default will be null and 0 due to the method. 
-        public int AddItem(ItemSO item, int quantity) // also can see if its stackable 
+        public int AddItem(ItemSO item, int quantity, List<ItemParameter> itemState = null) // also can see if its stackable 
         {
             if (item.IsStackable == false) // while it cannot be stacked
             {
@@ -39,8 +39,7 @@ namespace Inventory.Model
                 {
                     while (quantity > 0 && IsInventoryFull() == false) // while not full 
                     {
-                        quantity -= AddItemToFirstFreeSlot(item, 1);
-
+                        quantity -= AddItemToFirstFreeSlot(item, 1, itemState);
                     }
                     InformAboutChange();
                     return quantity;
@@ -51,12 +50,13 @@ namespace Inventory.Model
             return quantity;
         }
 
-        private int AddItemToFirstFreeSlot(ItemSO item, int quantity)
+        private int AddItemToFirstFreeSlot(ItemSO item, int quantity, List<ItemParameter> itemState = null)
         {
             InventoryEntry newItem = new InventoryEntry
             {
                 item = item,
-                quantity = quantity
+                quantity = quantity,
+                itemState = new List<ItemParameter>(itemState == null ? item.DefaultParametersList : itemState)
             };
 
             for (int i = 0; i < inventoryItems.Count; i++)
@@ -98,7 +98,7 @@ namespace Inventory.Model
             }
             while (quantity > 0 && IsInventoryFull() == false) // so if there is space 
             {
-                int newQuantity = Mathf.Clamp(quantity, 0 , item.MaxStackSize);
+                int newQuantity = Mathf.Clamp(quantity, 0, item.MaxStackSize);
                 quantity -= newQuantity;
                 AddItemToFirstFreeSlot(item, newQuantity);
             }
@@ -108,6 +108,21 @@ namespace Inventory.Model
         public void AddItem(InventoryEntry item)
         {
             AddItem(item.item, item.quantity);
+        }
+
+        public void RemoveItem(int itemIndex, int amount)
+        {
+            if (inventoryItems.Count > itemIndex)
+            {
+                if (inventoryItems[itemIndex].IsEmpty)
+                    return;
+                int reminder = inventoryItems[itemIndex].quantity - amount;
+                if (reminder <= 0)
+                    inventoryItems[itemIndex] = InventoryEntry.GetEmptyItem();
+                else
+                    inventoryItems[itemIndex] = inventoryItems[itemIndex].ChangeQuantity(reminder);
+                InformAboutChange();
+            }
         }
 
         public Dictionary<int, InventoryEntry> GetCurrentInventoryState() // we can only update the item if it is in the dictionary. 
@@ -146,6 +161,7 @@ namespace Inventory.Model
     {
         public int quantity;
         public ItemSO item;
+        public List<ItemParameter> itemState;
         public bool IsEmpty => item == null;
 
         public InventoryEntry ChangeQuantity(int newQuantity) // when item quantity changes
@@ -154,6 +170,7 @@ namespace Inventory.Model
             {
                 item = this.item,
                 quantity = newQuantity,
+                itemState = new List<ItemParameter>(this.itemState)
             };
         }
 
@@ -161,6 +178,7 @@ namespace Inventory.Model
         {
             item = null,
             quantity = 0,
+            itemState = new List<ItemParameter>()
         };
     }
 }

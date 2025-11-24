@@ -9,12 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b4e1604cd64d5f479b19e0524756d27, type: 3}
+  m_Script: {fileID: 11500000, guid: 2eb735ce124e4ed419a10b9da4a20fdb, type: 3}
   m_Name: Tomato
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 99
   <Name>k__BackingField: Tomato
-  <Description>k__BackingField: A tomato that was freshly harvested
+  <Description>k__BackingField: A perfectly ripe tomato pulled from the underground
+    vines. It can restore 15 hp.
   <ItemImage>k__BackingField: {fileID: -5900058499585226490, guid: 21b8cb85f2fca0c41a810a7ab4ba8415,
+    type: 3}
+  <DefaultParametersList>k__BackingField: []
+  modifiersData:
+  - statModifier: {fileID: 11400000, guid: f0b7aaf44ce87084a9cc0024a08a7105, type: 2}
+    value: 15
+  <actionSFX>k__BackingField: {fileID: 8300000, guid: 8e1b3fb49c5931e44ad94973a9e9f584,
     type: 3}

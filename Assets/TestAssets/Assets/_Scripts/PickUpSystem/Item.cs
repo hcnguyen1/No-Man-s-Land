@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Inventory.Model;
+using System;
 
 public class Item : MonoBehaviour
 {
@@ -41,6 +42,4 @@ public class Item : MonoBehaviour
         }
         Destroy(gameObject);
     }
-
-
 }

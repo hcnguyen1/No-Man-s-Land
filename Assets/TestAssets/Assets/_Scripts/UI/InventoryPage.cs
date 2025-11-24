@@ -15,8 +15,10 @@ namespace Inventory.UI
         private RectTransform contentPanel;
 
         [SerializeField]
-        private InventoryDescription itemDescription;
+        private ItemActionPanel actionPanel;
 
+        [SerializeField]
+        private InventoryDescription itemDescription;
 
         [SerializeField]
         private MouseFollower mouseFollower;
@@ -126,7 +128,11 @@ namespace Inventory.UI
 
         private void HandleShowItemActions(InventoryItem InventoryItemUI)
         {
+            int index = listOfUIItems.IndexOf(InventoryItemUI);
 
+            if (index == -1) // fills in the data if it returns something outside of the inventory, like something that doesn't belong.
+                return;
+            OnItemActionRequested?.Invoke(index);
         }
 
 
@@ -138,6 +144,7 @@ namespace Inventory.UI
 
         public void Hide() // this will let us hide the inventory page
         {
+            actionPanel.Toggle(false);
             gameObject.SetActive(false);
             ResetDraggedItem();
         }
@@ -160,6 +167,18 @@ namespace Inventory.UI
             {
                 item.Deselect();
             }
+            actionPanel.Toggle(false);
+        }
+
+        public void AddAction(string actionName, Action performAction) // activates the action panel stuff pulled from the other methods. 
+        {
+            actionPanel.AddButton(actionName, performAction);
+        }
+
+        public void ShowItemAction(int itemIndex) // when we want to show the item being selected in the action panel
+        {
+            actionPanel.Toggle(true);
+            actionPanel.transform.position = listOfUIItems[itemIndex].transform.position;
         }
     }
 
