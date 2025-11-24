@@ -125,6 +125,23 @@ namespace Inventory.Model
             }
         }
 
+        // Place an item at a specific slot (for cross-inventory transfers)
+        public void AddItemAtSlot(int slotIndex, ItemSO item, int quantity, List<ItemParameter> itemState = null)
+        {
+            if (slotIndex < 0 || slotIndex >= inventoryItems.Count)
+                return;
+
+            InventoryEntry newItem = new InventoryEntry
+            {
+                item = item,
+                quantity = quantity,
+                itemState = new List<ItemParameter>(itemState == null ? item.DefaultParametersList : itemState)
+            };
+
+            inventoryItems[slotIndex] = newItem;
+            InformAboutChange();
+        }
+
         public Dictionary<int, InventoryEntry> GetCurrentInventoryState() // we can only update the item if it is in the dictionary. 
         {
             Dictionary<int, InventoryEntry> returnValue = new Dictionary<int, InventoryEntry>();

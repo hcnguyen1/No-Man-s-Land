@@ -31,14 +31,13 @@ namespace Inventory.UI
         public event Action<int> OnDescriptionRequested, OnItemActionRequested, OnStartDragging;
         // on description will add border, request will give right button options, dragging will give quantity 
 
-        public event Action<int, int> OnSwapItems; // same as dragging but passes 2 indexes of int type. 
+        public event Action<int, int> OnSwapItems; // same as dragging but passes 2 indexes of int type.
+        public event Action<int> OnItemDroppedOn; // for cross-inventory transfers 
 
 
         private void Awake()
         {
-            Hide(); // hides inventory page
-            mouseFollower.Toggle(false);
-            itemDescription.ResetDescription();
+            Hide();
         }
 
         public void IntializeInventoryUI(int inventorysize) // this will create inventory as well as add items and hook it to the contentPanel
@@ -98,7 +97,12 @@ namespace Inventory.UI
             {
                 return;
             }
-            OnSwapItems?.Invoke(currentlyDraggedItemIndex, index);
+            if (currentlyDraggedItemIndex >= 0 && currentlyDraggedItemIndex < listOfUIItems.Count)
+            {
+                OnSwapItems?.Invoke(currentlyDraggedItemIndex, index);
+            }
+            // Always invoke OnItemDroppedOn - the controller will check the source
+            OnItemDroppedOn?.Invoke(index); // for cross-inventory transfers
             HandleItemSelection(InventoryItemUI);
         }
 
@@ -138,6 +142,8 @@ namespace Inventory.UI
 
         public void Show() // this lets us show the inventory page 
         {
+            gameObject.SetActive(true);
+            // Call SetActive twice to override layout group or deferred callbacks that might disable it
             gameObject.SetActive(true);
             ResetSelection(); // since we reset selecting the item, we want to reset description as well.
         }

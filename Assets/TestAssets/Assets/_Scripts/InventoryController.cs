@@ -7,6 +7,13 @@ using System.Text;
 
 namespace Inventory // this creates its own kind of import settings that can only make it be used by those 
 {// that call this namepace via ->  using Inventory;
+
+    public enum ItemSource
+    {
+        Inventory,
+        Hotbar
+    }
+
     public class InventoryController : MonoBehaviour
     {
 
@@ -17,12 +24,22 @@ namespace Inventory // this creates its own kind of import settings that can onl
         private InventorySO inventoryData;
 
         [SerializeField]
+        private HotbarUI hotbarUI;
+
+        [SerializeField]
+        private HotbarSO hotbarData;
+
+        [SerializeField]
         private AudioClip dropItemClip;
 
         [SerializeField]
         private AudioSource audioSource;
 
         public List<InventoryEntry> initialItems = new List<InventoryEntry>(); // for the start inventoryData
+
+        // Cross-inventory transfer tracking
+        private ItemSource currentDragSource = ItemSource.Inventory;
+        private int currentDragSourceIndex = -1;
 
         private void Start()
         {
@@ -40,6 +57,10 @@ namespace Inventory // this creates its own kind of import settings that can onl
                     continue;
                 inventoryData.AddItem(item);
             }
+
+            // Hotbar data initialization
+            hotbarData.Initialize();
+            hotbarData.OnHotbarUpdated += UpdateHotbarUI;
         }
 
         private void UpdateInventoryUI(Dictionary<int, InventoryEntry> inventoryState)
@@ -58,12 +79,23 @@ namespace Inventory // this creates its own kind of import settings that can onl
             this.inventoryUI.OnSwapItems += HandleSwapItems;
             this.inventoryUI.OnStartDragging += HandleDragging;
             this.inventoryUI.OnItemActionRequested += HandleItemActionRequest;
+
+            // Hotbar UI initialization
+            hotbarUI.IntializeHotbarUI(hotbarData.Size);
+            this.hotbarUI.OnDescriptionRequested += HandleHotbarDescriptionRequest;
+            this.hotbarUI.OnSwapItems += HandleHotbarSwapItems;
+            this.hotbarUI.OnStartDragging += HandleHotbarDragging;
+            this.hotbarUI.OnItemActionRequested += HandleHotbarItemActionRequest;
+            
+            // Cross-inventory drop handlers
+            this.inventoryUI.OnItemDroppedOn += HandleInventoryItemDropped;
+            this.hotbarUI.OnItemDroppedOn += HandleHotbarItemDropped;
         }
         public void Update()
         {
             if (Input.GetKeyDown(KeyCode.I))
             {
-                if (inventoryUI.isActiveAndEnabled == false)
+                if (!inventoryUI.gameObject.activeSelf)
                 {
                     inventoryUI.Show();
                     foreach (var item in inventoryData.GetCurrentInventoryState()) // use the inventory state and get data from there.
@@ -93,6 +125,7 @@ namespace Inventory // this creates its own kind of import settings that can onl
 
         private void HandleSwapItems(int itemIndex1, int itemIndex2) // handles 2 different items to swap
         {
+            // Both items in same inventory - regular swap
             inventoryData.SwapItems(itemIndex1, itemIndex2);
         }
 
@@ -101,6 +134,10 @@ namespace Inventory // this creates its own kind of import settings that can onl
             InventoryEntry inventoryItem = inventoryData.GetItemAt(itemIndex);
             if (inventoryItem.IsEmpty)
                 return;
+            
+            currentDragSource = ItemSource.Inventory;
+            currentDragSourceIndex = itemIndex;
+            
             inventoryUI.CreateDraggedItem(inventoryItem.item.ItemImage, inventoryItem.quantity);
         }
 
@@ -168,6 +205,214 @@ namespace Inventory // this creates its own kind of import settings that can onl
                 audioSource.PlayOneShot(itemAction.actionSFX);
                 if (inventoryData.GetItemAt(itemIndex).IsEmpty)
                     inventoryUI.ResetSelection();
+            }
+        }
+
+        // ========== HOTBAR EVENT HANDLERS ==========
+
+        private void UpdateHotbarUI(Dictionary<int, InventoryEntry> hotbarState)
+        {
+            hotbarUI.ResetAllItems(); // resets all data and items
+            foreach (var item in hotbarState)
+            {
+                hotbarUI.UpdateData(item.Key, item.Value.item.ItemImage, item.Value.quantity);
+            }
+        }
+
+        private void HandleHotbarDescriptionRequest(int itemIndex) // handles the description when selecting hotbar item
+        {
+            InventoryEntry hotbarItem = hotbarData.GetItemAt(itemIndex);
+            if (hotbarItem.IsEmpty)
+            {
+                hotbarUI.ResetSelection();
+                return;
+            }
+            ItemSO item = hotbarItem.item;
+            string description = PrepareDescription(hotbarItem);
+            hotbarUI.UpdateDescription(itemIndex, item.ItemImage, item.Name, description);
+        }
+
+        private void HandleHotbarSwapItems(int itemIndex1, int itemIndex2) // handles swapping items within hotbar
+        {
+            hotbarData.SwapItems(itemIndex1, itemIndex2);
+        }
+
+        private void HandleHotbarDragging(int itemIndex) // helps with getting information while performing drag in hotbar
+        {
+            InventoryEntry hotbarItem = hotbarData.GetItemAt(itemIndex);
+            if (hotbarItem.IsEmpty)
+                return;
+            
+            currentDragSource = ItemSource.Hotbar;
+            currentDragSourceIndex = itemIndex;
+            
+            hotbarUI.CreateDraggedItem(hotbarItem.item.ItemImage, hotbarItem.quantity);
+        }
+
+        private void HandleHotbarItemActionRequest(int itemIndex) // this will let us show options when right clicking hotbar items
+        {
+            InventoryEntry hotbarItem = hotbarData.GetItemAt(itemIndex);
+            if (hotbarItem.IsEmpty)
+                return;
+
+            // lets us interact with the item
+            IItemAction itemAction = hotbarItem.item as IItemAction;
+            if (itemAction != null)
+            {
+                hotbarUI.ShowItemAction(itemIndex);
+                hotbarUI.AddAction(itemAction.ActionName, () => PerformHotbarAction(itemIndex));
+            }
+
+            // removes the item from hotbar
+            IDestroyableItem destroyableItem = hotbarItem.item as IDestroyableItem;
+            if (destroyableItem != null)
+            {
+                hotbarUI.AddAction("Remove", () => RemoveHotbarItem(itemIndex, hotbarItem.quantity));
+            }
+        }
+
+        private void RemoveHotbarItem(int itemIndex, int quantity)
+        {
+            hotbarData.RemoveItem(itemIndex, quantity); // removes item from the hotbar data
+            hotbarUI.ResetSelection(); // then deselects the item
+            audioSource.PlayOneShot(dropItemClip);
+        }
+
+        public void PerformHotbarAction(int itemIndex)
+        {
+            InventoryEntry hotbarItem = hotbarData.GetItemAt(itemIndex);
+            if (hotbarItem.IsEmpty)
+                return;
+
+            // destroys the item when removing or equipping
+            IDestroyableItem destroyableItem = hotbarItem.item as IDestroyableItem;
+            if (destroyableItem != null)
+            {
+                hotbarData.RemoveItem(itemIndex, 1);
+            }
+
+            // lets us interact with the item
+            IItemAction itemAction = hotbarItem.item as IItemAction;
+            if (itemAction != null)
+            {
+                itemAction.PerformAction(gameObject, hotbarItem.itemState);
+                audioSource.PlayOneShot(itemAction.actionSFX);
+                if (hotbarData.GetItemAt(itemIndex).IsEmpty)
+                    hotbarUI.ResetSelection();
+            }
+        }
+
+        // ========== CROSS-INVENTORY TRANSFER HANDLERS ==========
+
+        private void HandleInventoryItemDropped(int targetIndex)
+        {
+            // Item dropped on inventory slot
+            if (currentDragSource == ItemSource.Hotbar && currentDragSourceIndex >= 0)
+            {
+                // Transfer from hotbar to inventory
+                TransferItemFromHotbarToInventory(currentDragSourceIndex, targetIndex);
+            }
+            // Reset drag state
+            currentDragSourceIndex = -1;
+            inventoryUI.ResetDraggedItem();
+            hotbarUI.ResetDraggedItem();
+        }
+
+        private void HandleHotbarItemDropped(int targetIndex)
+        {
+            // Item dropped on hotbar slot
+            if (currentDragSource == ItemSource.Inventory && currentDragSourceIndex >= 0)
+            {
+                // Transfer from inventory to hotbar
+                TransferItemFromInventoryToHotbar(currentDragSourceIndex, targetIndex);
+            }
+            // Reset drag state
+            currentDragSourceIndex = -1;
+            inventoryUI.ResetDraggedItem();
+            hotbarUI.ResetDraggedItem();
+        }
+
+        private void TransferItemFromInventoryToHotbar(int inventoryIndex, int hotbarIndex)
+        {
+            InventoryEntry itemToTransfer = inventoryData.GetItemAt(inventoryIndex);
+            if (itemToTransfer.IsEmpty)
+                return;
+
+            InventoryEntry hotbarSlot = hotbarData.GetItemAt(hotbarIndex);
+
+            // If hotbar slot is empty, move the item
+            if (hotbarSlot.IsEmpty)
+            {
+                hotbarData.AddItemAtSlot(hotbarIndex, itemToTransfer.item, itemToTransfer.quantity, itemToTransfer.itemState);
+                inventoryData.RemoveItem(inventoryIndex, itemToTransfer.quantity);
+            }
+            // If both items are the same and stackable, try to stack
+            else if (hotbarSlot.item == itemToTransfer.item && itemToTransfer.item.IsStackable)
+            {
+                int spaceInHotbar = hotbarSlot.item.MaxStackSize - hotbarSlot.quantity;
+                int amountToMove = Mathf.Min(itemToTransfer.quantity, spaceInHotbar);
+
+                if (amountToMove > 0)
+                {
+                    hotbarData.AddItemAtSlot(hotbarIndex, itemToTransfer.item, hotbarSlot.quantity + amountToMove, hotbarSlot.itemState);
+                    inventoryData.RemoveItem(inventoryIndex, amountToMove);
+                }
+            }
+            // Otherwise swap the items
+            else
+            {
+                inventoryData.SwapItems(inventoryIndex, inventoryIndex); // temp to force refresh
+                hotbarData.SwapItems(hotbarIndex, hotbarIndex); // temp to force refresh
+                
+                // Swap items between systems
+                InventoryEntry temp = itemToTransfer;
+                inventoryData.RemoveItem(inventoryIndex, itemToTransfer.quantity);
+                hotbarData.RemoveItem(hotbarIndex, hotbarSlot.quantity);
+                
+                inventoryData.AddItemAtSlot(inventoryIndex, hotbarSlot.item, hotbarSlot.quantity, hotbarSlot.itemState);
+                hotbarData.AddItemAtSlot(hotbarIndex, temp.item, temp.quantity, temp.itemState);
+            }
+        }
+
+        private void TransferItemFromHotbarToInventory(int hotbarIndex, int inventoryIndex)
+        {
+            InventoryEntry itemToTransfer = hotbarData.GetItemAt(hotbarIndex);
+            if (itemToTransfer.IsEmpty)
+                return;
+
+            InventoryEntry inventorySlot = inventoryData.GetItemAt(inventoryIndex);
+
+            // If inventory slot is empty, move the item
+            if (inventorySlot.IsEmpty)
+            {
+                inventoryData.AddItemAtSlot(inventoryIndex, itemToTransfer.item, itemToTransfer.quantity, itemToTransfer.itemState);
+                hotbarData.RemoveItem(hotbarIndex, itemToTransfer.quantity);
+            }
+            // If both items are the same and stackable, try to stack
+            else if (inventorySlot.item == itemToTransfer.item && itemToTransfer.item.IsStackable)
+            {
+                int spaceInInventory = inventorySlot.item.MaxStackSize - inventorySlot.quantity;
+                int amountToMove = Mathf.Min(itemToTransfer.quantity, spaceInInventory);
+
+                if (amountToMove > 0)
+                {
+                    inventoryData.AddItemAtSlot(inventoryIndex, itemToTransfer.item, inventorySlot.quantity + amountToMove, inventorySlot.itemState);
+                    hotbarData.RemoveItem(hotbarIndex, amountToMove);
+                }
+            }
+            // Otherwise swap the items
+            else
+            {
+                inventoryData.SwapItems(inventoryIndex, inventoryIndex); // temp to force refresh
+                hotbarData.SwapItems(hotbarIndex, hotbarIndex); // temp to force refresh
+                
+                // Swap items between systems
+                InventoryEntry temp = itemToTransfer;
+                hotbarData.RemoveItem(hotbarIndex, itemToTransfer.quantity);
+                inventoryData.RemoveItem(inventoryIndex, inventorySlot.quantity);
+                
+                hotbarData.AddItemAtSlot(hotbarIndex, inventorySlot.item, inventorySlot.quantity, inventorySlot.itemState);
+                inventoryData.AddItemAtSlot(inventoryIndex, temp.item, temp.quantity, temp.itemState);
             }
         }
     }
