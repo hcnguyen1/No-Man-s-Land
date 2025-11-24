@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Orc1 : Entity
@@ -12,10 +13,8 @@ public class Orc1 : Entity
     private List<Collider2D> hitboxes;
 
     // Track if Orc is attacking to prevent spam
-    private bool isAttacking;
-    private bool hasDealtDamage;
-    private float lastAttackTime = -Mathf.Infinity; // Track time of last attack
-    private float attackAnimationDuration = 0.26f; // Duration of attack animation
+    private bool isAttacking = false;
+    private bool canAttack = true;
 
     // Track death state
     private bool noHealth;
@@ -51,19 +50,16 @@ public class Orc1 : Entity
 
     private void FixedUpdate()
     {
-        // Chases the player
-        if (playerTransform == null)
+        if (playerTransform == null) return;
+        
+        // Attack if in range
+        float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
+        if (distanceToPlayer <= attackRange && canAttack && !noHealth)
         {
-            return;
+            StartAttackWindow();
         }
-        // If Orc is within attack range of player 
-        if (Vector2.Distance(transform.position, playerTransform.position) <= attackRange)
-        {
-            if (!isAttacking && Time.time >= lastAttackTime + attackCooldown)
-            {
-                StartCoroutine(Attack());
-            }
-        }
+
+        // Chase Player
         ChasePlayer();
     }
 
@@ -80,8 +76,8 @@ public class Orc1 : Entity
 
             animator.SetFloat("MoveX", dir.x);
             animator.SetFloat("MoveY", dir.y);
-            animator.SetBool("isWalking", true);
-
+            
+            animator.SetBool("isWalking", !isAttacking);
         }
         else
         {
@@ -92,32 +88,27 @@ public class Orc1 : Entity
     }
 
     // Orc Attack
-    private IEnumerator Attack()
+    // Turn on isAttacking when animation starts, turn off when animation ends
+    public void StartAttackWindow()
     {
+        if(isAttacking) return;
         isAttacking = true;
-        hasDealtDamage = false; // Have not dealt damage yet this attack
+        canAttack = false;
         animator.SetBool("isAttacking", true);
-
-        yield return new WaitForSeconds(attackAnimationDuration); // Duration of attack animation
-
-        animator.SetBool("isAttacking", false);
-        lastAttackTime = Time.time; // This records the time of the last attack
-        isAttacking = false;
     }
-
-    // When hitbox collides with player
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void EndAttackWindow()
     {
-        if (collision.CompareTag("Player") && isAttacking && !hasDealtDamage)
-        {
-            Entity player = collision.GetComponent<Entity>();
-            if (player != null)
-            {
-                player.TakeDamage(attackPower);
-                hasDealtDamage = true; // Ensure damage is only dealt once per attack
-                Debug.Log("Orc has dealt damage to Player.");
-            }
-        }
+        // Start cooldown before next attack
+        StartCoroutine(AttackCooldown());
+        isAttacking = false;
+        animator.SetBool("isAttacking", false);
+    }
+    
+    private IEnumerator AttackCooldown()
+    {
+        Debug.Log("Orc1 attack cooldown started.");
+        yield return new WaitForSeconds(attackCooldown);
+        canAttack = true;
     }
 
     // Orc Death (Animation handles Die() after animation completes)

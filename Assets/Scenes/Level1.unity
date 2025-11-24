@@ -50035,6 +50035,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 380194751297348751, guid: f1673017b945e624b9783826311e58fc,
+        type: 3}
+      propertyPath: attackCooldown
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1192397437683262866, guid: f1673017b945e624b9783826311e58fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -50085,16 +50090,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404747643398572338, guid: f1673017b945e624b9783826311e58fc,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.7858307
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404747643398572338, guid: f1673017b945e624b9783826311e58fc,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.2831513
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404747643398572338, guid: f1673017b945e624b9783826311e58fc,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.006890416
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404747643398572338, guid: f1673017b945e624b9783826311e58fc,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.67201465
+      objectReference: {fileID: 0}
     - target: {fileID: 5804737237844173118, guid: f1673017b945e624b9783826311e58fc,
         type: 3}
       propertyPath: m_Name
       value: Orc1
       objectReference: {fileID: 0}
+    - target: {fileID: 8013588586526902773, guid: f1673017b945e624b9783826311e58fc,
+        type: 3}
+      propertyPath: m_Name
+      value: OrcAttackHitbox
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1740586418265102652, guid: f1673017b945e624b9783826311e58fc, type: 3}
+    - {fileID: 8210898515160862967, guid: f1673017b945e624b9783826311e58fc, type: 3}
+    - {fileID: 6136227875248187367, guid: f1673017b945e624b9783826311e58fc, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8013588586526902773, guid: f1673017b945e624b9783826311e58fc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2069982787}
   m_SourcePrefab: {fileID: 100100000, guid: f1673017b945e624b9783826311e58fc, type: 3}
+--- !u!1 &2069982786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8013588586526902773, guid: f1673017b945e624b9783826311e58fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2069982785}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2069982787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069982786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc658aaa406005d4ebd542b9e2250513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2290039207475261850
 PrefabInstance:
   m_ObjectHideFlags: 0
