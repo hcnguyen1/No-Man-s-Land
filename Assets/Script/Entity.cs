@@ -5,7 +5,8 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     [Header("Stats")]
-    public float maxHealth, health;
+    public float maxHealth;
+    public float health;
     [SerializeField] protected int attackPower;
     [SerializeField] protected float movementSpeed;
     [SerializeField] protected float attackCooldown;
