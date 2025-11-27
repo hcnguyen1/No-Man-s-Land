@@ -108,6 +108,31 @@ namespace Inventory // this creates its own kind of import settings that can onl
                     inventoryUI.Hide();
                 }
             }
+
+            // Hotbar number keys (1-9 for slots 0-8, 0 for slot 9)
+            if (Input.GetKeyDown(KeyCode.Alpha1)) UseHotbarSlot(0);
+            if (Input.GetKeyDown(KeyCode.Alpha2)) UseHotbarSlot(1);
+            if (Input.GetKeyDown(KeyCode.Alpha3)) UseHotbarSlot(2);
+            if (Input.GetKeyDown(KeyCode.Alpha4)) UseHotbarSlot(3);
+            if (Input.GetKeyDown(KeyCode.Alpha5)) UseHotbarSlot(4);
+            if (Input.GetKeyDown(KeyCode.Alpha6)) UseHotbarSlot(5);
+            if (Input.GetKeyDown(KeyCode.Alpha7)) UseHotbarSlot(6);
+            if (Input.GetKeyDown(KeyCode.Alpha8)) UseHotbarSlot(7);
+            if (Input.GetKeyDown(KeyCode.Alpha9)) UseHotbarSlot(8);
+            if (Input.GetKeyDown(KeyCode.Alpha0)) UseHotbarSlot(9);
+        }
+
+        private void UseHotbarSlot(int slotIndex)
+        {
+            InventoryEntry hotbarItem = hotbarData.GetItemAt(slotIndex);
+            if (hotbarItem.IsEmpty)
+                return;
+
+            // Only consume if it's a consumable item
+            if (hotbarItem.item is ConsumableItemSO)
+            {
+                PerformHotbarAction(slotIndex);
+            }
         }
 
         private void HandleDescriptionRequest(int itemIndex) // handles the description when selecting item
@@ -190,25 +215,30 @@ namespace Inventory // this creates its own kind of import settings that can onl
             if (inventoryItem.IsEmpty)
                 return;
 
-            // destroys the item when removing or equipping
-            IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
-            if (destroyableItem != null)
-            {
-                inventoryData.RemoveItem(itemIndex, 1);
-            }
-
-            // lets us interact with the item, but needs to destroy object first if theres no slots. 
+            // First try to perform the action
             IItemAction itemAction = inventoryItem.item as IItemAction;
             if (itemAction != null)
             {
-                itemAction.PerformAction(gameObject, inventoryItem.itemState);
-                if (itemAction.actionSFX != null)
-                {
-                    AudioSource.PlayClipAtPoint(itemAction.actionSFX, transform.position);
-                }
+                bool actionSucceeded = itemAction.PerformAction(gameObject, inventoryItem.itemState);
                 
-                if (inventoryData.GetItemAt(itemIndex).IsEmpty)
-                    inventoryUI.ResetSelection();
+                // Only remove item if action succeeded
+                if (actionSucceeded)
+                {
+                    // destroys the item when removing or equipping
+                    IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
+                    if (destroyableItem != null)
+                    {
+                        inventoryData.RemoveItem(itemIndex, 1);
+                    }
+                    
+                    if (itemAction.actionSFX != null)
+                    {
+                        AudioSource.PlayClipAtPoint(itemAction.actionSFX, transform.position);
+                    }
+                    
+                    if (inventoryData.GetItemAt(itemIndex).IsEmpty)
+                        inventoryUI.ResetSelection();
+                }
             }
         }
 
@@ -291,24 +321,30 @@ namespace Inventory // this creates its own kind of import settings that can onl
             if (hotbarItem.IsEmpty)
                 return;
 
-            // destroys the item when removing or equipping
-            IDestroyableItem destroyableItem = hotbarItem.item as IDestroyableItem;
-            if (destroyableItem != null)
-            {
-                hotbarData.RemoveItem(itemIndex, 1);
-            }
-
-            // lets us interact with the item
+            // First try to perform the action
             IItemAction itemAction = hotbarItem.item as IItemAction;
             if (itemAction != null)
             {
-                itemAction.PerformAction(gameObject, hotbarItem.itemState);
-                if (itemAction.actionSFX != null)
+                bool actionSucceeded = itemAction.PerformAction(gameObject, hotbarItem.itemState);
+                
+                // Only remove item if action succeeded
+                if (actionSucceeded)
                 {
-                    AudioSource.PlayClipAtPoint(itemAction.actionSFX, transform.position);
+                    // destroys the item when removing or equipping
+                    IDestroyableItem destroyableItem = hotbarItem.item as IDestroyableItem;
+                    if (destroyableItem != null)
+                    {
+                        hotbarData.RemoveItem(itemIndex, 1);
+                    }
+                    
+                    if (itemAction.actionSFX != null)
+                    {
+                        AudioSource.PlayClipAtPoint(itemAction.actionSFX, transform.position);
+                    }
+                    
+                    if (hotbarData.GetItemAt(itemIndex).IsEmpty)
+                        hotbarUI.ResetSelection();
                 }
-                if (hotbarData.GetItemAt(itemIndex).IsEmpty)
-                    hotbarUI.ResetSelection();
             }
         }
 

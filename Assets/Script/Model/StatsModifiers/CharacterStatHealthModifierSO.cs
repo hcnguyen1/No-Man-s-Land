@@ -9,6 +9,12 @@ public class CharacterStatHealthModifierSO : CharacterStatModifierSO
     {
         Health health = character.GetComponent<Health>();
         if(health != null)
-            health.AddHealth((int) val);
+        {
+            // Only heal if not at max health
+            if (health.GetCurrentHealth() < health.GetMaxHealth())
+            {
+                health.AddHealth((int) val);
+            }
+        }
     }
 }

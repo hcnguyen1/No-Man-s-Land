@@ -14,6 +14,13 @@ public class Health : MonoBehaviour
 
     public void AddHealth(int amount)
     {
+        // Don't heal if already at max health
+        if (currentHealth >= maxHealth)
+        {
+            Debug.Log("Already at full health! Cannot consume healing item.");
+            return;
+        }
+        
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log($"Health changed to: {currentHealth}");
     }

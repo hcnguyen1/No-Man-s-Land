@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d0330172fdc0d40bb0487e3aebcf48, type: 3}
   m_Name: Bottle
   m_EditorClassIdentifier: 
-  <IsStackable>k__BackingField: 0
-  <MaxStackSize>k__BackingField: 1
-  <Name>k__BackingField: 
-  <Description>k__BackingField: 
-  <ItemImage>k__BackingField: {fileID: 0}
+  <IsStackable>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 99
+  <Name>k__BackingField: Empty Bottle
+  <Description>k__BackingField: A empty bottle. Can be combined with something else
+    in the crafting table.
+  <ItemImage>k__BackingField: {fileID: -1333810164, guid: b2aa333e2a0687c499a8b4ecb8625997,
+    type: 3}
   <DefaultParametersList>k__BackingField: []
