@@ -41,11 +41,20 @@ public class CraftingUI : MonoBehaviour
             // Show the button and display first recipe
             recipeButton.SetActive(true);
             DisplayRecipe(recipes[0]);
+            // Force it to stay active on next frame
+            StartCoroutine(ForceActiveNextFrame());
         }
         else
         {
             recipeButton.SetActive(false);
         }
+    }
+
+    private IEnumerator ForceActiveNextFrame()
+    {
+        yield return null; // Wait one frame
+        if (recipeButton != null)
+            recipeButton.SetActive(true);
     }
 
     private void DisplayRecipe(CraftingRecipe recipe)
@@ -112,11 +121,6 @@ public class CraftingUI : MonoBehaviour
         if (success)
         {
             DisplayRecipes(); // Refresh to update craftability
-            Debug.Log($"Successfully crafted {selectedRecipe.result.Name}!");
-        }
-        else
-        {
-            Debug.LogWarning("Failed to craft!");
         }
     }
 }

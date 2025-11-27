@@ -37,27 +37,18 @@ public class TabManager : MonoBehaviour
 
     void Update()
     {
-        // Close crafting menu if player walks away from bench
-        if (craftingMenu != null && craftingMenu.activeSelf && player != null)
-        {
-            if (!player.canOpenCraftingMenu)
-            {
-                CloseCraftingTab();
-            }
-        }
+        // TabManager no longer handles crafting menu closing - CraftingBench does
     }
 
     public void OpenCraftingTab()
     {
-        // Open inventory first
+        // Open crafting menu FIRST so it's on top
+        if (craftingMenu != null)
+            craftingMenu.SetActive(true);
+        
+        // Then open inventory
         if (inventoryController != null)
             inventoryController.ShowInventory();
-        
-        // Then open crafting menu
-        if (craftingMenu != null)
-        {
-            craftingMenu.SetActive(true);
-        }
     }
 
     public void CloseCraftingTab()

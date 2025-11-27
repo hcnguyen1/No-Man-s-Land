@@ -202,7 +202,11 @@ namespace Inventory // this creates its own kind of import settings that can onl
             if (itemAction != null)
             {
                 itemAction.PerformAction(gameObject, inventoryItem.itemState);
-                audioSource.PlayOneShot(itemAction.actionSFX);
+                if (itemAction.actionSFX != null)
+                {
+                    AudioSource.PlayClipAtPoint(itemAction.actionSFX, transform.position);
+                }
+                
                 if (inventoryData.GetItemAt(itemIndex).IsEmpty)
                     inventoryUI.ResetSelection();
             }
@@ -224,12 +228,15 @@ namespace Inventory // this creates its own kind of import settings that can onl
             InventoryEntry hotbarItem = hotbarData.GetItemAt(itemIndex);
             if (hotbarItem.IsEmpty)
             {
-                hotbarUI.ResetSelection();
+                inventoryUI.ResetSelection(); // Reset the shared description panel
+                hotbarUI.ResetSelection(); // Reset hotbar selection too
                 return;
             }
             ItemSO item = hotbarItem.item;
             string description = PrepareDescription(hotbarItem);
-            hotbarUI.UpdateDescription(itemIndex, item.ItemImage, item.Name, description);
+            inventoryUI.UpdateDescription(itemIndex, item.ItemImage, item.Name, description); // Use inventory UI's description panel
+            inventoryUI.ResetSelection(); // Clear inventory border
+            // Hotbar will keep its selection border
         }
 
         private void HandleHotbarSwapItems(int itemIndex1, int itemIndex2) // handles swapping items within hotbar
@@ -296,7 +303,10 @@ namespace Inventory // this creates its own kind of import settings that can onl
             if (itemAction != null)
             {
                 itemAction.PerformAction(gameObject, hotbarItem.itemState);
-                audioSource.PlayOneShot(itemAction.actionSFX);
+                if (itemAction.actionSFX != null)
+                {
+                    AudioSource.PlayClipAtPoint(itemAction.actionSFX, transform.position);
+                }
                 if (hotbarData.GetItemAt(itemIndex).IsEmpty)
                     hotbarUI.ResetSelection();
             }

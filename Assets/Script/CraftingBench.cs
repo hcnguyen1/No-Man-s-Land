@@ -14,6 +14,7 @@ public class CraftingBench : MonoBehaviour
     private List<CraftingRecipe> recipes = new List<CraftingRecipe>();
 
     private bool playerNearby = false;
+    private bool isCraftingOpen = false;
     private CraftingSystem craftingSystem;
     private Collider2D benchCollider;
     private InventoryController inventoryController;
@@ -21,7 +22,6 @@ public class CraftingBench : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log("CraftingBench Awake called!");
         craftingSystem = new CraftingSystem();
         benchCollider = GetComponent<Collider2D>();
         if (benchCollider != null)
@@ -38,10 +38,6 @@ public class CraftingBench : MonoBehaviour
         {
             craftingUIScript = craftingUI.GetComponent<CraftingUI>();
         }
-        
-        Debug.Log($"CraftingBench Start: inventoryController = {(inventoryController != null ? "found" : "NOT FOUND")}");
-        Debug.Log($"CraftingBench Start: craftingUIScript = {(craftingUIScript != null ? "found" : "NOT FOUND")}");
-        Debug.Log($"CraftingBench Start: craftingUI = {(craftingUI != null ? craftingUI.name : "NOT ASSIGNED")}");
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -68,16 +64,37 @@ public class CraftingBench : MonoBehaviour
             TabManager tabManager = FindObjectOfType<TabManager>();
             if (tabManager != null)
             {
-                if (craftingUI != null && craftingUI.activeSelf)
+                if (isCraftingOpen)
                 {
+                    // Close crafting
                     tabManager.CloseCraftingTab();
+                    isCraftingOpen = false;
                 }
                 else
                 {
+                    // First, open crafting menu to activate the GameObject
                     tabManager.OpenCraftingTab();
+                    isCraftingOpen = true;
+                    
+                    // THEN find CraftingUI (now that menu is active) and set the bench
+                    if (craftingUIScript == null)
+                        craftingUIScript = FindObjectOfType<CraftingUI>();
+                    
+                    // Set crafting bench AFTER menu is active so coroutines work
                     if (craftingUIScript != null)
                         craftingUIScript.SetCraftingBench(this);
                 }
+            }
+        }
+        
+        // Close crafting menu only if player walks away (not when opening)
+        if (isCraftingOpen && !playerNearby)
+        {
+            TabManager tabManager = FindObjectOfType<TabManager>();
+            if (tabManager != null)
+            {
+                tabManager.CloseCraftingTab();
+                isCraftingOpen = false;
             }
         }
     }
@@ -94,10 +111,6 @@ public class CraftingBench : MonoBehaviour
 
     public List<CraftingRecipe> GetAvailableRecipes()
     {
-        if (recipes.Count == 0)
-        {
-            Debug.LogWarning("CraftingBench has no recipes assigned!");
-        }
         return recipes;
     }
 
