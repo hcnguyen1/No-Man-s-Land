@@ -21,6 +21,7 @@ public class CraftingBench : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("CraftingBench Awake called!");
         craftingSystem = new CraftingSystem();
         benchCollider = GetComponent<Collider2D>();
         if (benchCollider != null)
@@ -31,6 +32,16 @@ public class CraftingBench : MonoBehaviour
     {
         inventoryController = FindObjectOfType<InventoryController>();
         craftingUIScript = FindObjectOfType<CraftingUI>();
+        
+        // If not found globally, try to find it on the craftingUI GameObject
+        if (craftingUIScript == null && craftingUI != null)
+        {
+            craftingUIScript = craftingUI.GetComponent<CraftingUI>();
+        }
+        
+        Debug.Log($"CraftingBench Start: inventoryController = {(inventoryController != null ? "found" : "NOT FOUND")}");
+        Debug.Log($"CraftingBench Start: craftingUIScript = {(craftingUIScript != null ? "found" : "NOT FOUND")}");
+        Debug.Log($"CraftingBench Start: craftingUI = {(craftingUI != null ? craftingUI.name : "NOT ASSIGNED")}");
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -83,6 +94,10 @@ public class CraftingBench : MonoBehaviour
 
     public List<CraftingRecipe> GetAvailableRecipes()
     {
+        if (recipes.Count == 0)
+        {
+            Debug.LogWarning("CraftingBench has no recipes assigned!");
+        }
         return recipes;
     }
 
