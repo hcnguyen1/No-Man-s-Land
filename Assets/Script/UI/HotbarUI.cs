@@ -69,7 +69,11 @@ namespace Inventory.UI
         private void HandleSwap(InventoryItem obj)
         {
             int targetItemIndex = listOfUIItems.IndexOf(obj);
-            // For cross-inventory transfers, always invoke OnItemDroppedOn - the controller will handle the source
+            if (currentlyDraggedItemIndex >= 0)
+            {
+                OnSwapItems?.Invoke(currentlyDraggedItemIndex, targetItemIndex);
+            }
+            // Always invoke OnItemDroppedOn - the controller will handle the source
             OnItemDroppedOn?.Invoke(targetItemIndex); // for cross-inventory transfers
             currentlyDraggedItemIndex = -1;
         }

@@ -21,7 +21,7 @@ namespace Inventory // this creates its own kind of import settings that can onl
         private InventoryPage inventoryUI;
 
         [SerializeField]
-        private InventorySO inventoryData;
+        public InventorySO inventoryData;
 
         [SerializeField]
         private HotbarUI hotbarUI;
@@ -413,6 +413,22 @@ namespace Inventory // this creates its own kind of import settings that can onl
                 
                 hotbarData.AddItemAtSlot(hotbarIndex, inventorySlot.item, inventorySlot.quantity, inventorySlot.itemState);
                 inventoryData.AddItemAtSlot(inventoryIndex, temp.item, temp.quantity, temp.itemState);
+            }
+        }
+
+        public void ShowInventory()
+        {
+            if (inventoryUI != null)
+            {
+                inventoryUI.Show();
+            }
+        }
+
+        public void HideInventory()
+        {
+            if (inventoryUI != null)
+            {
+                inventoryUI.Hide();
             }
         }
     }

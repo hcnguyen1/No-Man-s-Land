@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f6b7412a347acc4488bd6615e70e9a65
+guid: 8ace1fb331206454aa908061100d1519
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,91 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bottles_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f4842376e82f5c47bc17465117f552a
-      internalID: -1333810164
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bottles_1
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 64
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc5c16ac88568e64a9655a63c288e30a
-      internalID: -716874563
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bottles_2
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 64
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d622944c6881d74294a93a0068804c5
-      internalID: 473464009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bottles_3
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 64
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2c5b12c84cf96f48baf39dc234f912c
-      internalID: -975824108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bottles_4
+      name: armor_0
       rect:
         serializedVersion: 2
         x: 0
@@ -221,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f04e0d49aa274f84a9219a170088cda4
-      internalID: 1985709315
+      spriteID: 0f0514a89e99a9b48b63083c99eeb30d
+      internalID: -1445937408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_5
+      name: armor_1
       rect:
         serializedVersion: 2
         x: 8
@@ -242,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa9dd250ed80ae84f8199e0c21d6d432
-      internalID: -2008808052
+      spriteID: cff7822b5a7316c47b858ae56cf47113
+      internalID: -1625745348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_6
+      name: armor_2
       rect:
         serializedVersion: 2
         x: 16
@@ -263,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da552f604cff1e64cbe4a3f125c13f0d
-      internalID: -1979765053
+      spriteID: d00fb50499af4ca42af43546501a557f
+      internalID: 689571119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_7
+      name: armor_3
       rect:
         serializedVersion: 2
         x: 24
@@ -284,14 +200,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38c3f4de5ed216c4b847f7ebb728871c
-      internalID: 2103877094
+      spriteID: cd038c70caf3fd44e93ce6e3832f0efd
+      internalID: -1869029442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_8
+      name: armor_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 56
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a84634c36a34546a37425688944714
+      internalID: 1803383848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 56
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4540e73c630dd4409cae10b91d81aa3
+      internalID: 1328140537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 56
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15bad45193d93f04585a2a10ffb460a6
+      internalID: 1003766242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_7
       rect:
         serializedVersion: 2
         x: 0
@@ -305,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a75cbe965fd47144aec13d1a50b6538
-      internalID: 1110923219
+      spriteID: eb2f61dbee747774389e5d1e1a1a3fb1
+      internalID: 1482184718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_9
+      name: armor_8
       rect:
         serializedVersion: 2
         x: 8
@@ -326,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c98f3fcd7072964439b9fec9512328de
-      internalID: 1843083737
+      spriteID: 5a4cdcc9760475a49bc5b6508fa49724
+      internalID: 1483530355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_10
+      name: armor_9
       rect:
         serializedVersion: 2
         x: 16
@@ -347,14 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5856f6336336fcf44bce68281f4033a6
-      internalID: -1432437438
+      spriteID: 90b5ac2936d839b488a015bd84f6e054
+      internalID: -653272490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_11
+      name: armor_10
       rect:
         serializedVersion: 2
         x: 24
@@ -368,14 +347,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e52b8adc2e333c648acac5aefee4f807
-      internalID: -6129245
+      spriteID: 2d9e8d2caadb169449cacf0d8dd45294
+      internalID: 423894364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_12
+      name: armor_11
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47dd82e097b730d43b561f46af94e40b
+      internalID: 2130522552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_12
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 48
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeca445404c0495409ad3b6bf3aa29f8
+      internalID: 1806960797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_13
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 311a23efba533f8448bc4b616f31a42a
+      internalID: -106448770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_14
       rect:
         serializedVersion: 2
         x: 0
@@ -389,14 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62f54d0a60bb7cc41a23fa932baa7720
-      internalID: -1227757721
+      spriteID: 2531c45032c0bd7498b9a0326f0bfdbc
+      internalID: -1369692998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_13
+      name: armor_15
       rect:
         serializedVersion: 2
         x: 8
@@ -410,14 +452,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48415cdda27f93646a33866da6686ee4
-      internalID: 279730506
+      spriteID: 22af3f4d0616558489af3d1673d6913a
+      internalID: 495758389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_14
+      name: armor_16
       rect:
         serializedVersion: 2
         x: 16
@@ -431,14 +473,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ae9913a2b8a2fd4a9482cf679e91edb
-      internalID: -1839679319
+      spriteID: c0d8bc02a00652141b2e0eae818b88ca
+      internalID: -1050390021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_15
+      name: armor_17
       rect:
         serializedVersion: 2
         x: 24
@@ -452,14 +494,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e62541cdfe043e0468637cfbffd0c885
-      internalID: -1206442312
+      spriteID: 8c1b05eae02a67c47b733cea7ad18b6b
+      internalID: -1581729886
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_16
+      name: armor_18
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 40
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859f76ff5b9be624da78a8625bed4228
+      internalID: -1421301311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_19
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 40
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d179b1d1c5f9bf14584e40c6467fc0e9
+      internalID: -1732446864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_20
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 40
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c69228fb8f59954f8744dbfae953ebf
+      internalID: -190087268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_21
       rect:
         serializedVersion: 2
         x: 0
@@ -473,14 +578,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cb62aa441403f84e9535dd8d488f479
-      internalID: 1465428613
+      spriteID: 8c7f4a4d32324af4fa746d85cad90cdb
+      internalID: -490976884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_17
+      name: armor_22
       rect:
         serializedVersion: 2
         x: 8
@@ -494,14 +599,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d8b812afe9ceea46b9e07df6e4a9739
-      internalID: 543205411
+      spriteID: b008888496cdb77418206c990fd938d9
+      internalID: -2016916077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_18
+      name: armor_23
       rect:
         serializedVersion: 2
         x: 16
@@ -515,14 +620,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fe30a59796537e48b294c66718660e7
-      internalID: 2072186761
+      spriteID: aec857ef1eaa43a448bb5304ec6e04bd
+      internalID: -790654071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_19
+      name: armor_24
       rect:
         serializedVersion: 2
         x: 24
@@ -536,14 +641,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1aaf595f154284d479d687c96f196d25
-      internalID: 609153257
+      spriteID: 5bd14023b6de26e4ca51cc9ab6f6112c
+      internalID: -1114154291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_20
+      name: armor_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d982268af64b9348938d1aba89d78c4
+      internalID: 1297661249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_26
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 32
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1303d16b97cc3d84c83f3a88cc1f779a
+      internalID: -1026073836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_27
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc904527f1fc34546b45216c4efd185e
+      internalID: -1051812487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_28
       rect:
         serializedVersion: 2
         x: 0
@@ -557,14 +725,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e29aee77f6bc3ee4db9c8b8507812686
-      internalID: 1257703560
+      spriteID: 13e7a98441109b44091cea12b403d081
+      internalID: -1925064246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_21
+      name: armor_29
       rect:
         serializedVersion: 2
         x: 8
@@ -578,14 +746,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b10b6cffad1b81e47b18fe3a48ff8571
-      internalID: -1495362694
+      spriteID: 39df5703e9ba1a747b0d4101c7c094f5
+      internalID: -1016095610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_22
+      name: armor_30
       rect:
         serializedVersion: 2
         x: 16
@@ -599,14 +767,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f04d1a34e7a6bc2409ef9204559fd382
-      internalID: 1252759456
+      spriteID: 7d7e814c3e0797d41be3df7460c058e7
+      internalID: 447332867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_23
+      name: armor_31
       rect:
         serializedVersion: 2
         x: 24
@@ -620,14 +788,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 965d5e6493a591248aa7027f9cecd9bb
-      internalID: 1856230541
+      spriteID: 2efb3521d9ccaeb4887fbe44371c46f9
+      internalID: 2053020900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_24
+      name: armor_32
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c120c5964ed13234c8bc7634e199b89c
+      internalID: -701943542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_33
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca337f1fdc0abe749b0814f4c2fccca9
+      internalID: -1890707560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_34
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3330da5ba7a11a64aa7229efa2d60f2d
+      internalID: 1133706221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_35
       rect:
         serializedVersion: 2
         x: 0
@@ -641,14 +872,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f915f64946497842b3e1467296c5d4e
-      internalID: 1146055244
+      spriteID: db4f8286645b2a44fb6f9783cf680c4e
+      internalID: 1471923200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_25
+      name: armor_36
       rect:
         serializedVersion: 2
         x: 8
@@ -662,14 +893,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dbb70113079d2c4aae4fded641a66f4
-      internalID: 322811196
+      spriteID: 0e26c8d4116923549a404b2ddbe66cfa
+      internalID: -58416839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_26
+      name: armor_37
       rect:
         serializedVersion: 2
         x: 16
@@ -683,14 +914,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1aa716e2e6cea2d4a869897fdb0ea0e3
-      internalID: -483646924
+      spriteID: ce26302e258d7c7418fe0afd1b2a4cdf
+      internalID: 1411861338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_27
+      name: armor_38
       rect:
         serializedVersion: 2
         x: 24
@@ -704,14 +935,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bf3ded32d865f84ab1621d3669b7c69
-      internalID: -1950637210
+      spriteID: 925e9fbc43d24804c86050445ac7f99a
+      internalID: 1449606024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_28
+      name: armor_39
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611c92f9798a23f47a3e5c1f260e0e9a
+      internalID: -1683193400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_40
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b7a21c58a253f49a4395ae5aaccc1c
+      internalID: 991302681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_41
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f18706e5a35a36499b45cdead07277e
+      internalID: 1990434423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_42
       rect:
         serializedVersion: 2
         x: 0
@@ -725,14 +1019,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cbac7d0a2c59364684c2e55f0ede016
-      internalID: 1388510490
+      spriteID: 8cb6ee2fa0cb2074c8f04df680137aef
+      internalID: -1279500106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_29
+      name: armor_43
       rect:
         serializedVersion: 2
         x: 8
@@ -746,14 +1040,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d9703b32f002ce4fa8d6c0f2b11e27b
-      internalID: -473330107
+      spriteID: e4f77a9f5b5cca1409da1fbc8c43abef
+      internalID: 52771907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_30
+      name: armor_44
       rect:
         serializedVersion: 2
         x: 16
@@ -767,14 +1061,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fa72a001ff290c499014d807605bfbc
-      internalID: 2130427682
+      spriteID: e974d6f0ea7bf4b44bb5062da26dec28
+      internalID: -308648154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_31
+      name: armor_45
       rect:
         serializedVersion: 2
         x: 24
@@ -788,14 +1082,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fa44fc77d53381468e7d176e6700721
-      internalID: 934160122
+      spriteID: 3e4f3c8a69724ee469568b5657830e74
+      internalID: -1559742918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_32
+      name: armor_46
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6bb7f74645b88418919dcb60a73a01
+      internalID: 981812128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_47
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c04f502566aad404e8ef39b6d0450676
+      internalID: 779660801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_48
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c40eea9bbc065e4695ec8fa74cc30ef
+      internalID: -598757657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_49
       rect:
         serializedVersion: 2
         x: 0
@@ -809,14 +1166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4aea6486620e81a4997c15b9c40a8b6d
-      internalID: -191834117
+      spriteID: fa6ffdf41b93e8e4c9d53192c865ebc0
+      internalID: -1420385998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_33
+      name: armor_50
       rect:
         serializedVersion: 2
         x: 8
@@ -830,14 +1187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b29d61b69623e04ba307f405fed6c95
-      internalID: 1595268532
+      spriteID: 8f93d97d48bf85241a81b48de059a141
+      internalID: -2049128473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_34
+      name: armor_51
       rect:
         serializedVersion: 2
         x: 16
@@ -851,14 +1208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a870c5cca6d607469bd5d9322d245be
-      internalID: -350157195
+      spriteID: cc1be08f16dfb03439be7536e2bb527e
+      internalID: -1753624660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottles_35
+      name: armor_52
       rect:
         serializedVersion: 2
         x: 24
@@ -872,8 +1229,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a246fb250680ab74bb248b48c35af417
-      internalID: -67391279
+      spriteID: 05ce9cd02df1b4949a69894fe8bf4288
+      internalID: -1971645223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_53
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4d2dc86a5e95143bcfdef97539c32a
+      internalID: 743038684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_54
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bfc25cfc5e125a4193ac5f5a5c19304
+      internalID: 530635353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_55
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7651b84e08d26f64cb70f16a0b1f23d7
+      internalID: -1998121769
       vertices: []
       indices: 
       edges: []
@@ -889,42 +1309,62 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bottles_0: -1333810164
-      bottles_1: -716874563
-      bottles_10: -1432437438
-      bottles_11: -6129245
-      bottles_12: -1227757721
-      bottles_13: 279730506
-      bottles_14: -1839679319
-      bottles_15: -1206442312
-      bottles_16: 1465428613
-      bottles_17: 543205411
-      bottles_18: 2072186761
-      bottles_19: 609153257
-      bottles_2: 473464009
-      bottles_20: 1257703560
-      bottles_21: -1495362694
-      bottles_22: 1252759456
-      bottles_23: 1856230541
-      bottles_24: 1146055244
-      bottles_25: 322811196
-      bottles_26: -483646924
-      bottles_27: -1950637210
-      bottles_28: 1388510490
-      bottles_29: -473330107
-      bottles_3: -975824108
-      bottles_30: 2130427682
-      bottles_31: 934160122
-      bottles_32: -191834117
-      bottles_33: 1595268532
-      bottles_34: -350157195
-      bottles_35: -67391279
-      bottles_4: 1985709315
-      bottles_5: -2008808052
-      bottles_6: -1979765053
-      bottles_7: 2103877094
-      bottles_8: 1110923219
-      bottles_9: 1843083737
+      armor_0: -1445937408
+      armor_1: -1625745348
+      armor_10: 423894364
+      armor_11: 2130522552
+      armor_12: 1806960797
+      armor_13: -106448770
+      armor_14: -1369692998
+      armor_15: 495758389
+      armor_16: -1050390021
+      armor_17: -1581729886
+      armor_18: -1421301311
+      armor_19: -1732446864
+      armor_2: 689571119
+      armor_20: -190087268
+      armor_21: -490976884
+      armor_22: -2016916077
+      armor_23: -790654071
+      armor_24: -1114154291
+      armor_25: 1297661249
+      armor_26: -1026073836
+      armor_27: -1051812487
+      armor_28: -1925064246
+      armor_29: -1016095610
+      armor_3: -1869029442
+      armor_30: 447332867
+      armor_31: 2053020900
+      armor_32: -701943542
+      armor_33: -1890707560
+      armor_34: 1133706221
+      armor_35: 1471923200
+      armor_36: -58416839
+      armor_37: 1411861338
+      armor_38: 1449606024
+      armor_39: -1683193400
+      armor_4: 1803383848
+      armor_40: 991302681
+      armor_41: 1990434423
+      armor_42: -1279500106
+      armor_43: 52771907
+      armor_44: -308648154
+      armor_45: -1559742918
+      armor_46: 981812128
+      armor_47: 779660801
+      armor_48: -598757657
+      armor_49: -1420385998
+      armor_5: 1328140537
+      armor_50: -2049128473
+      armor_51: -1753624660
+      armor_52: -1971645223
+      armor_53: 743038684
+      armor_54: 530635353
+      armor_55: -1998121769
+      armor_6: 1003766242
+      armor_7: 1482184718
+      armor_8: 1483530355
+      armor_9: -653272490
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

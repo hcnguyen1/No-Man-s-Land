@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Inventory.Model;
+using Inventory;
 
 [RequireComponent(typeof(Collider2D))]
 public class CraftingBench : MonoBehaviour
@@ -8,9 +10,14 @@ public class CraftingBench : MonoBehaviour
     [Tooltip("Assign the crafting UI GameObject (CraftingMenu panel)")]
     public GameObject craftingUI;
 
+    [SerializeField]
+    private List<CraftingRecipe> recipes = new List<CraftingRecipe>();
+
     private bool playerNearby = false;
     private CraftingSystem craftingSystem;
     private Collider2D benchCollider;
+    private InventoryController inventoryController;
+    private CraftingUI craftingUIScript;
 
     void Awake()
     {
@@ -18,6 +25,12 @@ public class CraftingBench : MonoBehaviour
         benchCollider = GetComponent<Collider2D>();
         if (benchCollider != null)
             benchCollider.isTrigger = true;
+    }
+
+    void Start()
+    {
+        inventoryController = FindObjectOfType<InventoryController>();
+        craftingUIScript = FindObjectOfType<CraftingUI>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -39,6 +52,23 @@ public class CraftingBench : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K) && playerNearby)
+        {
+            TabManager tabManager = FindObjectOfType<TabManager>();
+            if (tabManager != null)
+            {
+                if (craftingUI != null && craftingUI.activeSelf)
+                {
+                    tabManager.CloseCraftingTab();
+                }
+                else
+                {
+                    tabManager.OpenCraftingTab();
+                    if (craftingUIScript != null)
+                        craftingUIScript.SetCraftingBench(this);
+                }
+            }
+        }
     }
 
     public CraftingSystem GetCraftingSystem()
@@ -49,5 +79,38 @@ public class CraftingBench : MonoBehaviour
     public bool IsPlayerNearby()
     {
         return playerNearby;
+    }
+
+    public List<CraftingRecipe> GetAvailableRecipes()
+    {
+        return recipes;
+    }
+
+    public bool CanCraft(CraftingRecipe recipe)
+    {
+        if (inventoryController == null)
+            return false;
+
+        InventorySO inventory = inventoryController.inventoryData;
+        return craftingSystem.CanCraft(recipe, inventory);
+    }
+
+    public List<string> GetMissingIngredients(CraftingRecipe recipe)
+    {
+        if (inventoryController == null)
+            return new List<string>();
+
+        InventorySO inventory = inventoryController.inventoryData;
+        return craftingSystem.GetMissingIngredients(recipe, inventory);
+    }
+
+    public bool TryCraft(CraftingRecipe recipe)
+    {
+        if (inventoryController == null)
+            return false;
+
+        InventorySO inventory = inventoryController.inventoryData;
+        bool success = craftingSystem.TryCraft(recipe, inventory);
+        return success;
     }
 }

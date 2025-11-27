@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using Inventory;
 
 public class TabManager : MonoBehaviour
 {
@@ -13,42 +13,72 @@ public class TabManager : MonoBehaviour
     public Vector2 InactiveTabButtonSize, ActiveTabButtonSize;
 
     [Header("Menu References")]
-    //public GameObject characterMenu;
-    //public GameObject inventoryMenu;
-    //public GameObject craftingMenu;
+    public GameObject inventoryMenu;
+    public GameObject craftingMenu;
     public Image itemDescriptionImage; // The item image to hide when crafting
     public Image itemDescriptionBackground; // The background of the description panel
     public TMP_Text itemDescriptionNameText; // The item name text
     public TMP_Text itemDescriptionText; // The item description text
 
-    //private InventoryManager inventoryManager;
+    private InventoryController inventoryController;
     private Player player;
 
     void Start()
     {
-        //inventoryManager = FindObjectOfType<InventoryManager>();
-        //player = FindObjectOfType<Player>();
+        inventoryController = FindObjectOfType<InventoryController>();
+        player = FindObjectOfType<Player>();
+        
+        // Auto-find menus if not assigned
+        if (inventoryMenu == null)
+            inventoryMenu = transform.Find("InventoryMenu")?.gameObject;
+        if (craftingMenu == null)
+            craftingMenu = transform.Find("CraftingMenu")?.gameObject;
     }
 
     void Update()
     {
         // Close crafting menu if player walks away from bench
-        /*if (craftingMenu != null && craftingMenu.activeSelf && player != null)
+        if (craftingMenu != null && craftingMenu.activeSelf && player != null)
         {
             if (!player.canOpenCraftingMenu)
             {
-                craftingMenu.SetActive(false);
-                // Re-enable description components when crafting closes
-                if (itemDescriptionImage != null)
-                    itemDescriptionImage.enabled = true;
-                if (itemDescriptionBackground != null)
-                    itemDescriptionBackground.enabled = true;
-                if (itemDescriptionNameText != null)
-                    itemDescriptionNameText.enabled = true;
-                if (itemDescriptionText != null)
-                    itemDescriptionText.enabled = true;
+                CloseCraftingTab();
             }
-            */
+        }
+    }
+
+    public void OpenCraftingTab()
+    {
+        // Open inventory first
+        if (inventoryController != null)
+            inventoryController.ShowInventory();
+        
+        // Then open crafting menu
+        if (craftingMenu != null)
+        {
+            craftingMenu.SetActive(true);
+        }
+    }
+
+    public void CloseCraftingTab()
+    {
+        // Close crafting menu
+        if (craftingMenu != null)
+            craftingMenu.SetActive(false);
+        
+        // Close inventory
+        if (inventoryController != null)
+            inventoryController.HideInventory();
+        
+        // Re-enable description components when crafting closes
+        if (itemDescriptionImage != null)
+            itemDescriptionImage.enabled = true;
+        if (itemDescriptionBackground != null)
+            itemDescriptionBackground.enabled = true;
+        if (itemDescriptionNameText != null)
+            itemDescriptionNameText.enabled = true;
+        if (itemDescriptionText != null)
+            itemDescriptionText.enabled = true;
     }
 
         // ESC key - Close all menus

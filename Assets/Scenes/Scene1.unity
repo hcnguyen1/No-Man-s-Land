@@ -10258,6 +10258,11 @@ PrefabInstance:
       propertyPath: thirstDecayRate
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1131423990753330622, guid: 5daed3bd66d3437418db2d6d918decf9,
+        type: 3}
+      propertyPath: inventoryManager
+      value: 
+      objectReference: {fileID: 2040456211}
     - target: {fileID: 1954184340459370606, guid: 5daed3bd66d3437418db2d6d918decf9,
         type: 3}
       propertyPath: m_Camera
