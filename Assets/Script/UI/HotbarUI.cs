@@ -43,6 +43,11 @@ namespace Inventory.UI
                 InventoryItem uiItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
                 uiItem.transform.SetParent(contentPanel);
                 listOfUIItems.Add(uiItem);
+                
+                // Set the hotbar key number (1-9, then 0 for the 10th slot)
+                int keyNumber = (i + 1) % 10; // 0->1, 1->2, ..., 8->9, 9->0
+                uiItem.SetHotbarKeyNumber(keyNumber);
+                
                 uiItem.OnItemClicked += HandleItemSelection;
                 uiItem.OnItemBeginDrag += HandleBeginDrag;
                 uiItem.OnItemDroppedOn += HandleSwap;

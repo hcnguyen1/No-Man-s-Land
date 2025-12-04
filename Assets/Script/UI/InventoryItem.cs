@@ -18,6 +18,9 @@ namespace Inventory.UI
         private TMP_Text quantityText; // the text of the item 
 
         [SerializeField]
+        private TMP_Text hotbarKeyText; // the hotbar key number (1-9, 0)
+
+        [SerializeField]
         private Image borderImage; // the border to select 
 
         public event Action<InventoryItem> OnItemClicked, OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag, OnRightMouseBtnClick; // interactions with items using mouse
@@ -31,12 +34,15 @@ namespace Inventory.UI
         {
             ResetData(); // on awake, reset data
             Deselect(); // on awake, deselect the slot
+            if (hotbarKeyText != null)
+                hotbarKeyText.gameObject.SetActive(false); // hide by default (only hotbar shows it)
         }
 
         public void ResetData() // clears the inventory item image.
         {
             this.itemImage.gameObject.SetActive(false); // inactive
             isEmpty = true; // now the slot will be empty.
+            // Don't clear hotbar key text - it should persist
         }
 
         public void Deselect() // deselects the item so the border will be disabled. 
@@ -50,6 +56,16 @@ namespace Inventory.UI
             this.itemImage.sprite = sprite; // image becomes whatever is currently there.
             this.quantityText.text = quantity + ""; // instead of nothing it will be whatever quantity.
             isEmpty = false; // slot is now occupied. 
+        }
+
+        public void SetHotbarKeyNumber(int keyNumber) // sets the hotbar key number (0-9)
+        {
+            if (hotbarKeyText != null)
+            {
+                hotbarKeyText.gameObject.SetActive(true); // show for hotbar
+                string displayKey = keyNumber == 10 ? "0" : keyNumber.ToString(); // 10 displays as 0
+                hotbarKeyText.text = displayKey;
+            }
         }
 
         public void Select() // upon selecting the item, the border image will be highlighting the item 
