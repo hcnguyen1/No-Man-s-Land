@@ -5,12 +5,10 @@ using UnityEngine;
 public class Cow : Animal
 {
     private bool noHealth;
-    Animator animator;
-    Collider2D cowCollider;
+    private Collider2D cowCollider;
 
     void Start()
     {
-        animator = GetComponent<Animator>();
         cowCollider = GetComponent<Collider2D>();
         noHealth = false;
     }

@@ -12,7 +12,7 @@ public class Animal : Entity
     // Movement
     private Vector2 targetPosition;
     private Rigidbody2D rb;
-    private Animator animator;
+    protected Animator animator;
 
     // Sprite Renderer
     private SpriteRenderer spriteRenderer;
