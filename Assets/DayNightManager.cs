@@ -30,11 +30,40 @@ public class LightController : MonoBehaviour
     private int lastLoggedSecond = -1;
 
     // Mob spawning logic helper
-    public int dayCount = 0;
+    public int dayCount = 1;
     public int nightCount = 0;
+    [SerializeField] float mobSpawnDelay = 3f;
 
-    // Initialize private gameobject list that can add any number of enemy prefabs
+    [SerializeField] float animalSpawnChance = 0.2f;
+    [SerializeField] float animalSpawnTimer = 0f;
+    [SerializeField] float animalSpawnInterval = 1f; // Seconds
+    // Initialize private gameobject list of mobs
+    [SerializeField] private List<GameObject> animalPrefabs;
     [SerializeField] private List<GameObject> nightOneEnemyPrefabs;
+
+    [Header("Night 1")]
+    [SerializeField] int nightOneEnemiesPerSpawn = 1;
+    [SerializeField] int nightOneSpawnAmount = 5;
+
+    [Header("Night 2")]
+    [SerializeField] int nightTwoEnemiesPerSpawn = 1;
+    [SerializeField] int nightTwoSpawnAmount = 5;
+
+    [Header("Night 3")]
+    [SerializeField] int nightThreeEnemiesPerSpawn = 1;
+    [SerializeField] int nightThreeSpawnAmount = 5;
+
+    [Header("Night 4")]
+    [SerializeField] int nightFourEnemiesPerSpawn = 1;
+    [SerializeField] int nightFourSpawnAmount = 5;
+
+    [Header("Night 5")]
+    [SerializeField] int nightFiveEnemiesPerSpawn = 1;
+    [SerializeField] int nightFiveSpawnAmount = 5;
+
+    [Header("Night 6")]
+    [SerializeField] int nightSixEnemiesPerSpawn = 1;
+    [SerializeField] int nightSixSpawnAmount = 5;
 
     void Start()
     {
@@ -48,6 +77,17 @@ public class LightController : MonoBehaviour
             HandleTransition();
         else
             HandleDayNightCycle();
+
+        // Spawn animals by chance during the day on ground tiles
+        if (isDay)
+        {
+            animalSpawnTimer += Time.deltaTime;
+            if (animalSpawnTimer >= animalSpawnInterval)
+            {
+                SpawnAnimals(animalSpawnChance, animalPrefabs);
+                animalSpawnTimer = 0f;
+            }
+        }
     }
 
     // Initializes the light to day settings
@@ -105,11 +145,31 @@ public class LightController : MonoBehaviour
         targetColor = isDay ? nightColor : dayColor;
         targetIntensity = isDay ? nightIntensity : dayIntensity;
 
+        // Spawn mobs when it's night
         if (!isDay)
         {
             nightCount++;
-            NightOne();
-            NightTwo();
+            switch (nightCount)
+            {
+                case 1:
+                    NightOne();
+                    break;
+                case 2:
+                    NightTwo();
+                    break;
+                case 3:
+                    NightThree();
+                    break;
+                case 4:
+                    NightFour();
+                    break;
+                case 5:
+                    NightFive();
+                    break;
+                case 6:
+                    NightSix();
+                    break;
+            }
         }
     }
 
@@ -134,52 +194,116 @@ public class LightController : MonoBehaviour
         initialIntensity = light2D.intensity;
     }
 
+    // Simple spawn animals by chance during the day on ground tiles
+    private void SpawnAnimals(float chance, List<GameObject> animalPrefabs)
+    {
+        if (Random.value < chance)
+        {        
+            // Search for all tilemap object tagged with "Ground"
+            GameObject[] groundTiles = GameObject.FindGameObjectsWithTag("Ground");
+
+            GameObject randomTile = groundTiles[Random.Range(0, groundTiles.Length)]; // ranges from the list of "Ground" tiles
+            Collider2D tilemapCollider = randomTile.GetComponent<Collider2D>(); // We use collider to get the bounds of the tilemap, and the bounds means the area of the tilemap
+
+            if (tilemapCollider != null)
+            {
+                Bounds bounds = tilemapCollider.bounds;
+                Vector2 randomPosition = new Vector2(
+                    Random.Range(bounds.min.x, bounds.max.x),
+                    Random.Range(bounds.min.y, bounds.max.y)
+                );
+
+                // Spawn animal at the randomly generated position
+                GameObject randomAnimal = animalPrefabs[Random.Range(0, animalPrefabs.Count)];
+                Instantiate(randomAnimal, randomPosition, Quaternion.identity);
+                Debug.Log("Animal spawned at: " + randomPosition);
+            }
+        }
+    }
+
+    IEnumerator SpawnEnemiesWithDelay(List<GameObject> enemyPrefabs, float delay, int enemiesPerSpawn, int totalSpawns)
+    {
+        // Search for all tilemap object tagged with "Ground"
+        GameObject[] groundTiles = GameObject.FindGameObjectsWithTag("Ground");
+
+        for (int spawn = 0; spawn < totalSpawns; spawn++)
+        {
+            for (int enemy = 0; enemy < enemiesPerSpawn; enemy++)
+            {
+                // Pick random enemy from the list of enemy prefabs
+                GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
+
+                // Pick random tile from "Ground" tagged tiles
+                GameObject randomTile = groundTiles[Random.Range(0, groundTiles.Length)]; // ranges from the list of "Ground" tiles
+                Collider2D tilemapCollider = randomTile.GetComponent<Collider2D>(); // We use collider to get the bounds of the tilemap, and the bounds means the area of the tilemap
+
+                if (tilemapCollider != null)
+                {
+                    Bounds bounds = tilemapCollider.bounds;
+                    Vector2 randomPosition = new Vector2(
+                        Random.Range(bounds.min.x, bounds.max.x),
+                        Random.Range(bounds.min.y, bounds.max.y)
+                    );
+
+                    // Spawn enemy at the randomly generated position
+                    Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
+                    Debug.Log("Enemy spawned at: " + randomPosition);
+                }
+            }
+            // Spawning delay
+            if (spawn < totalSpawns - 1)
+            {
+                yield return new WaitForSeconds(delay);
+            }
+        }
+    }
+
     // Spawns mobs for Night One
     private void NightOne()
     {
-        // Spawn 2 Orc1 mobs at random positions inside "Ground" tagged area
-        GameObject[] grounds = GameObject.FindGameObjectsWithTag("Ground");
         if (nightCount == 1)
         {
-            if (grounds.Length == 0 || nightOneEnemyPrefabs == null || nightOneEnemyPrefabs.Count == 0) return;
-
-            for (int i = 0; i < 1; i++)
-            {
-                GameObject ground = grounds[Random.Range(0, grounds.Length)];
-                Vector3 spawnPos = ground.transform.position + new Vector3(
-                    Random.Range(-2f, 2f),
-                    Random.Range(-2f, 2f),
-                    0f
-                );
-                // Log
-                Debug.Log($"Spawning Night One Enemy at: {spawnPos}");
-
-                Instantiate(nightOneEnemyPrefabs[Random.Range(0, nightOneEnemyPrefabs.Count)], spawnPos, Quaternion.identity);
-            }
+            StartCoroutine(SpawnEnemiesWithDelay(nightOneEnemyPrefabs, mobSpawnDelay, nightOneEnemiesPerSpawn, nightOneSpawnAmount));
         }
     }
 
     // Spawns mobs for Night Two
     private void NightTwo()
     {
-        // Spawn 2 mobs at random positions inside "Ground" tagged area
-        GameObject[] grounds = GameObject.FindGameObjectsWithTag("Ground");
         if (nightCount == 2)
         {
-            if (grounds.Length == 0 || nightOneEnemyPrefabs == null || nightOneEnemyPrefabs.Count == 0) return;
-            for (int i = 0; i < 2; i++)
-            {
-                GameObject ground = grounds[Random.Range(0, grounds.Length)];
-                Vector3 spawnPos = ground.transform.position + new Vector3(
-                    Random.Range(-2f, 2f),
-                    Random.Range(-2f, 2f),
-                    0f
-                );
-                // Log
-                Debug.Log($"Spawning Night Two Enemy at: {spawnPos}");
+            StartCoroutine(SpawnEnemiesWithDelay(nightOneEnemyPrefabs, mobSpawnDelay, nightTwoEnemiesPerSpawn, nightTwoSpawnAmount));
+        }
+    }
+    private void NightThree()
+    {
+        if (nightCount == 3)
+        {
+            StartCoroutine(SpawnEnemiesWithDelay(nightOneEnemyPrefabs, mobSpawnDelay, nightThreeEnemiesPerSpawn, nightThreeSpawnAmount));
+        }
+    }
+    private void NightFour()
+    {
+        if (nightCount == 4)
+        {
+            StartCoroutine(SpawnEnemiesWithDelay(nightOneEnemyPrefabs, mobSpawnDelay, nightFourEnemiesPerSpawn, nightFourSpawnAmount));
+        }
+    }
+    private void NightFive()
+    {
+        if (nightCount == 5)
+        {
+            StartCoroutine(SpawnEnemiesWithDelay(nightOneEnemyPrefabs, mobSpawnDelay, nightFiveEnemiesPerSpawn, nightFiveSpawnAmount));
+        }
+    }
 
-                Instantiate(nightOneEnemyPrefabs[Random.Range(0, nightOneEnemyPrefabs.Count)], spawnPos, Quaternion.identity);
-            }
+    // Night 6++++++++++++++++++++
+    private void NightSix()
+    {
+        if (nightCount == 6)
+        {
+            // Kill the player by making the game 100x harder
+            // StartCoroutine(SpawnEnemiesWithDelay(nightOneEnemyPrefabs, mobSpawnDelay, nightSixEnemiesPerSpawn, nightSixSpawnAmount));
         }
     }
 }
