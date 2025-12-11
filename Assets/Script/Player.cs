@@ -13,6 +13,9 @@ public class Player : Entity
     private Vector2 moveInput;
     private Animator animator;
 
+    [SerializeField] private AudioClip attackSFX;
+    [SerializeField] [Range(0f, 1f)] private float attackVolume = 0.5f;
+
     public float maxHunger;
     public float hunger;
     public float maxThirst;
@@ -90,9 +93,14 @@ public class Player : Entity
         // Only allow attack if not clicking on UI
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            animator.SetBool("isAttacking", true);
-            animator.SetFloat("AttackX", lastMoveDir.x); // Use your last input direction
-            animator.SetFloat("AttackY", lastMoveDir.y);
+            // Only attack if not already attacking
+            if (!animator.GetBool("isAttacking"))
+            {
+                animator.SetBool("isAttacking", true);
+                animator.SetFloat("AttackX", lastMoveDir.x); // Use your last input direction
+                animator.SetFloat("AttackY", lastMoveDir.y);
+                PlayAttackSFX();
+            }
         }
 
     }
@@ -185,10 +193,10 @@ public class Player : Entity
 
     private void OnFire(InputAction.CallbackContext context)
     {
-        Debug.Log("Fire action performed!");
         animator.SetBool("isAttacking", true);
         animator.SetFloat("AttackX", lastMoveDir.x);
         animator.SetFloat("AttackY", lastMoveDir.y);
+        PlayAttackSFX();
     }
 
     // Call this from an Animation Event at the end of your attack animation
@@ -200,8 +208,6 @@ public class Player : Entity
     public void OnRollEnd()
     {
         if (!isRolling) return; // Already ended, ignore duplicate calls
-        
-        Debug.Log("OnRollEnd called - resetting roll state");
         animator.SetBool("isRolling", false);
         isRolling = false;
         isInvincible = false;
@@ -239,6 +245,14 @@ public class Player : Entity
         if (stateInfo.IsName("Attack") && animator.GetBool("isAttacking") == true && stateInfo.normalizedTime > 1f)
         {
             animator.SetBool("isAttacking", false);
+        }
+    }
+
+    private void PlayAttackSFX()
+    {
+        if (audioSource != null && attackSFX != null)
+        {
+            audioSource.PlayOneShot(attackSFX, attackVolume);
         }
     }
 

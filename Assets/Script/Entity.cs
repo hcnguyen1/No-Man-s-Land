@@ -12,6 +12,20 @@ public class Entity : MonoBehaviour
     [SerializeField] protected float attackCooldown;
     [SerializeField] protected float attackRange;
 
+    [Header("Audio")]
+    [SerializeField] protected AudioClip getHitSFX;
+    
+    private AudioSource _audioSource;
+    protected AudioSource audioSource
+    {
+        get
+        {
+            if (_audioSource == null)
+                _audioSource = GetComponent<AudioSource>();
+            return _audioSource;
+        }
+    }
+
     protected virtual void Awake()
     {
         Initialize();
@@ -25,6 +39,15 @@ public class Entity : MonoBehaviour
     public virtual void TakeDamage(int damage)
     {
         health -= damage;
+        PlayGetHitSFX();
+    }
+
+    protected virtual void PlayGetHitSFX()
+    {
+        if (audioSource != null && getHitSFX != null)
+        {
+            audioSource.PlayOneShot(getHitSFX);
+        }
     }
 
     protected virtual void Die()

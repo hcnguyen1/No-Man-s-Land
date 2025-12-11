@@ -19,6 +19,8 @@ public class Orc1 : Entity
     // Track death state
     private bool noHealth;
 
+    [SerializeField] private AudioClip attackSFX;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -95,6 +97,7 @@ public class Orc1 : Entity
         isAttacking = true;
         canAttack = false;
         animator.SetBool("isAttacking", true);
+        PlayAttackSFX();
     }
     public void EndAttackWindow()
     {
@@ -141,6 +144,14 @@ public class Orc1 : Entity
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+
+    private void PlayAttackSFX()
+    {
+        if (audioSource != null && attackSFX != null)
+        {
+            audioSource.PlayOneShot(attackSFX);
+        }
     }
 
 
