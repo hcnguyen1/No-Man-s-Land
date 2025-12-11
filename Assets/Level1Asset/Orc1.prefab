@@ -296,8 +296,9 @@ MonoBehaviour:
   movementSpeed: 3
   attackCooldown: 1
   attackRange: 1.6
-  getHitSFX: {fileID: 8300000, guid: c43c6925e20ee89438d9c3b5e008a7c4, type: 3}
-  attackSFX: {fileID: 8300000, guid: 3434dc80786d20a43b56bcd37def9334, type: 3}
+  getHitSFX: {fileID: 8300000, guid: b6ece9df535205649998747b9d30291d, type: 3}
+  deathSFX: {fileID: 8300000, guid: d84fbc7719ecec341b6644f86f940d39, type: 3}
+  attackSFX: {fileID: 8300000, guid: 8ea62091a8f53334b98e2213c3bd22d8, type: 3}
 --- !u!82 &7924019195130173373
 AudioSource:
   m_ObjectHideFlags: 0

@@ -49937,6 +49937,7 @@ MonoBehaviour:
   attackCooldown: 0
   attackRange: 0
   getHitSFX: {fileID: 8300000, guid: f7ad8cd4a04c74e458c1da2a45cae3b2, type: 3}
+  deathSFX: {fileID: 8300000, guid: 05629169af931d84bb9fd74e5972030d, type: 3}
   wanderRadius: 3
   wanderInterval: 8
 --- !u!61 &1806484775
@@ -50212,6 +50213,7 @@ MonoBehaviour:
   attackCooldown: 0
   attackRange: 0
   getHitSFX: {fileID: 0}
+  deathSFX: {fileID: 0}
   woodPrefab: {fileID: 6196426236917103648, guid: d5589428411bab546a9225e87fb82ef6,
     type: 3}
 --- !u!61 &1922188814
