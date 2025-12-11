@@ -14,6 +14,9 @@ public class Entity : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] protected AudioClip getHitSFX;
+    [SerializeField] [Range(0f, 1f)] protected float getHitVolume = 1f;
+    [SerializeField] protected AudioClip deathSFX;
+    [SerializeField] [Range(0f, 1f)] protected float deathVolume = 1f;
     
     private AudioSource _audioSource;
     protected AudioSource audioSource
@@ -46,7 +49,7 @@ public class Entity : MonoBehaviour
     {
         if (audioSource != null && getHitSFX != null)
         {
-            audioSource.PlayOneShot(getHitSFX);
+            audioSource.PlayOneShot(getHitSFX, getHitVolume);
         }
     }
 
@@ -56,6 +59,13 @@ public class Entity : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log($"{gameObject.name} has died.");
+            
+            // Play death sound at position (independent of GameObject)
+            if (deathSFX != null)
+            {
+                AudioSource.PlayClipAtPoint(deathSFX, transform.position, deathVolume);
+            }
+            
             Destroy(gameObject);
         }
     }
