@@ -25,6 +25,9 @@ public class Player : Entity
     public float hungerDecayRate;
     public float thirstDecayRate;
 
+    // Currency System
+    public int currency = 0;
+
     // Rolling Mechanic
     public bool canRoll = true;
     public bool isRolling = false;

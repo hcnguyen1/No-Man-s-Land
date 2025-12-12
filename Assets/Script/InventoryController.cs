@@ -35,6 +35,12 @@ namespace Inventory // this creates its own kind of import settings that can onl
         [SerializeField]
         private AudioSource audioSource;
 
+        [SerializeField]
+        private Item itemPrefab; // Prefab for spawning dropped items
+
+        [SerializeField]
+        private Transform playerTransform; // Reference to player for drop position
+
         public List<InventoryEntry> initialItems = new List<InventoryEntry>(); // for the start inventoryData
 
         // Cross-inventory transfer tracking
@@ -190,9 +196,45 @@ namespace Inventory // this creates its own kind of import settings that can onl
 
         private void DropItem(int itemIndex, int quantity)
         {
+            InventoryEntry inventoryItem = inventoryData.GetItemAt(itemIndex);
+            if (!inventoryItem.IsEmpty)
+            {
+                SpawnItemInWorld(inventoryItem.item, quantity);
+            }
+
             inventoryData.RemoveItem(itemIndex, quantity); // removes item from the inventory data
             inventoryUI.ResetSelection(); // then deselects the item. 
-            audioSource.PlayOneShot(dropItemClip);
+            
+            if (audioSource != null && dropItemClip != null)
+            {
+                audioSource.PlayOneShot(dropItemClip);
+            }
+        }
+
+        private void SpawnItemInWorld(ItemSO itemSO, int quantity)
+        {
+            if (itemPrefab == null || playerTransform == null)
+            {
+                Debug.LogWarning("Cannot spawn item: Item prefab or player transform not assigned!");
+                return;
+            }
+
+            // Calculate spawn position (in front of player with slight random offset)
+            Vector3 dropPosition = playerTransform.position + playerTransform.right * 1.5f;
+            dropPosition += new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(-0.3f, 0.3f), 0);
+
+            // Instantiate the item
+            Item droppedItem = Instantiate(itemPrefab, dropPosition, Quaternion.identity);
+            droppedItem.InventoryEntry = itemSO;
+            droppedItem.Quantity = quantity;
+
+            // Optional: Add a small outward force
+            Rigidbody2D rb = droppedItem.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                Vector2 throwDirection = (dropPosition - playerTransform.position).normalized;
+                rb.AddForce(throwDirection * 3f, ForceMode2D.Impulse);
+            }
         }
 
         public string PrepareDescription(InventoryEntry inventoryItem)
@@ -310,9 +352,19 @@ namespace Inventory // this creates its own kind of import settings that can onl
 
         private void RemoveHotbarItem(int itemIndex, int quantity)
         {
+            InventoryEntry hotbarItem = hotbarData.GetItemAt(itemIndex);
+            if (!hotbarItem.IsEmpty)
+            {
+                SpawnItemInWorld(hotbarItem.item, quantity);
+            }
+
             hotbarData.RemoveItem(itemIndex, quantity); // removes item from the hotbar data
             hotbarUI.ResetSelection(); // then deselects the item
-            audioSource.PlayOneShot(dropItemClip);
+            
+            if (audioSource != null && dropItemClip != null)
+            {
+                audioSource.PlayOneShot(dropItemClip);
+            }
         }
 
         public void PerformHotbarAction(int itemIndex)

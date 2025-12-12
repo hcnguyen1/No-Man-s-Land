@@ -7,7 +7,7 @@ using System;
 public class Item : MonoBehaviour
 {
     [field: SerializeField]
-    public ItemSO InventoryEntry {get; private set; }
+    public ItemSO InventoryEntry {get; set; } // Changed to set; so it can be assigned at runtime
 
     [field: SerializeField]
     public int Quantity {get; set; } = 1;
@@ -19,7 +19,27 @@ public class Item : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = InventoryEntry.ItemImage;
+        UpdateSprite();
+    }
+
+    private void UpdateSprite()
+    {
+        if (InventoryEntry != null)
+        {
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.sprite = InventoryEntry.ItemImage;
+            }
+        }
+    }
+
+    // Call this after setting InventoryEntry at runtime
+    public void Initialize(ItemSO itemSO, int quantity)
+    {
+        InventoryEntry = itemSO;
+        Quantity = quantity;
+        UpdateSprite();
     }
 
     public void DestroyItem()

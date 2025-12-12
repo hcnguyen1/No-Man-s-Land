@@ -43,6 +43,11 @@ public class Entity : MonoBehaviour
     {
         health -= damage;
         PlayGetHitSFX();
+        
+        if (health <= 0)
+        {
+            Die();
+        }
     }
 
     protected virtual void PlayGetHitSFX()
