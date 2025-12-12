@@ -13,7 +13,7 @@ public class CraftingBench : MonoBehaviour
     [SerializeField]
     private List<CraftingRecipe> recipes = new List<CraftingRecipe>();
 
-    private bool playerNearby = false;
+    private bool playerNearBench = false;
     private bool isCraftingOpen = false;
     private CraftingSystem craftingSystem;
     private Collider2D benchCollider;
@@ -44,7 +44,7 @@ public class CraftingBench : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerNearby = true;
+            playerNearBench = true;
         }
     }
 
@@ -52,14 +52,14 @@ public class CraftingBench : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerNearby = false;
+            playerNearBench = false;
             // TabManager handles closing the crafting menu via Player.canOpenCraftingMenu
         }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K) && playerNearby)
+        if (Input.GetKeyDown(KeyCode.K) && playerNearBench)
         {
             TabManager tabManager = FindObjectOfType<TabManager>();
             if (tabManager != null)
@@ -88,7 +88,7 @@ public class CraftingBench : MonoBehaviour
         }
         
         // Close crafting menu only if player walks away (not when opening)
-        if (isCraftingOpen && !playerNearby)
+        if (isCraftingOpen && !playerNearBench)
         {
             TabManager tabManager = FindObjectOfType<TabManager>();
             if (tabManager != null)
@@ -106,7 +106,7 @@ public class CraftingBench : MonoBehaviour
 
     public bool IsPlayerNearby()
     {
-        return playerNearby;
+        return playerNearBench;
     }
 
     public List<CraftingRecipe> GetAvailableRecipes()
