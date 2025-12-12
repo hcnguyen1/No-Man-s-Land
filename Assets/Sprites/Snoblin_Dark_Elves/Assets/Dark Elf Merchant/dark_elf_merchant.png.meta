@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,7 +108,1393 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: dark_elf_merchant_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 745
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66ce19602910e6c4785ffd5747fa456f
+      internalID: 1144337275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 745
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af88f52d54e9a2e499f60b264cbe451c
+      internalID: -602267986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_2
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 713
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50177b5c13e61a40807f9833604a54f
+      internalID: -769946103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_3
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 713
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f224ed9eb7371a24b95c179b1b7d9d64
+      internalID: -125253386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 681
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e931739da34b4448b74a7a9836b8d2
+      internalID: -1771977031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 681
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6af92803b9f8ed428e97de4f71d89a4
+      internalID: -762484523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_6
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 649
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6312cacd796fcdc4eaa5ad3d1e93f791
+      internalID: 1356541854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_7
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 649
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ba8b3fe5740604bad02f9fd149a4a9
+      internalID: -958419248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_8
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 649
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5983d7592e5a094fb8536bf3f83a091
+      internalID: -1790595405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_9
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 649
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1123efbfbf78804eb7cb90e6b55d44c
+      internalID: 1081721027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_10
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 617
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc23da430f899354db1de2b9eee59866
+      internalID: -441901834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_11
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 617
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28da28a3880689d4a8f8956ac4fa4a1e
+      internalID: -567125588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 617
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1565533bda2754d4db7e9d37796ba29f
+      internalID: 1417159550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_13
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 617
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 248a22e6801547b449a91bc3f5af7552
+      internalID: 76141817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_14
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 585
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7db8de202305446aec1d1c2dfd9ea8
+      internalID: -1015520723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_15
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 585
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e5ea61f456d09e4b84da9cf67298db4
+      internalID: -77419313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_16
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 585
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30ae3cf233ba6a64b9f066ca1fcfa6b7
+      internalID: 1097794018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_17
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 585
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55e172e16a342c40be3ebdb26b395b6
+      internalID: -1379284036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_18
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 553
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a1e8587a3a6b834b9d144eb04f89835
+      internalID: -804521571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_19
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 553
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c91de5128ba04c42817e2dcb466818b
+      internalID: -924285875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_20
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 521
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 913e52ee4466d5e419d2a2ec39660a4e
+      internalID: 1443464575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_21
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 521
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba035461fb55624abf6afb40518684b
+      internalID: 481286673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_22
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 489
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd72440c0786ac4690e268cfc6e1322
+      internalID: -301925631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_23
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 489
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07ec66164272a94885a767b4193b7e9
+      internalID: 1716426060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_24
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 457
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3b26231dae34248a64a8b8e09f479c
+      internalID: 1530360669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_25
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 457
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2a838fa2896b44b871a37dfdb42ad0
+      internalID: -173212506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_26
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 457
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df37fa1fc867bf94f9c2abb26251ff28
+      internalID: 103449424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_27
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 425
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2496cda8eeb1934da716acfbd80a206
+      internalID: -1666376328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_28
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 425
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aef52e3056d4434284bb5febee27759
+      internalID: -1109404575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_29
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 425
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd5e01f3da029a549b0166bf81f9c55c
+      internalID: -777009717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_30
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 393
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89983efced374154383a6d9f28511d87
+      internalID: -507879477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_31
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 393
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b851210bbda41dc419ce365a51f68fde
+      internalID: 1777317188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_32
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 393
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e1b566db4515643bb83755e279e75f
+      internalID: 150616691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_33
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 361
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aac6323e5bb29434898d8d77461d50d7
+      internalID: 1716615027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_34
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 361
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0925bb6182ebe045aa57dbf598b4cca
+      internalID: 904303503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_35
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 329
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b1d65522f38c644a89bf08f059cbbf
+      internalID: -131601552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_36
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 329
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e44053e643f40149983958c6228cef3
+      internalID: -8741715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_37
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 297
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116d84df7f59011428819708dbcd6d89
+      internalID: -958249699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_38
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 297
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36bb21cc0ab93fd41a6379bd23ef189a
+      internalID: 1764384032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_39
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 262
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f1e6342ea2de1d43b2517db6e89bdd8
+      internalID: -644751738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_40
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 263
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbf38fc62bc2edf4f9e69302d09d526c
+      internalID: 506868595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_41
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 264
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435d3d78af0ce4b4fbbab016af75aa0c
+      internalID: -364586145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_42
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 265
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f34fd9dc98d18de4a853acda9b6f29dc
+      internalID: -1314047839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_43
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 231
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2356fafffeaf7be4e922b3f9d10ee538
+      internalID: 1221270446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_44
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 230
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c266e5745cd091e41abb517fcdb77f1e
+      internalID: 481638760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_45
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 230
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b777acfd4a1a97b4d8bd4aa0e7c41efc
+      internalID: 868478292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_46
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 233
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd068e316b19bb4b97a69814b380ee3
+      internalID: 1004423946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_47
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 201
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8177d956204b03b4bb371e86ec1b9680
+      internalID: -1656887557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_48
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 201
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d9cb09f58ca354cb29eba7f1ebcdfc
+      internalID: -1323929431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_49
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 200
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b7be4473379d4348b19461aa266d3b6
+      internalID: -2000766883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_50
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 201
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c161d557c8b0040a8d3caee6c681c3
+      internalID: 798835712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_51
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 169
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8465ebd8c3287645812bd97e5f6ab07
+      internalID: -484251175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_52
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 169
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b4f3704881a9646a28d6c96cb5d028
+      internalID: -1844059149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_53
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 137
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6918535dfd84879409a660f5dceda109
+      internalID: 617801204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_54
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 137
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786a4a19ca6bf4a42b4cabed64860a89
+      internalID: -2008291677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_55
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 105
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a792c89d521ab444884940d613d572c
+      internalID: -1816157368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_56
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 105
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7088ae86b89d11940a7b5224c39711fb
+      internalID: -1922136628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_57
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 72
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ecfd9cf4b6a84d4080176f1caf31d90
+      internalID: -1834083322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_58
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 71
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a43ce45145c3b942a88210697355104
+      internalID: -348489856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_59
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 70
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faf5d88cb61e17242932d6149dda19b6
+      internalID: 953024107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_60
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 41
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9000cd4c79aad40af5166e6e8aab46
+      internalID: -1287253662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_61
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 39
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 420921e876c20dd45b9492b275424585
+      internalID: -1718191635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_62
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 38
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c19432566ef773a448e1959e2690e8f0
+      internalID: 867161004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_63
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 9
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c5307291475d7f4881b6ff6c4492280
+      internalID: -1138662498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_64
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 7
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e1e772b71d6734c898f39580ac340c
+      internalID: -789681505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_elf_merchant_65
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 6
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5463844b768238447b34216fe3935a55
+      internalID: -1099428741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +1505,73 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dark_elf_merchant_0: 1144337275
+      dark_elf_merchant_1: -602267986
+      dark_elf_merchant_10: -441901834
+      dark_elf_merchant_11: -567125588
+      dark_elf_merchant_12: 1417159550
+      dark_elf_merchant_13: 76141817
+      dark_elf_merchant_14: -1015520723
+      dark_elf_merchant_15: -77419313
+      dark_elf_merchant_16: 1097794018
+      dark_elf_merchant_17: -1379284036
+      dark_elf_merchant_18: -804521571
+      dark_elf_merchant_19: -924285875
+      dark_elf_merchant_2: -769946103
+      dark_elf_merchant_20: 1443464575
+      dark_elf_merchant_21: 481286673
+      dark_elf_merchant_22: -301925631
+      dark_elf_merchant_23: 1716426060
+      dark_elf_merchant_24: 1530360669
+      dark_elf_merchant_25: -173212506
+      dark_elf_merchant_26: 103449424
+      dark_elf_merchant_27: -1666376328
+      dark_elf_merchant_28: -1109404575
+      dark_elf_merchant_29: -777009717
+      dark_elf_merchant_3: -125253386
+      dark_elf_merchant_30: -507879477
+      dark_elf_merchant_31: 1777317188
+      dark_elf_merchant_32: 150616691
+      dark_elf_merchant_33: 1716615027
+      dark_elf_merchant_34: 904303503
+      dark_elf_merchant_35: -131601552
+      dark_elf_merchant_36: -8741715
+      dark_elf_merchant_37: -958249699
+      dark_elf_merchant_38: 1764384032
+      dark_elf_merchant_39: -644751738
+      dark_elf_merchant_4: -1771977031
+      dark_elf_merchant_40: 506868595
+      dark_elf_merchant_41: -364586145
+      dark_elf_merchant_42: -1314047839
+      dark_elf_merchant_43: 1221270446
+      dark_elf_merchant_44: 481638760
+      dark_elf_merchant_45: 868478292
+      dark_elf_merchant_46: 1004423946
+      dark_elf_merchant_47: -1656887557
+      dark_elf_merchant_48: -1323929431
+      dark_elf_merchant_49: -2000766883
+      dark_elf_merchant_5: -762484523
+      dark_elf_merchant_50: 798835712
+      dark_elf_merchant_51: -484251175
+      dark_elf_merchant_52: -1844059149
+      dark_elf_merchant_53: 617801204
+      dark_elf_merchant_54: -2008291677
+      dark_elf_merchant_55: -1816157368
+      dark_elf_merchant_56: -1922136628
+      dark_elf_merchant_57: -1834083322
+      dark_elf_merchant_58: -348489856
+      dark_elf_merchant_59: 953024107
+      dark_elf_merchant_6: 1356541854
+      dark_elf_merchant_60: -1287253662
+      dark_elf_merchant_61: -1718191635
+      dark_elf_merchant_62: 867161004
+      dark_elf_merchant_63: -1138662498
+      dark_elf_merchant_64: -789681505
+      dark_elf_merchant_65: -1099428741
+      dark_elf_merchant_7: -958419248
+      dark_elf_merchant_8: -1790595405
+      dark_elf_merchant_9: 1081721027
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
