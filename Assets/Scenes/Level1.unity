@@ -51187,6 +51187,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 380194751297348751, guid: f1673017b945e624b9783826311e58fc,
+        type: 3}
+      propertyPath: goldCoinPrefab
+      value: 
+      objectReference: {fileID: 3103846407896113844, guid: f4c4cedf25185c045a0acf9238862c3e,
+        type: 3}
     - target: {fileID: 1192397437683262866, guid: f1673017b945e624b9783826311e58fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -51260,6 +51266,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cow
       objectReference: {fileID: 0}
+    - target: {fileID: 2753985284884041416, guid: b818b9ac68e6b5546ae7d182e442f25c,
+        type: 3}
+      propertyPath: rawMeat
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ed8e30738c90274aaba0b0806a5a2c7,
+        type: 2}
     - target: {fileID: 4851656556857885596, guid: b818b9ac68e6b5546ae7d182e442f25c,
         type: 3}
       propertyPath: m_LocalPosition.x

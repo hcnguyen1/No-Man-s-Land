@@ -29,6 +29,9 @@ namespace Inventory // this creates its own kind of import settings that can onl
         [SerializeField]
         private HotbarSO hotbarData;
 
+        // Public accessor for hotbar data
+        public HotbarSO HotbarData => hotbarData;
+
         [SerializeField]
         private AudioClip dropItemClip;
 

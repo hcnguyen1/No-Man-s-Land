@@ -11,6 +11,9 @@ public class CraftingBench : MonoBehaviour
     public GameObject craftingUI;
 
     [SerializeField]
+    private GameObject interactPrompt; // Optional: "Press K to craft" text
+
+    [SerializeField]
     private List<CraftingRecipe> recipes = new List<CraftingRecipe>();
 
     private bool playerNearBench = false;
@@ -38,6 +41,12 @@ public class CraftingBench : MonoBehaviour
         {
             craftingUIScript = craftingUI.GetComponent<CraftingUI>();
         }
+
+        // Hide prompt initially
+        if (interactPrompt != null)
+        {
+            interactPrompt.SetActive(false);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -45,6 +54,12 @@ public class CraftingBench : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNearBench = true;
+
+            // Only show prompt if crafting is not already open
+            if (interactPrompt != null && !isCraftingOpen)
+            {
+                interactPrompt.SetActive(true);
+            }
         }
     }
 
@@ -53,6 +68,11 @@ public class CraftingBench : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNearBench = false;
+
+            if (interactPrompt != null)
+            {
+                interactPrompt.SetActive(false);
+            }
         }
     }
 
@@ -86,6 +106,12 @@ public class CraftingBench : MonoBehaviour
             craftingUI.SetActive(true);
             isCraftingOpen = true;
 
+            // Hide prompt when crafting opens
+            if (interactPrompt != null)
+            {
+                interactPrompt.SetActive(false);
+            }
+
             // Set the bench reference
             if (craftingUIScript == null)
             {
@@ -113,6 +139,12 @@ public class CraftingBench : MonoBehaviour
         {
             craftingUI.SetActive(false);
             isCraftingOpen = false;
+
+            // Show prompt again if player still near
+            if (interactPrompt != null && playerNearBench)
+            {
+                interactPrompt.SetActive(true);
+            }
 
             // Hide inventory
             if (inventoryController != null)

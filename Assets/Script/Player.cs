@@ -26,7 +26,13 @@ public class Player : Entity
     public float thirstDecayRate;
 
     // Currency System
-    public int currency = 0;
+    [SerializeField]
+    private int _currency = 0;
+    public int currency
+    {
+        get => _currency;
+        set => _currency = value;
+    }
 
     // Rolling Mechanic
     public bool canRoll = true;

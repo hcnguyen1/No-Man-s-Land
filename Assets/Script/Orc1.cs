@@ -20,6 +20,7 @@ public class Orc1 : Entity
     private bool noHealth;
 
     [SerializeField] private AudioClip attackSFX;
+    [SerializeField] private GameObject goldCoinPrefab; // The coin will now drop on death
 
     private void Start()
     {
@@ -154,6 +155,15 @@ public class Orc1 : Entity
         }
     }
 
+    protected override void Die()
+    {
+        // Spawn gold coin on death
+        if (goldCoinPrefab != null)
+        {
+            Instantiate(goldCoinPrefab, transform.position, Quaternion.identity);
+        }
 
-
+        // Call base Die() to handle death sound and destruction
+        base.Die();
+    }
 }
