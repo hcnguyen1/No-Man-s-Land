@@ -43,12 +43,12 @@ public class Animal : Entity
         rb.MovePosition(newPosition);
         animator.SetBool("isMoving", rb.position != targetPosition);
 
-        // Flip sprite based on movement direction
-        if (newPosition.x > rb.position.x)
+        float movementDifference = newPosition.x - rb.position.x;
+        if (movementDifference > 0.01f)
         {
             spriteRenderer.flipX = true; // Facing right
         }
-        else if (newPosition.x < rb.position.x)
+        else if (movementDifference < -0.01f)
         {
             spriteRenderer.flipX = false; // Facing left
         }
