@@ -20,6 +20,7 @@ MonoBehaviour:
   <ItemImage>k__BackingField: {fileID: -5900058499585226490, guid: 21b8cb85f2fca0c41a810a7ab4ba8415,
     type: 3}
   <DefaultParametersList>k__BackingField: []
+  <Price>k__BackingField: 5
   modifiersData:
   - statModifier: {fileID: 11400000, guid: f0b7aaf44ce87084a9cc0024a08a7105, type: 2}
     value: 15

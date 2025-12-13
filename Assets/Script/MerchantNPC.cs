@@ -37,12 +37,24 @@ public class MerchantNPC : MonoBehaviour
                     // Close shop
                     shopController.CloseShop();
                     isShopOpen = false;
+                    
+                    // Show prompt again if player still near
+                    if (interactPrompt != null && playerNearShop)
+                    {
+                        interactPrompt.SetActive(true);
+                    }
                 }
                 else
                 {
                     // Open shop (this automatically opens inventory too)
                     shopController.OpenShop();
                     isShopOpen = true;
+                    
+                    // Hide prompt when shop opens
+                    if (interactPrompt != null)
+                    {
+                        interactPrompt.SetActive(false);
+                    }
                 }
             }
         }
@@ -64,7 +76,8 @@ public class MerchantNPC : MonoBehaviour
         {
             playerNearShop = true;
             
-            if (interactPrompt != null)
+            // Only show prompt if shop is not already open
+            if (interactPrompt != null && !isShopOpen)
             {
                 interactPrompt.SetActive(true);
             }

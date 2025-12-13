@@ -13,6 +13,15 @@ namespace Inventory.UI
         [SerializeField]
         private RectTransform shopContentPanel; // Left side - shop items
 
+        [SerializeField]
+        private GameObject shopPanel; // The panel to show/hide
+
+        [SerializeField]
+        private GameObject inventoryText; // "Inventory" label
+
+        [SerializeField]
+        private GameObject shopText; // "Shop" label
+
         private List<ShopItemUI> shopItemSlots = new List<ShopItemUI>();
 
         public event Action<ItemSO, int> OnItemPurchaseRequested;
@@ -30,6 +39,9 @@ namespace Inventory.UI
             // Create slots for each shop item
             foreach (ItemSO item in shopItems)
             {
+                // Skip null items
+                if (item == null) continue;
+                
                 ShopItemUI slot = Instantiate(shopItemPrefab, shopContentPanel);
                 slot.transform.SetParent(shopContentPanel);
                 
@@ -69,12 +81,36 @@ namespace Inventory.UI
 
         public void Show()
         {
-            gameObject.SetActive(true);
+            if (shopPanel != null)
+            {
+                Debug.Log("ShopUI: Activating shopPanel");
+                shopPanel.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("ShopUI: shopPanel is null! Activating gameObject instead");
+                gameObject.SetActive(true);
+            }
+
+            // Show text labels
+            if (inventoryText != null) inventoryText.SetActive(true);
+            if (shopText != null) shopText.SetActive(true);
         }
 
         public void Hide()
         {
-            gameObject.SetActive(false);
+            if (shopPanel != null)
+            {
+                shopPanel.SetActive(false);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+
+            // Hide text labels
+            if (inventoryText != null) inventoryText.SetActive(false);
+            if (shopText != null) shopText.SetActive(false);
         }
     }
 }

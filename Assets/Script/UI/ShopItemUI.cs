@@ -29,6 +29,12 @@ namespace Inventory.UI
         [SerializeField]
         private Color unaffordableColor = Color.gray;
 
+        [SerializeField]
+        private Color affordablePriceColor = Color.white;
+
+        [SerializeField]
+        private Color unaffordablePriceColor = Color.red;
+
         private ItemSO currentItem;
         private int currentPrice;
 
@@ -66,6 +72,7 @@ namespace Inventory.UI
             if (priceText != null)
             {
                 priceText.text = $"{price}G";
+                priceText.color = canAfford ? affordablePriceColor : unaffordablePriceColor;
             }
 
             if (insufficientFundsText != null)

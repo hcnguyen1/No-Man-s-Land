@@ -53,7 +53,6 @@ public class CraftingBench : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNearBench = false;
-            // TabManager handles closing the crafting menu via Player.canOpenCraftingMenu
         }
     }
 
@@ -61,41 +60,67 @@ public class CraftingBench : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K) && playerNearBench)
         {
-            TabManager tabManager = FindObjectOfType<TabManager>();
-            if (tabManager != null)
+            if (isCraftingOpen)
             {
-                if (isCraftingOpen)
-                {
-                    // Close crafting
-                    tabManager.CloseCraftingTab();
-                    isCraftingOpen = false;
-                }
-                else
-                {
-                    // First, open crafting menu to activate the GameObject
-                    tabManager.OpenCraftingTab();
-                    isCraftingOpen = true;
-                    
-                    // THEN find CraftingUI (now that menu is active) and set the bench
-                    if (craftingUIScript == null)
-                        craftingUIScript = FindObjectOfType<CraftingUI>();
-                    
-                    // Set crafting bench AFTER menu is active so coroutines work
-                    if (craftingUIScript != null)
-                        craftingUIScript.SetCraftingBench(this);
-                }
+                // Close crafting
+                CloseCrafting();
+            }
+            else
+            {
+                // Open crafting
+                OpenCrafting();
             }
         }
-        
-        // Close crafting menu only if player walks away (not when opening)
+
+        // Close crafting if player walks away
         if (isCraftingOpen && !playerNearBench)
         {
-            TabManager tabManager = FindObjectOfType<TabManager>();
-            if (tabManager != null)
+            CloseCrafting();
+        }
+    }
+
+    private void OpenCrafting()
+    {
+        if (craftingUI != null)
+        {
+            craftingUI.SetActive(true);
+            isCraftingOpen = true;
+
+            // Set the bench reference
+            if (craftingUIScript == null)
             {
-                tabManager.CloseCraftingTab();
-                isCraftingOpen = false;
+                craftingUIScript = craftingUI.GetComponent<CraftingUI>();
             }
+
+            if (craftingUIScript != null)
+            {
+                craftingUIScript.SetCraftingBench(this);
+            }
+
+            // Show inventory
+            if (inventoryController != null)
+            {
+                inventoryController.ShowInventory();
+            }
+
+            Debug.Log("Crafting opened!");
+        }
+    }
+
+    private void CloseCrafting()
+    {
+        if (craftingUI != null)
+        {
+            craftingUI.SetActive(false);
+            isCraftingOpen = false;
+
+            // Hide inventory
+            if (inventoryController != null)
+            {
+                inventoryController.HideInventory();
+            }
+
+            Debug.Log("Crafting closed!");
         }
     }
 

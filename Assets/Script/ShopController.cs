@@ -59,7 +59,7 @@ public class ShopController : MonoBehaviour
             shopUI.InitializeShop(shopInventory.GetShopItems(), player.currency);
             shopUI.Show();
 
-            // Open inventory (like CraftingBench does with TabManager)
+            // Open inventory
             if (inventoryController != null)
             {
                 inventoryController.ShowInventory();
