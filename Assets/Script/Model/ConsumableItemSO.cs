@@ -36,9 +36,29 @@ namespace Inventory.Model
                         break;
                     }
                 }
+                // Check if this is a hunger modifier
+                else if (data.statModifier is CharacterStatHungerModifierSO)
+                {
+                    Player player = character.GetComponent<Player>();
+                    if (player != null && player.hunger < player.maxHunger)
+                    {
+                        canPerformAction = true;
+                        break;
+                    }
+                }
+                // Check if this is a thirst modifier
+                else if (data.statModifier is CharacterStatThirstModifierSO)
+                {
+                    Player player = character.GetComponent<Player>();
+                    if (player != null && player.thirst < player.maxThirst)
+                    {
+                        canPerformAction = true;
+                        break;
+                    }
+                }
                 else
                 {
-                    // For non-health modifiers, always allow
+                    // For other modifiers, always allow
                     canPerformAction = true;
                     break;
                 }
@@ -47,7 +67,6 @@ namespace Inventory.Model
             // Only consume if the action can be performed
             if (!canPerformAction)
             {
-                Debug.Log("Cannot consume item - already at full health!");
                 return false;
             }
             

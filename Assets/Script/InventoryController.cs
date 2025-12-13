@@ -218,7 +218,6 @@ namespace Inventory // this creates its own kind of import settings that can onl
         {
             if (itemPrefab == null || playerTransform == null)
             {
-                Debug.LogWarning("Cannot spawn item: Item prefab or player transform not assigned!");
                 return;
             }
 

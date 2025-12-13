@@ -8,7 +8,7 @@ public class ExitButton : MonoBehaviour
     // Exit out of the application
     public void ExitGame()
     {
-        Debug.Log("Exiting game...");
+
         Application.Quit();
     }
 }

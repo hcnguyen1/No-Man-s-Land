@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bc328c9af1d1014782356b5166e829e, type: 3}
-  m_Name: FoodHealthModifier
+  m_Script: {fileID: 11500000, guid: cd6d92b676229464b921ff5608a0466e, type: 3}
+  m_Name: ThirstModifier
   m_EditorClassIdentifier: 

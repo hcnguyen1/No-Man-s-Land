@@ -27,10 +27,6 @@ public class CurrencyUI : MonoBehaviour
         if (player == null)
         {
             player = FindObjectOfType<Player>();
-            if (player == null)
-            {
-                Debug.LogError("CurrencyUI: No Player found in scene!");
-            }
         }
 
         UpdateCurrencyDisplay();

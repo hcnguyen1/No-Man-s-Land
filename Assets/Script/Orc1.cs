@@ -45,10 +45,6 @@ public class Orc1 : Entity
         {
             playerTransform = player.transform;
         }
-        else
-        {
-            Debug.LogError("Player object not found in the scene.");
-        }
     }
 
     private void FixedUpdate()
@@ -110,7 +106,6 @@ public class Orc1 : Entity
     
     private IEnumerator AttackCooldown()
     {
-        Debug.Log("Orc1 attack cooldown started.");
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }

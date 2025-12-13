@@ -116,11 +116,8 @@ public class Player : Entity
 
     private void OnRoll(InputAction.CallbackContext context)
     {
-        Debug.Log($"OnRoll called! isRolling={isRolling}, canRoll={canRoll}");
-        
         if (!isRolling && canRoll)
         {
-            Debug.Log($"Rolling! Direction: ({lastMoveDir.x}, {lastMoveDir.y})");
             animator.SetFloat("RollX", lastMoveDir.x);
             animator.SetFloat("RollY", lastMoveDir.y);
             animator.SetBool("isRolling", true);
@@ -130,10 +127,6 @@ public class Player : Entity
             canRoll = false;
             rollCooldownTimer = rollCooldownTime; // Start 2-second cooldown
             rollTimer = rollDuration; // Start roll animation timer
-        }
-        else
-        {
-            Debug.Log("Roll blocked - already rolling or on cooldown");
         }
     }
 
@@ -194,7 +187,6 @@ public class Player : Entity
         // invincibility during rolls or some other function that can call it. 
         if (isInvincible)
         {
-            Debug.Log("Player is invincible! Damage blocked.");
             return;
         }
         base.TakeDamage(damage);
@@ -243,7 +235,6 @@ public class Player : Entity
         if (scene.name == "Level1")
         {
             transform.position = new Vector3(locationX, locationY, 0);
-            Debug.Log("Player spawned at Level1 at (" + locationX + ", " + locationY + ")");
         }
     }
 

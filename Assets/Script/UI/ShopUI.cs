@@ -83,12 +83,10 @@ namespace Inventory.UI
         {
             if (shopPanel != null)
             {
-                Debug.Log("ShopUI: Activating shopPanel");
                 shopPanel.SetActive(true);
             }
             else
             {
-                Debug.Log("ShopUI: shopPanel is null! Activating gameObject instead");
                 gameObject.SetActive(true);
             }
 

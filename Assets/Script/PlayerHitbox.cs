@@ -10,7 +10,6 @@ public class PlayerHitbox : MonoBehaviour
         player = GetComponentInParent<Player>();
         if (player == null)
         {
-            Debug.LogError("Player component not found in parent.");
         }
     }
 

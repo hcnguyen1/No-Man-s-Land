@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb735ce124e4ed419a10b9da4a20fdb, type: 3}
+  m_Name: BottledWater
+  m_EditorClassIdentifier: 
+  <IsStackable>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 99
+  <Name>k__BackingField: Bottled Water
+  <Description>k__BackingField: A water that was bottled. Reduces thirst by 20.
+  <ItemImage>k__BackingField: {fileID: 21300000, guid: 1dd3985101100aa409b69663e8716b95,
+    type: 3}
+  <DefaultParametersList>k__BackingField: []
+  <Price>k__BackingField: 0
+  modifiersData:
+  - statModifier: {fileID: 11400000, guid: fbdc0865e2d17614c9f2bd8f10dc6dff, type: 2}
+    value: 20
+  <actionSFX>k__BackingField: {fileID: 8300000, guid: 0e095918ca68d8944a91d01552360a80,
+    type: 3}

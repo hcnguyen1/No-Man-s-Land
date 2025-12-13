@@ -8,14 +8,12 @@ public class MainMenuManager : MonoBehaviour
     // Start the game by loading the main scene
     public void PlayGame()
     {
-        Debug.Log("Starting");
         SceneManager.LoadScene("Scene1");
     }
 
     // Exit
     public void ExitGame()
     {
-        Debug.Log("Exiting");
         Application.Quit();
     }
 }

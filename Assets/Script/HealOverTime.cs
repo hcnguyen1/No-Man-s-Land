@@ -32,12 +32,9 @@ public class HealOverTime : MonoBehaviour
 
             ticksRemaining--;
 
-            Debug.Log($"Healing tick: +{healPerTick} HP. Current health: {player.health}. Ticks remaining: {ticksRemaining}");
-
             // Stop if player is at max health
             if (player.health >= player.maxHealth)
             {
-                Debug.Log("Player at max health, stopping healing.");
                 break;
             }
         }

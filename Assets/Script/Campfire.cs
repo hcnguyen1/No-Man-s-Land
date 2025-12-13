@@ -52,7 +52,6 @@ public class Campfire : MonoBehaviour
     {
         if (inventoryController == null || rawMeat == null || cookedMeat == null)
         {
-            Debug.LogError("Campfire: Missing references!");
             return;
         }
 
@@ -113,8 +112,6 @@ public class Campfire : MonoBehaviour
             if (remainder == 0)
             {
                 // Successfully cooked
-                Debug.Log("Cooked meat!");
-
                 // Play sound
                 if (audioSource != null && cookSound != null)
                 {
@@ -132,12 +129,7 @@ public class Campfire : MonoBehaviour
                 {
                     hotbar.AddItem(rawMeat, 1);
                 }
-                Debug.Log("Inventory and hotbar full! Cannot cook.");
             }
-        }
-        else
-        {
-            Debug.Log("No raw meat to cook!");
         }
     }
 

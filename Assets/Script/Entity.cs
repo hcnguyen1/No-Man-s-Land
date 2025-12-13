@@ -63,8 +63,6 @@ public class Entity : MonoBehaviour
         // Debug log of that entity's name has died
         if (health <= 0)
         {
-            Debug.Log($"{gameObject.name} has died.");
-            
             // Play death sound at position (independent of GameObject)
             if (deathSFX != null)
             {

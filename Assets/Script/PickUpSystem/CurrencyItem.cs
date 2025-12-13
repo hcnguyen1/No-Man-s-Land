@@ -12,7 +12,6 @@ public class CurrencyItem : MonoBehaviour
         if (player != null)
         {
             player.currency += currencyValue;
-            Debug.Log($"Picked up {currencyValue} currency! Total: {player.currency}");
             DestroyCurrency();
         }
     }

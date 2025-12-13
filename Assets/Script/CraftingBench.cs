@@ -128,8 +128,6 @@ public class CraftingBench : MonoBehaviour
             {
                 inventoryController.ShowInventory();
             }
-
-            Debug.Log("Crafting opened!");
         }
     }
 
@@ -151,8 +149,6 @@ public class CraftingBench : MonoBehaviour
             {
                 inventoryController.HideInventory();
             }
-
-            Debug.Log("Crafting closed!");
         }
     }
 

@@ -64,8 +64,6 @@ public class ShopController : MonoBehaviour
             {
                 inventoryController.ShowInventory();
             }
-
-            Debug.Log("Shop opened!");
         }
     }
 
@@ -81,8 +79,6 @@ public class ShopController : MonoBehaviour
             {
                 inventoryController.HideInventory();
             }
-
-            Debug.Log("Shop closed!");
         }
     }
 
@@ -95,7 +91,7 @@ public class ShopController : MonoBehaviour
     {
         if (player == null || playerInventory == null)
         {
-            Debug.LogError("Player or inventory not assigned!");
+
             return;
         }
 
@@ -118,20 +114,16 @@ public class ShopController : MonoBehaviour
                 {
                     audioSource.PlayOneShot(purchaseSuccessClip);
                 }
-
-                Debug.Log($"Purchased {item.Name} for {price}G. Remaining currency: {player.currency}");
             }
             else
             {
                 // Inventory full
-                Debug.Log("Inventory is full! Cannot purchase item.");
                 PlayFailSound();
             }
         }
         else
         {
             // Not enough currency
-            Debug.Log($"Not enough currency! Need {price}G, have {player.currency}G");
             PlayFailSound();
         }
     }

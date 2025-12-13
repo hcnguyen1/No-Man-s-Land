@@ -11,7 +11,6 @@ public class Orc1AttackHitbox : MonoBehaviour
         orc = GetComponentInParent<Orc1>();
         if (orc == null)
         {
-            Debug.LogError("Orc1 component not found in parent.");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,7 +19,6 @@ public class Orc1AttackHitbox : MonoBehaviour
         if (player != null)
         {
             player.TakeDamage(orc.AttackPower);
-            Debug.Log("Orc1 hit the player for " + orc.AttackPower + " damage.");
         }
     }
 }

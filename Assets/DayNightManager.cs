@@ -105,7 +105,6 @@ public class LightController : MonoBehaviour
         int currentSecond = Mathf.FloorToInt(Time.time);
         if (currentSecond != lastLoggedSecond)
         {
-            Debug.Log($"Second: {currentSecond}");
             lastLoggedSecond = currentSecond;
         }
     }
@@ -134,11 +133,10 @@ public class LightController : MonoBehaviour
         if (isDay)
         {
             dayCount++;
-            Debug.Log($"Day {dayCount} has begun.");
         }
         else
         {
-            Debug.Log($"Night {nightCount} has begun.");
+            nightCount++;
         }
 
         // Flip targets for next cycle
@@ -216,7 +214,6 @@ public class LightController : MonoBehaviour
                 // Spawn animal at the randomly generated position
                 GameObject randomAnimal = animalPrefabs[Random.Range(0, animalPrefabs.Count)];
                 Instantiate(randomAnimal, randomPosition, Quaternion.identity);
-                Debug.Log("Animal spawned at: " + randomPosition);
             }
         }
     }
@@ -247,7 +244,6 @@ public class LightController : MonoBehaviour
 
                     // Spawn enemy at the randomly generated position
                     Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
-                    Debug.Log("Enemy spawned at: " + randomPosition);
                 }
             }
             // Spawning delay

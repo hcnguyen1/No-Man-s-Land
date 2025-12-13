@@ -15,12 +15,15 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 99
   <Name>k__BackingField: Cooked Meat
-  <Description>k__BackingField: A nice medium rare piece of meat from a cow.
+  <Description>k__BackingField: A nice medium rare piece of meat from a cow. Reduces
+    hunger by 10 and restores 15 health.
   <ItemImage>k__BackingField: {fileID: 0}
   <DefaultParametersList>k__BackingField: []
   <Price>k__BackingField: 0
   modifiersData:
   - statModifier: {fileID: 11400000, guid: f0b7aaf44ce87084a9cc0024a08a7105, type: 2}
-    value: 50
+    value: 15
+  - statModifier: {fileID: 11400000, guid: 6e54b1aa8764be94b9734bd18f8ffcea, type: 2}
+    value: 10
   <actionSFX>k__BackingField: {fileID: 8300000, guid: ed77df5c74efb0841b6ea71f3fe32cfb,
     type: 3}
