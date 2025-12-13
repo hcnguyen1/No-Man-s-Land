@@ -25,21 +25,27 @@ public class Cow : Animal
     {
         base.TakeDamage(damage);
         animator.SetBool("takenDamage", true);
-        if (health <= 0 && !noHealth)
-        {
-            noHealth = true;
-            animator.SetTrigger("noHealth");
-        }
-
-        if (noHealth && cowCollider != null)
-        {
-            cowCollider.enabled = false;
-        }
+        // Death handling moved to OnZeroHealth()
     }
 
     public void EndDamageAnimation()
     {
         animator.SetBool("takenDamage", false);
+    }
+
+    protected override void OnZeroHealth()
+    {
+        if (!noHealth)
+        {
+            noHealth = true;
+            animator.SetTrigger("noHealth");
+        }
+
+        if (cowCollider != null)
+        {
+            cowCollider.enabled = false;
+        }
+        // Do not destroy here; animation should invoke Die() via event
     }
 
     protected override void Die()

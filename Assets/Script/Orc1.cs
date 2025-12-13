@@ -114,8 +114,27 @@ public class Orc1 : Entity
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
+        // Death handling moved to OnZeroHealth()
+    }
 
-        if (health <= 0 && !noHealth)
+    // Orc Attack Range Visualization
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+
+    private void PlayAttackSFX()
+    {
+        if (audioSource != null && attackSFX != null)
+        {
+            audioSource.PlayOneShot(attackSFX);
+        }
+    }
+
+    protected override void OnZeroHealth()
+    {
+        if (!noHealth)
         {
             noHealth = true;
             animator.SetBool("noHealth", true);
@@ -133,21 +152,7 @@ public class Orc1 : Entity
                 mainCollider.enabled = false;
             }
         }
-    }
-
-    // Orc Attack Range Visualization
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
-    }
-
-    private void PlayAttackSFX()
-    {
-        if (audioSource != null && attackSFX != null)
-        {
-            audioSource.PlayOneShot(attackSFX);
-        }
+        // Do not destroy here; animation should invoke Die() via event
     }
 
     protected override void Die()

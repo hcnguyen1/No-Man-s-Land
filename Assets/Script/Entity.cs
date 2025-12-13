@@ -39,6 +39,9 @@ public class Entity : MonoBehaviour
         health = maxHealth;
     }
 
+    // Ensures Die() is executed only once
+    protected bool hasDied = false;
+
     public virtual void TakeDamage(int damage)
     {
         health -= damage;
@@ -46,7 +49,7 @@ public class Entity : MonoBehaviour
         
         if (health <= 0)
         {
-            Die();
+            OnZeroHealth();
         }
     }
 
@@ -58,11 +61,19 @@ public class Entity : MonoBehaviour
         }
     }
 
+    // Hook for subclasses to handle death flow (animations, drops)
+    protected virtual void OnZeroHealth()
+    {
+        // Default behavior: immediately die
+        Die();
+    }
+
     protected virtual void Die()
     {
         // Debug log of that entity's name has died
-        if (health <= 0)
+        if (health <= 0 && !hasDied)
         {
+            hasDied = true;
             // Play death sound at position (independent of GameObject)
             if (deathSFX != null)
             {
@@ -71,6 +82,12 @@ public class Entity : MonoBehaviour
             
             Destroy(gameObject);
         }
+    }
+
+    // Animation Event entry point to finish death
+    public void OnDeathAnimationComplete()
+    {
+        Die();
     }
 
     // Getter for attackPower
