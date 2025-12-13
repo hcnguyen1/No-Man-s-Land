@@ -16,6 +16,7 @@ MonoBehaviour:
   <MaxStackSize>k__BackingField: 99
   <Name>k__BackingField: Raw Meat
   <Description>k__BackingField: A nice piece of meat from a cow.
-  <ItemImage>k__BackingField: {fileID: 0}
+  <ItemImage>k__BackingField: {fileID: -1377743931, guid: 338eb9325b511bf4dbf0184fff5f5d9c,
+    type: 3}
   <DefaultParametersList>k__BackingField: []
   <Price>k__BackingField: 0

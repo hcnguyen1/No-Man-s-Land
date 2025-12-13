@@ -17,7 +17,8 @@ MonoBehaviour:
   <Name>k__BackingField: Cooked Meat
   <Description>k__BackingField: A nice medium rare piece of meat from a cow. Reduces
     hunger by 10 and restores 15 health.
-  <ItemImage>k__BackingField: {fileID: 0}
+  <ItemImage>k__BackingField: {fileID: 280196778, guid: 338eb9325b511bf4dbf0184fff5f5d9c,
+    type: 3}
   <DefaultParametersList>k__BackingField: []
   <Price>k__BackingField: 0
   modifiersData:
