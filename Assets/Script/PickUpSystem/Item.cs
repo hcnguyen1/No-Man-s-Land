@@ -50,7 +50,10 @@ public class Item : MonoBehaviour
 
     private IEnumerator AnimateItemPickup() // once you pick up the item, the size will change and the item on the ground will be destroyed.
     {
-        audioSource.Play();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
         Vector3 startScale = transform.localScale;
         Vector3 endScale = Vector3.zero;
         float currentTime = 0;
