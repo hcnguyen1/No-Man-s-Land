@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - CraftingBench
   - Tree
+  - Herb
   layers:
   - Default
   - TransparentFX

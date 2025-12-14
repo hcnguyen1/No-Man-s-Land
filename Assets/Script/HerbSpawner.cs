@@ -31,11 +31,12 @@ public class HerbSpawner : MonoBehaviour
             GameObject herb = new GameObject("Herb");
             herb.tag = "Herb"; // Tag it so we can count them
             herb.transform.position = spawnPosition;
+            herb.transform.localScale = new Vector3(0.5f, 0.5f, 1f); // Half size
 
             // Add sprite renderer
             SpriteRenderer sr = herb.AddComponent<SpriteRenderer>();
             sr.sprite = herbItemSO.ItemImage;
-            sr.sortingLayerName = "Default"; // Adjust if needed
+            sr.sortingLayerName = "Foreground"; // Adjust if needed
 
             // Add collider for pickup
             CircleCollider2D col = herb.AddComponent<CircleCollider2D>();
