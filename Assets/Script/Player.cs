@@ -62,6 +62,7 @@ public class Player : Entity
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         health = maxHealth;
         hunger = maxHunger;
@@ -72,7 +73,11 @@ public class Player : Entity
     }
     void Update()
     {
-        decayHungerAndThirst(); // Always decay, even when rolling
+        // Decay if in level scene
+        if (SceneManager.GetActiveScene().name.Contains("Level"))
+        {
+            decayHungerAndThirst();
+        }
 
         // Handle roll cooldown
         if (!canRoll)

@@ -18,6 +18,7 @@ public class Entity : MonoBehaviour
     [SerializeField] protected AudioClip deathSFX;
     [SerializeField] [Range(0f, 1f)] protected float deathVolume = 1f;
     
+    public SpriteRenderer spriteRenderer;
     private AudioSource _audioSource;
     protected AudioSource audioSource
     {
@@ -32,6 +33,7 @@ public class Entity : MonoBehaviour
     protected virtual void Awake()
     {
         Initialize();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     protected virtual void Initialize()
@@ -51,6 +53,8 @@ public class Entity : MonoBehaviour
         {
             OnZeroHealth();
         }
+
+        StartCoroutine(TakeDamageFlash());
     }
 
     protected virtual void PlayGetHitSFX()
@@ -97,5 +101,14 @@ public class Entity : MonoBehaviour
     public void ModifyAttackPower(int amount)
     {
         attackPower += amount;
+    }
+
+    // Flashes red when taking damage (In case there is no take damage animation)
+    private IEnumerator TakeDamageFlash()
+    {
+        Color originalColor = spriteRenderer.color;
+        spriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = originalColor;
     }
 }

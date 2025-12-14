@@ -15,10 +15,13 @@ public class Orc1AttackHitbox : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Entity player = collision.GetComponent<Entity>();
-        if (player != null)
+        if (collision.CompareTag("Player") || collision.CompareTag("Tree"))
         {
-            player.TakeDamage(orc.AttackPower);
+            Entity target = collision.GetComponent<Entity>();
+            if (target != null)
+            {
+                target.TakeDamage(orc.AttackPower);
+            }
         }
     }
 }

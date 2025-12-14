@@ -15,8 +15,7 @@ public class Animal : Entity
     protected Animator animator;
 
     // Sprite Renderer
-    private SpriteRenderer spriteRenderer;
-
+    
     protected override void Awake()
     {
         base.Awake();
