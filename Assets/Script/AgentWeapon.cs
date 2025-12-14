@@ -20,14 +20,43 @@ public class AgentWeapon : MonoBehaviour
     // this is the set method where it takes the state of the weapon and if you remove it, will be back in inventory.
     public void SetWeapon(EquippableItemSO weaponItemSO, List<ItemParameter> itemState) 
     {
+        // Remove stat bonuses from old weapon before unequipping
         if (weapon != null)
         {
+            RemoveWeaponStatBonuses(weapon);
             inventoryData.AddItem(weapon, 1, itemCurrentState);
         }
 
         this.weapon = weaponItemSO;
         this.itemCurrentState = new List<ItemParameter>(itemState);
         ModifyParameters();
+        
+        // Apply stat bonuses from new weapon
+        if (weapon != null)
+        {
+            ApplyWeaponStatBonuses(weapon);
+        }
+    }
+
+    private void ApplyWeaponStatBonuses(EquippableItemSO weaponItem)
+    {
+        if (weaponItem.ModifiersData == null) return;
+        
+        foreach (ModifierData data in weaponItem.ModifiersData)
+        {
+            data.statModifier.AffectCharacter(gameObject, data.value);
+        }
+    }
+
+    private void RemoveWeaponStatBonuses(EquippableItemSO weaponItem)
+    {
+        if (weaponItem.ModifiersData == null) return;
+        
+        foreach (ModifierData data in weaponItem.ModifiersData)
+        {
+            // Apply negative value to remove the bonus
+            data.statModifier.AffectCharacter(gameObject, -data.value);
+        }
     }
 
     private void ModifyParameters()

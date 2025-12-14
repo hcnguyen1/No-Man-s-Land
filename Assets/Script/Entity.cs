@@ -92,4 +92,10 @@ public class Entity : MonoBehaviour
 
     // Getter for attackPower
     public int AttackPower => attackPower;
+
+    // Method to modify attack power (for equipment bonuses)
+    public void ModifyAttackPower(int amount)
+    {
+        attackPower += amount;
+    }
 }

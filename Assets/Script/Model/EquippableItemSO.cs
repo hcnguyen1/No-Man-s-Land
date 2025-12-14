@@ -10,10 +10,15 @@ namespace Inventory.Model
     [CreateAssetMenu]
     public class EquippableItemSO : ItemSO, IDestroyableItem, IItemAction
     {
+        [SerializeField]
+        private List<ModifierData> modifiersData = new List<ModifierData>();
+
         public string ActionName => "Equip";
 
         [field: SerializeField]
         public AudioClip actionSFX { get; private set; }
+
+        public List<ModifierData> ModifiersData => modifiersData;
 
         
         public bool PerformAction(GameObject character, List<ItemParameter> itemState = null) // will check if the item is indeed equippable. 
