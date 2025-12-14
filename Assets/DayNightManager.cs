@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class LightController : MonoBehaviour
+public class DayNightManager : MonoBehaviour
 {
     public Light2D light2D;
 
@@ -137,14 +137,10 @@ public class LightController : MonoBehaviour
         isDay = !isDay;
         timer = 0f;
 
-        // Log if it's now day or night and what day or night it is.
+        // Log the day count
         if (isDay)
         {
             dayCount++;
-        }
-        else
-        {
-            nightCount++;
         }
 
         // Flip targets for next cycle

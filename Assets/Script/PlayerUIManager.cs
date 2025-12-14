@@ -16,8 +16,10 @@ public class PlayerUIManager : MonoBehaviour
     // UI Variables
     [SerializeField] GameObject PauseMenuUI;
     [SerializeField] GameObject GameOverUI;
+    [SerializeField] GameObject VictoryUI;
     private bool isPaused = false;
     private bool isGameOver = false;
+    private bool displayVictoryOnce = false;
 
     void Start()
     {
@@ -27,12 +29,12 @@ public class PlayerUIManager : MonoBehaviour
 
         if (PauseMenuUI) PauseMenuUI.SetActive(false);
         if (GameOverUI) GameOverUI.SetActive(false);
+        if (VictoryUI) VictoryUI.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-
         // Pause Menu and Game Over Menu Toggles
         if (player == null || player.health <= 0 && !isGameOver)
         {
@@ -57,6 +59,20 @@ public class PlayerUIManager : MonoBehaviour
         UpdateHealthBar();
         UpdateHungerBar();
         UpdateThirstBar();
+
+        // Day 6 (You get this from DayNightManager), trigger victory UI once
+        // if in scene Level1, Level2, or Level3, find DayNightManager
+        if (SceneManager.GetActiveScene().name.Contains("Level"))
+        {
+            DayNightManager dayNightManager = FindObjectOfType<DayNightManager>();
+            if (dayNightManager != null)
+            {
+                if (dayNightManager.dayCount >= 6 && !displayVictoryOnce)
+                {
+                    TriggerVictoryUI();
+                }
+            }
+        }
     }
 
     private void UpdateHealthBar()
@@ -136,4 +152,25 @@ public class PlayerUIManager : MonoBehaviour
         // Load Main Menu scene
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void ContinueButton()
+    {
+        // Set time scale back to normal
+        Time.timeScale = 1f;
+
+        VictoryUI.SetActive(false);
+    }
+
+    public void TriggerVictoryUI()
+    {
+        if (VictoryUI)
+        {
+            displayVictoryOnce = true;
+            VictoryUI.SetActive(true);
+        }
+        Time.timeScale = 0f;
+    }
+
+
+
 }
