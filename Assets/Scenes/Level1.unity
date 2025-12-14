@@ -19985,6 +19985,7 @@ MonoBehaviour:
   animalSpawnChance: 0.1
   animalSpawnTimer: 0
   animalSpawnInterval: 1
+  initialAnimalSpawnCount: 15
   animalPrefabs:
   - {fileID: 1806484770}
   nightOneEnemyPrefabs:
