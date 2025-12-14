@@ -7,11 +7,19 @@ public class TreeSpawner : MonoBehaviour
     [SerializeField] GameObject[] treePrefabs;
     [SerializeField] int maxTreeAmount = 25;
     [SerializeField] int spawnInterval = 5;
-    
 
     private void Start()
     {
+        SpawnInitialTrees();
         StartCoroutine(SpawnTreeWithInterval());
+    }
+
+    private void SpawnInitialTrees()
+    {
+        for (int i = 0; i < maxTreeAmount; i++)
+        {
+            SpawnTree();
+        }
     }
 
     private void SpawnTree()

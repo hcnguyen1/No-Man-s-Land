@@ -29,6 +29,8 @@ public class LightController : MonoBehaviour
     private float initialIntensity;
     private int lastLoggedSecond = -1;
 
+    private MerchantNPC merchantNPC;
+
     // Mob spawning logic helper
     public int dayCount = 1;
     public int nightCount = 0;
@@ -68,6 +70,7 @@ public class LightController : MonoBehaviour
     void Start()
     {
         InitializeLight();
+        merchantNPC = FindObjectOfType<MerchantNPC>(true);
     }
 
     void Update()
@@ -88,6 +91,8 @@ public class LightController : MonoBehaviour
                 animalSpawnTimer = 0f;
             }
         }
+
+        ToggleMerchantNPC();
     }
 
     // Initializes the light to day settings
@@ -190,6 +195,14 @@ public class LightController : MonoBehaviour
         transitionTimer = 0f;
         initialColor = light2D.color;
         initialIntensity = light2D.intensity;
+    }
+
+    private void ToggleMerchantNPC()
+    {
+        if (merchantNPC != null)
+        {
+            merchantNPC.gameObject.SetActive(isDay);
+        }
     }
 
     // Simple spawn animals by chance during the day on ground tiles
