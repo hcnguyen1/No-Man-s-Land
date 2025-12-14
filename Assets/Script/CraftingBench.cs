@@ -78,7 +78,7 @@ public class CraftingBench : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K) && playerNearBench)
+        if (Input.GetKeyDown(KeyCode.F) && playerNearBench)
         {
             if (isCraftingOpen)
             {

@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press K to Craft!
+  m_text: Press F to Craft!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f7db2a91a4025c344b3aec04f0afb7d3, type: 2}
   m_sharedMaterial: {fileID: -3241305397723020001, guid: f7db2a91a4025c344b3aec04f0afb7d3,

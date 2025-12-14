@@ -27,8 +27,8 @@ public class MerchantNPC : MonoBehaviour
 
     private void Update()
     {
-        // Press K to open/close shop (like crafting bench)
-        if (Input.GetKeyDown(KeyCode.K) && playerNearShop)
+        // Press F to open/close shop (like crafting bench)
+        if (Input.GetKeyDown(KeyCode.F) && playerNearShop)
         {
             if (shopController != null)
             {

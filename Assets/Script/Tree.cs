@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Inventory.Model;
 
 public class Tree : Entity
 {
     // Drop wood when destroyed
-    [SerializeField] GameObject woodPrefab;
+    [SerializeField] ItemSO woodItem;
     float currentHealth; // Check when tree has taken damage to drop wood
+
+    // Sound effects
+    [SerializeField] private AudioClip choppingSFX;
+    [SerializeField] private AudioClip treeFallSFX;
 
     void Start()
     {
@@ -16,8 +21,25 @@ public class Tree : Entity
     // Drops wood at a random position around the tree
     public void DropWood()
     {
-        Vector2 dropPosition = (Vector2)transform.position + Random.insideUnitCircle * 0.5f;  // Drop within 0.5 units radius of the tree
-        Instantiate(woodPrefab, dropPosition, Quaternion.identity);
+        if (woodItem == null)
+            return;
+
+        // Create item GameObject manually like Cow does
+        GameObject droppedWood = new GameObject("DroppedWood");
+        droppedWood.transform.position = (Vector2)transform.position + Random.insideUnitCircle * 0.5f;
+        
+        // Add sprite renderer
+        SpriteRenderer sr = droppedWood.AddComponent<SpriteRenderer>();
+        sr.sprite = woodItem.ItemImage;
+        
+        // Add collider
+        CircleCollider2D col = droppedWood.AddComponent<CircleCollider2D>();
+        col.isTrigger = true;
+        col.radius = 0.5f;
+        
+        // Add Item script and initialize it
+        Item itemScript = droppedWood.AddComponent<Item>();
+        itemScript.Initialize(woodItem, 1);
     }
 
     void Update()
@@ -32,11 +54,22 @@ public class Tree : Entity
             {
                 DropWood();
                 currentHealth = health;
+
+                // Play chopping sound when tree takes damage
+                if (audioSource != null && choppingSFX != null)
+                {
+                    audioSource.PlayOneShot(choppingSFX);
+                }
             }
 
             // Check if tree is destroyed, destroy and drop wood
             if (health <= 0)
             {
+                // Play tree fall sound when tree dies
+                if (audioSource != null && treeFallSFX != null)
+                {
+                    audioSource.PlayOneShot(treeFallSFX);
+                }
                 Die();
             }
     }

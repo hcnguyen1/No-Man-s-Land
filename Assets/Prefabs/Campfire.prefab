@@ -178,8 +178,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1854091853
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 947766100, guid: c550f469f9e01234a9b12f1c3606b4b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press C to Cook!
+  m_text: Press F to Cook!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f7db2a91a4025c344b3aec04f0afb7d3, type: 2}
   m_sharedMaterial: {fileID: -3241305397723020001, guid: f7db2a91a4025c344b3aec04f0afb7d3,
