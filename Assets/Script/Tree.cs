@@ -31,6 +31,7 @@ public class Tree : Entity
         // Add sprite renderer
         SpriteRenderer sr = droppedItem.AddComponent<SpriteRenderer>();
         sr.sprite = itemToDrop.ItemImage;
+        sr.sortingLayerName = "Foreground"; // Ensure item appears above ground
         
         // Add collider
         CircleCollider2D col = droppedItem.AddComponent<CircleCollider2D>();

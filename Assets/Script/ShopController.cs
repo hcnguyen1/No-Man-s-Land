@@ -51,6 +51,12 @@ public class ShopController : MonoBehaviour
 
     public void OpenShop()
     {
+        // Find Shop UI if not assigned
+        if (shopUI == null)
+        {
+            shopUI = FindObjectOfType<ShopUI>();
+        }
+
         if (shopUI != null && shopInventory != null && player != null)
         {
             isShopOpen = true;

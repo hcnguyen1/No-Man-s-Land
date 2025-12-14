@@ -59,11 +59,13 @@ public class Cow : Animal
             // Add sprite renderer
             SpriteRenderer sr = droppedMeat.AddComponent<SpriteRenderer>();
             sr.sprite = rawMeat.ItemImage;
+            sr.sortingLayerName = "Foreground"; // Ensure item appears above ground
             
             // Add collider
             CircleCollider2D col = droppedMeat.AddComponent<CircleCollider2D>();
             col.isTrigger = true;
             col.radius = 0.5f;
+            Debug.Log("Collider enabled: " + col.enabled);
             
             // Add Item script and initialize it
             Item itemScript = droppedMeat.AddComponent<Item>();

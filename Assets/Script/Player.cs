@@ -25,6 +25,11 @@ public class Player : Entity
     public float hungerDecayRate;
     public float thirstDecayRate;
 
+    [SerializeField] int noHungerDamage = 1;
+    [SerializeField] float noThirstStatReduction = 0.5f;
+    private float baseMoveSpeed;
+    private int baseAttackPower;
+
     // Currency System
     [SerializeField]
     private int _currency = 0;
@@ -61,6 +66,9 @@ public class Player : Entity
         health = maxHealth;
         hunger = maxHunger;
         thirst = maxThirst;
+
+        baseMoveSpeed = moveSpeed;
+        baseAttackPower = attackPower;
     }
     void Update()
     {
@@ -170,6 +178,9 @@ public class Player : Entity
 
         hunger = Mathf.Clamp(hunger, 0, maxHunger);
         thirst = Mathf.Clamp(thirst, 0, maxThirst);
+
+        NoHunger();
+        NoThirst();
     }
 
 
@@ -253,6 +264,32 @@ public class Player : Entity
         if (audioSource != null && attackSFX != null)
         {
             audioSource.PlayOneShot(attackSFX, attackVolume);
+        }
+    }
+
+    private void NoHunger()
+    {
+        if (hunger <= 0)
+        {
+            TakeDamage(noHungerDamage); // Take damage per call when hunger is 0
+        }
+    }
+
+    private void NoThirst()
+    {
+        if (thirst <= 0)
+        {
+            // Reduce movement speed by noThirstStatReduction factor
+            if(thirst <= 0)
+            {
+                moveSpeed *= noThirstStatReduction;
+                attackPower = Mathf.Max(1, Mathf.FloorToInt(attackPower * noThirstStatReduction)); // Ensure attack power doesn't drop below 1
+            } 
+            else
+            {
+                moveSpeed = baseMoveSpeed; // Reset to normal speed when thirst is above 0
+                attackPower = baseAttackPower; // Reset to normal attack power when thirst is above 0
+            }
         }
     }
 
