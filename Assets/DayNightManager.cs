@@ -39,6 +39,7 @@ public class LightController : MonoBehaviour
     [SerializeField] float animalSpawnChance = 0.2f;
     [SerializeField] float animalSpawnTimer = 0f;
     [SerializeField] float animalSpawnInterval = 1f; // Seconds
+    [SerializeField] int initialAnimalSpawnCount = 5;
     // Initialize private gameobject list of mobs
     [SerializeField] private List<GameObject> animalPrefabs;
     [SerializeField] private List<GameObject> nightOneEnemyPrefabs;
@@ -71,6 +72,8 @@ public class LightController : MonoBehaviour
     {
         InitializeLight();
         merchantNPC = FindObjectOfType<MerchantNPC>(true);
+
+        SpawnInitialAnimals();
     }
 
     void Update()
@@ -87,7 +90,7 @@ public class LightController : MonoBehaviour
             animalSpawnTimer += Time.deltaTime;
             if (animalSpawnTimer >= animalSpawnInterval)
             {
-                SpawnAnimals(animalSpawnChance, animalPrefabs);
+                SpawnAnimalsByChance(animalSpawnChance, animalPrefabs);
                 animalSpawnTimer = 0f;
             }
         }
@@ -204,9 +207,37 @@ public class LightController : MonoBehaviour
             merchantNPC.gameObject.SetActive(isDay);
         }
     }
+    private void SpawnInitialAnimals()
+    {
+        for (int i = 0; i < initialAnimalSpawnCount; i++)
+        {
+            SpawnAnimals(animalPrefabs);
+        }
+    }
 
+    private void SpawnAnimals(List<GameObject> animalPrefabs)
+    {
+        // Search for all tilemap object tagged with "Ground"
+        GameObject[] groundTiles = GameObject.FindGameObjectsWithTag("Ground");
+
+        GameObject randomTile = groundTiles[Random.Range(0, groundTiles.Length)]; // ranges from the list of "Ground" tiles
+        Collider2D tilemapCollider = randomTile.GetComponent<Collider2D>(); // We use collider to get the bounds of the tilemap, and the bounds means the area of the tilemap
+
+        if (tilemapCollider != null)
+        {
+            Bounds bounds = tilemapCollider.bounds;
+            Vector2 randomPosition = new Vector2(
+                Random.Range(bounds.min.x, bounds.max.x),
+                Random.Range(bounds.min.y, bounds.max.y)
+            );
+
+            // Spawn animal at the randomly generated position
+            GameObject randomAnimal = animalPrefabs[Random.Range(0, animalPrefabs.Count)];
+            Instantiate(randomAnimal, randomPosition, Quaternion.identity);
+        }
+    }
     // Simple spawn animals by chance during the day on ground tiles
-    private void SpawnAnimals(float chance, List<GameObject> animalPrefabs)
+    private void SpawnAnimalsByChance(float chance, List<GameObject> animalPrefabs)
     {
         if (Random.value < chance)
         {        

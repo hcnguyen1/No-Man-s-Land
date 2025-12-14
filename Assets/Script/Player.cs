@@ -241,8 +241,8 @@ public class Player : Entity
     // Hard-coded player position for Level1 entry
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        int locationX = 2;
-        int locationY = 2;
+        int locationX = -30;
+        int locationY = -3;
         if (scene.name == "Level1")
         {
             transform.position = new Vector3(locationX, locationY, 0);
