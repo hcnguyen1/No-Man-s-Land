@@ -107,7 +107,7 @@ public class Entity : MonoBehaviour
     private IEnumerator TakeDamageFlash()
     {
         Color originalColor = spriteRenderer.color;
-        spriteRenderer.color = Color.white;
+        spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         spriteRenderer.color = originalColor;
     }
