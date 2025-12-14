@@ -15,12 +15,15 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Sword
-  <Description>k__BackingField: Sword that can increase your attack power.
+  <Description>k__BackingField: Sword that can increase your attack power by 10.
   <ItemImage>k__BackingField: {fileID: 21300000, guid: dd3631e297d7ef341bfc48751be7ca9d,
     type: 3}
   <DefaultParametersList>k__BackingField:
   - itemParameter: {fileID: 11400000, guid: 641e09ee59dbb9a4fb5c531507346099, type: 2}
     value: 100
   <Price>k__BackingField: 50
+  modifiersData:
+  - statModifier: {fileID: 11400000, guid: b51137d0285f498448da2387b127a61d, type: 2}
+    value: 10
   <actionSFX>k__BackingField: {fileID: 8300000, guid: 1e4d438f9d286304b918672a47cba77f,
     type: 3}

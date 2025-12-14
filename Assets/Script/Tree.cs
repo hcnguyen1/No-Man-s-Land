@@ -5,9 +5,9 @@ using Inventory.Model;
 
 public class Tree : Entity
 {
-    // Drop wood when destroyed
-    [SerializeField] ItemSO woodItem;
-    float currentHealth; // Check when tree has taken damage to drop wood
+    // Item to drop when destroyed
+    [SerializeField] ItemSO itemToDrop;
+    float currentHealth; // Check when tree has taken damage to drop item
 
     // Sound effects
     [SerializeField] private AudioClip choppingSFX;
@@ -18,28 +18,28 @@ public class Tree : Entity
         currentHealth = health;
     }
 
-    // Drops wood at a random position around the tree
-    public void DropWood()
+    // Drops item at a random position around the tree
+    public void DropItem()
     {
-        if (woodItem == null)
+        if (itemToDrop == null)
             return;
 
         // Create item GameObject manually like Cow does
-        GameObject droppedWood = new GameObject("DroppedWood");
-        droppedWood.transform.position = (Vector2)transform.position + Random.insideUnitCircle * 0.5f;
+        GameObject droppedItem = new GameObject("DroppedItem");
+        droppedItem.transform.position = (Vector2)transform.position + Random.insideUnitCircle * 0.5f;
         
         // Add sprite renderer
-        SpriteRenderer sr = droppedWood.AddComponent<SpriteRenderer>();
-        sr.sprite = woodItem.ItemImage;
+        SpriteRenderer sr = droppedItem.AddComponent<SpriteRenderer>();
+        sr.sprite = itemToDrop.ItemImage;
         
         // Add collider
-        CircleCollider2D col = droppedWood.AddComponent<CircleCollider2D>();
+        CircleCollider2D col = droppedItem.AddComponent<CircleCollider2D>();
         col.isTrigger = true;
         col.radius = 0.5f;
         
         // Add Item script and initialize it
-        Item itemScript = droppedWood.AddComponent<Item>();
-        itemScript.Initialize(woodItem, 1);
+        Item itemScript = droppedItem.AddComponent<Item>();
+        itemScript.Initialize(itemToDrop, 1);
     }
 
     void Update()
@@ -49,10 +49,10 @@ public class Tree : Entity
         {
             TakeDamage(1);
         }
-        // if tree taken damage, drop wood
+        // if tree taken damage, drop item
             if (health < currentHealth)
             {
-                DropWood();
+                DropItem();
                 currentHealth = health;
 
                 // Play chopping sound when tree takes damage
@@ -62,7 +62,7 @@ public class Tree : Entity
                 }
             }
 
-            // Check if tree is destroyed, destroy and drop wood
+            // Check if tree is destroyed, destroy and drop item
             if (health <= 0)
             {
                 // Play tree fall sound when tree dies
