@@ -11,7 +11,7 @@ This game is a 2D Top-Down Survival game where you wander in the open land inhab
 - Player: Wander | Resource Gathering | Combat | Crafting | Survival Mechanics
 - Enemies: AI Targeting, Combat
 - Environment: Day/Night Cycle | Forest Landscape
-- UI: Health/Stamina/Hunger/Thirst Bars | Inventory System | Crafting Menu
+- UI: Health/Stamina/Hunger/Thirst Bars | Inventory System | Crafting Menu | Merchant Menu 
 - Audio: Background Music | Sound Effects
 
 # Controls
