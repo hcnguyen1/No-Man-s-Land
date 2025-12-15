@@ -18,5 +18,7 @@ MonoBehaviour:
   <Description>k__BackingField: Freshly found in the wild. Can be used in crafting.
   <ItemImage>k__BackingField: {fileID: 8878282661013386174, guid: 21b8cb85f2fca0c41a810a7ab4ba8415,
     type: 3}
+  <PickupSound>k__BackingField: {fileID: 8300000, guid: 1f4aaf6642aeb3b418138de1a67f2d37,
+    type: 3}
   <DefaultParametersList>k__BackingField: []
   <Price>k__BackingField: 5

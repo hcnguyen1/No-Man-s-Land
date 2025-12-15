@@ -214,13 +214,16 @@ MonoBehaviour:
   health: 10
   attackPower: 25
   movementSpeed: 3
-  attackCooldown: 5
+  attackCooldown: 3
   attackRange: 1.6
   getHitSFX: {fileID: 8300000, guid: b6ece9df535205649998747b9d30291d, type: 3}
   getHitVolume: 0.506
   deathSFX: {fileID: 8300000, guid: d84fbc7719ecec341b6644f86f940d39, type: 3}
   deathVolume: 1
+  spriteRenderer: {fileID: 0}
   attackSFX: {fileID: 8300000, guid: 8ea62091a8f53334b98e2213c3bd22d8, type: 3}
+  goldCoinPrefab: {fileID: 3103846407896113844, guid: f4c4cedf25185c045a0acf9238862c3e,
+    type: 3}
 --- !u!82 &7924019195130173373
 AudioSource:
   m_ObjectHideFlags: 0

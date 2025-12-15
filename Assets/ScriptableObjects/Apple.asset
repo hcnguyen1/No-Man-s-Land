@@ -18,6 +18,8 @@ MonoBehaviour:
   <Description>k__BackingField: An apple that fell from a tree
   <ItemImage>k__BackingField: {fileID: 1327143038, guid: 338eb9325b511bf4dbf0184fff5f5d9c,
     type: 3}
+  <PickupSound>k__BackingField: {fileID: 8300000, guid: 1f4aaf6642aeb3b418138de1a67f2d37,
+    type: 3}
   <DefaultParametersList>k__BackingField: []
   <Price>k__BackingField: 0
   modifiersData:

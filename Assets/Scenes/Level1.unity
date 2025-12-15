@@ -20466,8 +20466,8 @@ MonoBehaviour:
   nightColor: {r: 0.2901961, g: 0.3607843, b: 0.6666667, a: 1}
   dayIntensity: 1
   nightIntensity: 0.25
-  dayDuration: 10
-  nightDuration: 10
+  dayDuration: 25
+  nightDuration: 20
   dayCount: 1
   nightCount: 0
   mobSpawnDelay: 1
@@ -53001,80 +53001,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 654529594}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2069982785
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 380194751297348751, guid: f1673017b945e624b9783826311e58fc,
-        type: 3}
-      propertyPath: goldCoinPrefab
-      value: 
-      objectReference: {fileID: 3103846407896113844, guid: f4c4cedf25185c045a0acf9238862c3e,
-        type: 3}
-    - target: {fileID: 1192397437683262866, guid: f1673017b945e624b9783826311e58fc,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192397437683262866, guid: f1673017b945e624b9783826311e58fc,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192397437683262866, guid: f1673017b945e624b9783826311e58fc,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192397437683262866, guid: f1673017b945e624b9783826311e58fc,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192397437683262866, guid: f1673017b945e624b9783826311e58fc,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192397437683262866, guid: f1673017b945e624b9783826311e58fc,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192397437683262866, guid: f1673017b945e624b9783826311e58fc,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192397437683262866, guid: f1673017b945e624b9783826311e58fc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192397437683262866, guid: f1673017b945e624b9783826311e58fc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192397437683262866, guid: f1673017b945e624b9783826311e58fc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5804737237844173118, guid: f1673017b945e624b9783826311e58fc,
-        type: 3}
-      propertyPath: m_Name
-      value: Orc1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f1673017b945e624b9783826311e58fc, type: 3}
 --- !u!1001 &4495958802004427089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53155,7 +53081,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 412783146}
   - {fileID: 1933804793}
-  - {fileID: 2069982785}
   - {fileID: 1326611393}
   - {fileID: 4495958802004427089}
   - {fileID: 264827077}

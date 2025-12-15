@@ -18,5 +18,7 @@ MonoBehaviour:
   <Description>k__BackingField: A nice piece of meat from a cow.
   <ItemImage>k__BackingField: {fileID: -1377743931, guid: 338eb9325b511bf4dbf0184fff5f5d9c,
     type: 3}
+  <PickupSound>k__BackingField: {fileID: 8300000, guid: 1f4aaf6642aeb3b418138de1a67f2d37,
+    type: 3}
   <DefaultParametersList>k__BackingField: []
   <Price>k__BackingField: 0
