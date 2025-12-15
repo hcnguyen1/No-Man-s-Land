@@ -102,7 +102,7 @@ namespace Inventory // this creates its own kind of import settings that can onl
         }
         public void Update()
         {
-            if (Input.GetKeyDown(KeyCode.I))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (!inventoryUI.gameObject.activeSelf)
                 {

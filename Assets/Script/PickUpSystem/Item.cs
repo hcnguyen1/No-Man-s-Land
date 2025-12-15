@@ -15,6 +15,8 @@ public class Item : MonoBehaviour
     [SerializeField]
     private AudioSource audioSource;
     [SerializeField]
+    private AudioClip pickupSound; // Audio clip for pickup sound
+    [SerializeField]
     private float duration = 0.3f;
 
     private void Start()
@@ -40,6 +42,12 @@ public class Item : MonoBehaviour
         InventoryEntry = itemSO;
         Quantity = quantity;
         UpdateSprite();
+        
+        // Set pickup sound from ItemSO if not already set
+        if (pickupSound == null && itemSO != null && itemSO.PickupSound != null)
+        {
+            pickupSound = itemSO.PickupSound;
+        }
     }
 
     public void DestroyItem()
@@ -50,10 +58,23 @@ public class Item : MonoBehaviour
 
     private IEnumerator AnimateItemPickup() // once you pick up the item, the size will change and the item on the ground will be destroyed.
     {
-        if (audioSource != null)
+        // Get AudioSource if not assigned
+        if (audioSource == null)
         {
+            audioSource = GetComponent<AudioSource>();
+        }
+        
+        // Play pickup sound (works even without AudioSource on this object)
+        if (pickupSound != null)
+        {
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+        }
+        else if (audioSource != null && audioSource.clip != null)
+        {
+            // Fallback to AudioSource if it has a clip assigned
             audioSource.Play();
         }
+        
         Vector3 startScale = transform.localScale;
         Vector3 endScale = Vector3.zero;
         float currentTime = 0;

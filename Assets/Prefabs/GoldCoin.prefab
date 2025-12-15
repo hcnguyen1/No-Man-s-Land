@@ -134,3 +134,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currencyValue: 1
+  pickupSound: {fileID: 8300000, guid: 1f4aaf6642aeb3b418138de1a67f2d37, type: 3}

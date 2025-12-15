@@ -5,6 +5,9 @@ public class CurrencyItem : MonoBehaviour
 {
     [SerializeField]
     private int currencyValue = 100; // How much currency this item gives
+    
+    [SerializeField]
+    private AudioClip pickupSound; // Sound to play when picked up
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,6 +27,12 @@ public class CurrencyItem : MonoBehaviour
 
     private IEnumerator AnimateCurrencyPickup()
     {
+        // Play pickup sound
+        if (pickupSound != null)
+        {
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+        }
+        
         Destroy(gameObject);
         yield return null;
     }

@@ -24,6 +24,9 @@ namespace Inventory.Model
         public Sprite ItemImage { get; set; }
 
         [field: SerializeField]
+        public AudioClip PickupSound { get; set; } // Sound to play when item is picked up
+
+        [field: SerializeField]
         public List<ItemParameter> DefaultParametersList { get; private set; }
 
         [field: SerializeField]
