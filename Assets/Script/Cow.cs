@@ -68,6 +68,10 @@ public class Cow : Animal
             col.radius = 0.5f;
             Debug.Log("Collider enabled: " + col.enabled);
             
+            // Add AudioSource for pickup sound
+            AudioSource itemAudioSource = droppedMeat.AddComponent<AudioSource>();
+            itemAudioSource.playOnAwake = false;
+            
             // Add Item script and initialize it
             Item itemScript = droppedMeat.AddComponent<Item>();
             itemScript.Initialize(rawMeat, 1);

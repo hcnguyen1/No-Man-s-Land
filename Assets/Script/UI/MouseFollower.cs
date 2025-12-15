@@ -14,7 +14,10 @@ public class MouseFollower : MonoBehaviour
 
     public void Awake()
     {
-        canvas = transform.root.GetComponent<Canvas>();
+        if (canvas == null)
+        {
+            canvas = transform.root.GetComponent<Canvas>();
+        }
         item = GetComponentInChildren<InventoryItem>();
     }
 
@@ -25,6 +28,8 @@ public class MouseFollower : MonoBehaviour
 
     void Update() // this function basically allows us to take the mouse position, and transform the screen rect thats usually in the inspector, as well as move the camera
     {
+        if (canvas == null) return; // Safety check
+        
         Vector2 position;
 
         RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)canvas.transform, Input.mousePosition, canvas.worldCamera, out position);

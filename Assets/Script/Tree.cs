@@ -48,6 +48,7 @@ public class Tree : Entity
         // Create item GameObject manually like Cow does
         GameObject droppedItem = new GameObject("DroppedItem");
         droppedItem.transform.position = (Vector2)transform.position + Random.insideUnitCircle * 0.5f;
+        droppedItem.transform.localScale = Vector3.one * 0.5f; 
         
         // Add sprite renderer
         SpriteRenderer sr = droppedItem.AddComponent<SpriteRenderer>();
@@ -58,6 +59,10 @@ public class Tree : Entity
         CircleCollider2D col = droppedItem.AddComponent<CircleCollider2D>();
         col.isTrigger = true;
         col.radius = 0.5f;
+        
+        // Add AudioSource for pickup sound
+        AudioSource itemAudioSource = droppedItem.AddComponent<AudioSource>();
+        itemAudioSource.playOnAwake = false;
         
         // Add Item script and initialize it
         Item itemScript = droppedItem.AddComponent<Item>();
