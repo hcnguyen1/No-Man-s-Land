@@ -35,7 +35,9 @@ public class CraftingBench : MonoBehaviour
     {
         inventoryController = FindObjectOfType<InventoryController>();
         craftingUIScript = FindObjectOfType<CraftingUI>();
-        
+
+        FindCraftingUIObject();
+
         // If not found globally, try to find it on the craftingUI GameObject
         if (craftingUIScript == null && craftingUI != null)
         {
@@ -46,6 +48,19 @@ public class CraftingBench : MonoBehaviour
         if (interactPrompt != null)
         {
             interactPrompt.SetActive(false);
+        }
+    }
+
+    private void FindCraftingUIObject()
+    {
+        if (craftingUIScript == null)
+        {
+            craftingUIScript = FindObjectOfType<CraftingUI>(true);
+
+            if (craftingUIScript != null)
+            {
+                craftingUI = craftingUIScript.gameObject;
+            }
         }
     }
 
