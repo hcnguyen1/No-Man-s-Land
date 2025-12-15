@@ -55,11 +55,11 @@ public class CraftingBench : MonoBehaviour
     {
         if (craftingUIScript == null)
         {
-            craftingUIScript = FindObjectOfType<CraftingUI>(true);
+            craftingUIScript = FindObjectOfType<CraftingUI>(true); // Find the CraftingUI object that may be inactive
 
             if (craftingUIScript != null)
             {
-                craftingUI = craftingUIScript.gameObject;
+                craftingUI = craftingUIScript.gameObject; // Set CraftingUI GameObject to the found script's GameObject
             }
         }
     }
