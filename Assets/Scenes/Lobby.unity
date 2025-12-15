@@ -22901,8 +22901,8 @@ MonoBehaviour:
   hunger: 100
   maxThirst: 100
   thirst: 100
-  hungerDecayRate: 3
-  thirstDecayRate: 2.5
+  hungerDecayRate: 1
+  thirstDecayRate: 0.75
   noHungerDamage: 1
   noHungerDamageInterval: 1
   noThirstStatReduction: 0.5
