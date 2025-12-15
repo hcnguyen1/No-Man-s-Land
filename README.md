@@ -16,9 +16,8 @@ This game is a 2D Top-Down Survival game where you wander in the open land inhab
 
 # Controls
 - Movement: W, A, S, D
-- Interact: F
-- Inventory: I
-- Crafting Menu: C
+- Interact: F (for campfire, river, shop, and crafting) 
+- Inventory: E
 - Attack: Left Mouse Button
 - Pause Menu: Escape
 - Dodge: Spacebar
