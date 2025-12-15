@@ -20484,17 +20484,17 @@ MonoBehaviour:
   - {fileID: 5804737237844173118, guid: f1673017b945e624b9783826311e58fc, type: 3}
   - {fileID: 5804737237844173118, guid: f1673017b945e624b9783826311e58fc, type: 3}
   nightOneEnemiesPerSpawn: 1
-  nightOneSpawnAmount: 5
-  nightTwoEnemiesPerSpawn: 1
-  nightTwoSpawnAmount: 5
-  nightThreeEnemiesPerSpawn: 1
-  nightThreeSpawnAmount: 5
-  nightFourEnemiesPerSpawn: 1
-  nightFourSpawnAmount: 5
-  nightFiveEnemiesPerSpawn: 1
+  nightOneSpawnAmount: 3
+  nightTwoEnemiesPerSpawn: 2
+  nightTwoSpawnAmount: 3
+  nightThreeEnemiesPerSpawn: 3
+  nightThreeSpawnAmount: 3
+  nightFourEnemiesPerSpawn: 4
+  nightFourSpawnAmount: 4
+  nightFiveEnemiesPerSpawn: 5
   nightFiveSpawnAmount: 5
-  nightSixEnemiesPerSpawn: 1
-  nightSixSpawnAmount: 5
+  nightSixEnemiesPerSpawn: 6
+  nightSixSpawnAmount: 10
 --- !u!114 &854285008
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22889,7 +22889,7 @@ MonoBehaviour:
   attackCooldown: 0
   attackRange: 0
   getHitSFX: {fileID: 8300000, guid: a55282afa84edf844a4631b615057e10, type: 3}
-  getHitVolume: 1
+  getHitVolume: 0.331
   deathSFX: {fileID: 8300000, guid: f5d915c725aa4fa458953e71000d07f6, type: 3}
   deathVolume: 1
   spriteRenderer: {fileID: 0}
@@ -22901,9 +22901,10 @@ MonoBehaviour:
   hunger: 100
   maxThirst: 100
   thirst: 100
-  hungerDecayRate: 5
-  thirstDecayRate: 4
+  hungerDecayRate: 3
+  thirstDecayRate: 2.5
   noHungerDamage: 1
+  noHungerDamageInterval: 1
   noThirstStatReduction: 0.5
   _currency: 50
   canRoll: 1

@@ -339,7 +339,7 @@ public class DayNightManager : MonoBehaviour
         if (nightCount == 6)
         {
             // Kill the player by making the game 100x harder
-            // StartCoroutine(SpawnEnemiesWithDelay(nightOneEnemyPrefabs, mobSpawnDelay, nightSixEnemiesPerSpawn, nightSixSpawnAmount));
+            StartCoroutine(SpawnEnemiesWithDelay(nightOneEnemyPrefabs, mobSpawnDelay, nightSixEnemiesPerSpawn, nightSixSpawnAmount));
         }
     }
 }
