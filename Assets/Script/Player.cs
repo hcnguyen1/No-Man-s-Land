@@ -16,6 +16,8 @@ public class Player : Entity
     [SerializeField] private AudioClip attackSFX;
     [SerializeField] [Range(0f, 1f)] private float attackVolume = 0.5f;
 
+
+    [Header("Hunger and Thirst Stats")]
     public float maxHunger;
     public float hunger;
     public float maxThirst;
@@ -25,8 +27,15 @@ public class Player : Entity
     public float hungerDecayRate;
     public float thirstDecayRate;
 
+    private bool isTakingNoHungerDamage = false;
     [SerializeField] int noHungerDamage = 1;
+    [SerializeField] int noHungerDamageInterval = 1; // Seconds
+
+    private bool isTakingNoThirstPenalty = false;
     [SerializeField] float noThirstStatReduction = 0.5f;
+
+
+
     private float baseMoveSpeed;
     private int baseAttackPower;
 
@@ -184,7 +193,10 @@ public class Player : Entity
         hunger = Mathf.Clamp(hunger, 0, maxHunger);
         thirst = Mathf.Clamp(thirst, 0, maxThirst);
 
-        NoHunger();
+        if(hunger <= 0 && !isTakingNoHungerDamage)
+        {
+            StartCoroutine(NoHungerDamageOverTime());
+        }
         NoThirst();
     }
 
@@ -272,29 +284,30 @@ public class Player : Entity
         }
     }
 
-    private void NoHunger()
+    private IEnumerator NoHungerDamageOverTime()
     {
-        if (hunger <= 0)
+        isTakingNoHungerDamage = true;
+        while (hunger <= 0)
         {
-            TakeDamage(noHungerDamage); // Take damage per call when hunger is 0
+            TakeDamage(noHungerDamage);
+            yield return new WaitForSeconds(noHungerDamageInterval);
         }
+        isTakingNoHungerDamage = false;
     }
 
     private void NoThirst()
     {
-        if (thirst <= 0)
+        if (thirst <= 0 && !isTakingNoThirstPenalty)
         {
-            // Reduce movement speed by noThirstStatReduction factor
-            if(thirst <= 0)
-            {
-                moveSpeed *= noThirstStatReduction;
-                attackPower = Mathf.Max(1, Mathf.FloorToInt(attackPower * noThirstStatReduction)); // Ensure attack power doesn't drop below 1
-            } 
-            else
-            {
-                moveSpeed = baseMoveSpeed; // Reset to normal speed when thirst is above 0
-                attackPower = baseAttackPower; // Reset to normal attack power when thirst is above 0
-            }
+            isTakingNoThirstPenalty = true;
+            moveSpeed = baseMoveSpeed - (baseMoveSpeed * noThirstStatReduction); // 5 reduced by (5 * 0.5) = 2.5
+            attackPower = baseAttackPower - (int)(baseAttackPower * noThirstStatReduction);
+        }
+        else if (thirst > 0 && isTakingNoThirstPenalty)
+        {
+            isTakingNoThirstPenalty = false;
+            moveSpeed = baseMoveSpeed;
+            attackPower = baseAttackPower;
         }
     }
 
