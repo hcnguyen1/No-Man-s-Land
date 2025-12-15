@@ -160,6 +160,7 @@ public class Orc1 : Entity
         // Spawn gold coin on death
         if (goldCoinPrefab != null)
         {
+            Debug.Log($"[Orc] Dropping gold coin at position {transform.position}");
             Instantiate(goldCoinPrefab, transform.position, Quaternion.identity);
         }
 

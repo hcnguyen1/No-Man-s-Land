@@ -53,6 +53,7 @@ public class Cow : Animal
         // Spawn meat item in world on death
         if (rawMeat != null)
         {
+            Debug.Log($"[Cow] Dropping item: {rawMeat.Name} at position {transform.position}");
             GameObject droppedMeat = new GameObject("DroppedMeat");
             droppedMeat.transform.position = transform.position;
             

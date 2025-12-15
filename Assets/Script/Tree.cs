@@ -18,11 +18,32 @@ public class Tree : Entity
         currentHealth = health;
     }
 
+    protected override void OnZeroHealth()
+    {
+        Debug.Log("[Tree] OnZeroHealth called - Tree is dying");
+        // Drop items before dying
+        DropItem();
+        
+        // Play tree fall sound at position (independent of GameObject)
+        if (treeFallSFX != null)
+        {
+            AudioSource.PlayClipAtPoint(treeFallSFX, transform.position);
+        }
+        
+        // Now call Die to destroy the tree
+        Die();
+    }
+
     // Drops item at a random position around the tree
     public void DropItem()
     {
         if (itemToDrop == null)
+        {
+            Debug.LogWarning("[Tree] DropItem called but itemToDrop is NULL! Check Inspector.");
             return;
+        }
+
+        Debug.Log($"[Tree] Dropping item: {itemToDrop.Name} at position {transform.position}");
 
         // Create item GameObject manually like Cow does
         GameObject droppedItem = new GameObject("DroppedItem");
@@ -50,28 +71,16 @@ public class Tree : Entity
         {
             TakeDamage(1);
         }
-        // if tree taken damage, drop item
-            if (health < currentHealth)
-            {
-                DropItem();
-                currentHealth = health;
+        // Play chopping sound when tree takes damage (but don't drop item yet)
+        if (health < currentHealth)
+        {
+            currentHealth = health;
 
-                // Play chopping sound when tree takes damage
-                if (audioSource != null && choppingSFX != null)
-                {
-                    audioSource.PlayOneShot(choppingSFX);
-                }
-            }
-
-            // Check if tree is destroyed, destroy and drop item
-            if (health <= 0)
+            // Play chopping sound when tree takes damage
+            if (audioSource != null && choppingSFX != null)
             {
-                // Play tree fall sound when tree dies
-                if (audioSource != null && treeFallSFX != null)
-                {
-                    audioSource.PlayOneShot(treeFallSFX);
-                }
-                Die();
+                audioSource.PlayOneShot(choppingSFX);
             }
+        }
     }
 }
