@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
+// generally not used in this project but the idea is there for when we want to heal over time rather than all at once.
+// The feature can be used if we want to create a potion that needs this specifically. 
 public class HealOverTime : MonoBehaviour
 {
     private Coroutine healingCoroutine;

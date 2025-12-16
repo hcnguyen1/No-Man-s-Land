@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+
+// This class is the consumable item SO where it takes the ItemSOs classes and also enforces whether the item can be consumed upon right click.
 namespace Inventory.Model
 {
     [CreateAssetMenu]
@@ -18,7 +20,7 @@ namespace Inventory.Model
 
 
 
-        
+        // performs the action of cycling through the stats that can affect the character. 
         public bool PerformAction(GameObject character, List<ItemParameter> itemState = null)
         {
             // Check if the item would have any effect before consuming it
@@ -69,7 +71,7 @@ namespace Inventory.Model
             {
                 return false;
             }
-            
+            // for EVERY stat that can affect the player, we want to cycle and make sure it all applies. 
             foreach (ModifierData data in modifiersData)
             {
                 data.statModifier.AffectCharacter(character, data.value);
@@ -89,7 +91,7 @@ namespace Inventory.Model
     }
 
     [Serializable]
-    public class ModifierData
+    public class ModifierData // this is the data that can be modified by the class by calling the statmodifierSO.
     {
         public CharacterStatModifierSO statModifier;
         public float value;

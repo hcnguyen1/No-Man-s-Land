@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Inventory.Model;
 
+// Referenced from a youtube video, this class basically allows us to equip, set, and unequip items as well as apply those bonuses
+// from the EquippableItemSO. The classes functions are pretty simple, either to apply or remove the stats.
 public class AgentWeapon : MonoBehaviour
 {
     [SerializeField]

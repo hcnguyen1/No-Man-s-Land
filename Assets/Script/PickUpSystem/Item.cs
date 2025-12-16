@@ -4,6 +4,9 @@ using UnityEngine;
 using Inventory.Model;
 using System;
 
+// This class is the Item class which is very important to the structure of the inventory system. 
+// the items sprite and other details need to be updated through this class in order to reach 
+// the UI. It is also in charge of manipulating the item's size via local transform as well as the sound queue.
 public class Item : MonoBehaviour
 {
     [field: SerializeField]

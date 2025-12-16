@@ -5,6 +5,9 @@ using Inventory.Model;
 
 namespace Inventory.UI
 {
+    // while the shopItem UI manipulates the visuals and purchases, this class works on the UI itself like whether the text appears 
+    // The creation of the shop is called in InitializeShop and it pulls the array from the inspector in unityhub. 
+    // whether the user has enough currency or not determines if the items affordability marker shows up and whether the item is dimmed or brightened. 
     public class ShopUI : MonoBehaviour
     {
         [SerializeField]

@@ -6,6 +6,10 @@ using TMPro;
 
 namespace Inventory.UI
 {
+
+    // Each inventory item needs to make sure their image, title, and description are updated and not NULL hence SetDescription
+    // This class adjusts those features and uses reset in case the item is no longer there, so that there would be no afterimage or remainders.
+    // this is ResetDescription. 
     public class InventoryDescription : MonoBehaviour
     {
 

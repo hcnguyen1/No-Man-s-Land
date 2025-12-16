@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// The class inherits from CharacterStatModifierSO and allows the player to have their THIRST changed based on whatever items they consume or equip. 
 [CreateAssetMenu]
 public class CharacterStatThirstModifierSO : CharacterStatModifierSO
 {

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerHitbox : MonoBehaviour
 {
+    // simple class that lets us add colliders to hitbox gameobject.
     private Player player;
 
     // This method is called when the script instance is being loaded

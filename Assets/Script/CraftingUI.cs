@@ -6,6 +6,9 @@ using TMPro;
 using Inventory.Model;
 using Inventory;
 
+
+// This class affects the UI of crafting so it is able to display recipes if set in the inspector, 
+// allow the crafting bench to be connected to the object and attempt crafting if all is correct. 
 public class CraftingUI : MonoBehaviour
 {
     [SerializeField]

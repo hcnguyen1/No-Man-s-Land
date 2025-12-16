@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Inventory.Model;
 
+// This class allows herbs to randomly spawn in the forest so that players can pick up these resources
+// we can change the max amount that can be spawned, its interval, as well as the radius of where it can spawn.
 public class HerbSpawner : MonoBehaviour
 {
     [SerializeField] private ItemSO herbItemSO; // The herb ItemSO to spawn

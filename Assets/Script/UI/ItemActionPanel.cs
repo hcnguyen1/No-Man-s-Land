@@ -6,6 +6,7 @@ using System;
 
 namespace Inventory.UI
 {
+    // When interacting with the item via right click, we need to make sure the button appears and can be removed.
     public class ItemActionPanel : MonoBehaviour
     {
         [SerializeField]

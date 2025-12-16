@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Inventory.Model;
 
+// The pick up system class utilizes the collider component to pick up the item off the ground. 
 public class PickUpSystem : MonoBehaviour
 {
     [SerializeField]

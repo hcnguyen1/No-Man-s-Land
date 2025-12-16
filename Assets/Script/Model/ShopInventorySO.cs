@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Inventory.Model
 {
+
+    // This gives the merchant shop an interactive feature that connects their shop to the players inventory.
+    // We can get the shop items from the field in the form of an array as well as the price of each item. 
     [CreateAssetMenu(fileName = "ShopInventory", menuName = "Shop/Shop Inventory")]
     public class ShopInventorySO : ScriptableObject
     {

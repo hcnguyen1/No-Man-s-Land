@@ -2,6 +2,10 @@ using UnityEngine;
 using Inventory;
 using Inventory.Model;
 
+
+// This class allows one to interact with a Campfire UI once they are within proximity and 
+// if the meat is inside the player's inventory via inventoryController, we then can press a key, F being in this case, to cook the rawmeat.
+// The rawmeat item is swapped with the cooked meat item and the audio will play a sound queue to cook. 
 [RequireComponent(typeof(Collider2D))]
 public class Campfire : MonoBehaviour
 {

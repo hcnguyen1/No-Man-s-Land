@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Inventory.UI;
 
+// Mousefollower creates a visual afterimage of the itemSlot image, and quantity so the player can visually feel the item being moved.
+// then it will update based on the new position of the item, or whether it moved or not. 
 public class MouseFollower : MonoBehaviour
 {
     [SerializeField]

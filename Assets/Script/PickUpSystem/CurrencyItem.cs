@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
+// For this class, we want the mobs to drop coins and it was better off becoming a prefab that can affect the 
+// characters currency value. It becomes an serializefield in player, while the 100 in this class doesn't really matter,
+// it is in charge of the destruction of the prefab and its audio source. 
 public class CurrencyItem : MonoBehaviour
 {
     [SerializeField]

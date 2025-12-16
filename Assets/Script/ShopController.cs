@@ -3,6 +3,10 @@ using Inventory.UI;
 using Inventory.Model;
 using Inventory;
 
+
+// The shop controller class manipulates the shop and inventory interactions
+// whether the player is able to buy
+// if the shop can be opened, so if the player is within range
 public class ShopController : MonoBehaviour
 {
     [SerializeField]

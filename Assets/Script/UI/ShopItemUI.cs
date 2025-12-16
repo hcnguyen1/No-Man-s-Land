@@ -6,6 +6,10 @@ using Inventory.Model;
 
 namespace Inventory.UI
 {
+    // The Shop Item UI creates the visuals so that player can see the items price, as well as their image, name, and also a visual marker if they cannot afford that item.
+    // we want the class to be able to click on the button similar to crafting button and to move it to the first slot of the inventory 
+    // using the same logic as if it was dropped from the ground.
+    // it also needs to import that items data using inventory logic. 
     public class ShopItemUI : MonoBehaviour
     {
         [SerializeField]

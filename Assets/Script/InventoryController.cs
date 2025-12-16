@@ -5,9 +5,13 @@ using Inventory.UI;
 using Inventory.Model;
 using System.Text;
 
-namespace Inventory // this creates its own kind of import settings that can only make it be used by those 
-{// that call this namepace via ->  using Inventory;
-
+namespace Inventory 
+{
+    // this creates its own kind of import settings that can only make it be used by those 
+    // that call this namepace via ->  using Inventory;
+    // The inventoryController script allows us to connect both hotbar and inventory so both can work in tandem.
+    // various types of item manipulation involving swapping, dropping, dragging, and hotbar values such as number keys are
+    // used from here. 
     public enum ItemSource
     {
         Inventory,

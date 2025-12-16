@@ -2,6 +2,12 @@ using UnityEngine;
 using Inventory;
 using Inventory.Model;
 
+
+// The class functions like other gameobjects that the player can interact with.
+// It allows the player to convert empty bottle into a water bottle if they are within the proximity of the river.
+// it allow creates a prompt so that the player knows they are within range as well as tell them the interaction key.
+// The audio source will play a clip when the action goes through. 
+// lastly, it connects to the inventoryController so that the item will be swapped inside of the inventory.
 [RequireComponent(typeof(Collider2D))]
 public class River : MonoBehaviour
 {

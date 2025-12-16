@@ -4,6 +4,11 @@ using UnityEngine;
 using Inventory.Model;
 using Inventory;
 
+// The crafting bench game object comes with logic that lets the player craft items.
+// It checks for players proximity 
+// It gives the player an interactive prompt when they are within the colliders range.
+// It pulls from an array of recipes that can be inserted to the CraftingRecipe.cs and adjusted within the inspector of that class. 
+
 [RequireComponent(typeof(Collider2D))]
 public class CraftingBench : MonoBehaviour
 {

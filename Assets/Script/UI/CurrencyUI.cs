@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 
+// this class allows the currency logic to function with the UI. 
 public class CurrencyUI : MonoBehaviour
 {
     [SerializeField]

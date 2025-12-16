@@ -6,6 +6,10 @@ using Inventory.Model;
 
 namespace Inventory.UI
 {
+    // This class has many functions as well as initialize the Hotbar UI. 
+    // Hotbar UI connects the hotbar to the inventory as well as connect their mousefollower and itemAction functions.
+    // it works by understanding when the item is being picked up, dragged, dropped onto the inventory, being swapped with another item
+    // the swapping logic also works if its not being swapped with an item, but swapping its array slot aka inventory slot. 
     public class HotbarUI : MonoBehaviour
     {
         [SerializeField]

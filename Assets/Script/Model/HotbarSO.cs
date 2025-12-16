@@ -6,6 +6,8 @@ using System.Linq;
 
 namespace Inventory.Model
 {
+
+    // this class modifies and allows the hotbar to utilize inventory features as well as interact with inventorySO.
     [CreateAssetMenu]
     public class HotbarSO : ScriptableObject
     {

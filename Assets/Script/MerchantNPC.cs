@@ -3,11 +3,13 @@ using TMPro;
 
 public class MerchantNPC : MonoBehaviour
 {
+    // This class checks if the player is near the proximity of the merchant and therefore allow the merchant to 
+    // be interactable. If the Player is indeed nearby, we can trade by pressing F.
     [SerializeField]
     private ShopController shopController;
 
     [SerializeField]
-    private GameObject interactPrompt; // UI prompt "Press K to Trade"
+    private GameObject interactPrompt; // UI prompt "Press F to Trade"
 
     private bool playerNearShop = false;
     private bool isShopOpen = false;

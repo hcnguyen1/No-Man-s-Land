@@ -4,6 +4,15 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
+
+// The player class is in charge of all the following features:
+// stat changes
+// movement and attack states
+// thirst and hunger decays
+// character rolling and invincibility frames
+// the players hitboxes
+// whether or not the player persists in each scene
+// sound involving getting hit or attacking or dying.
 public class Player : Entity
 // Assign your health potion ItemSO in the Inspector
 {

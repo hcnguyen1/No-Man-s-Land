@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 
+// This is the inventorySO where it takes the power of SO and can utilize and modify items within its itemSlots. 
 // the inventory itself needs to know the current state of an item as well as other scriptable object related methods.
 // have another object class called InventoryItem so we renamed it to InventoryEntry to avoid confusion
 

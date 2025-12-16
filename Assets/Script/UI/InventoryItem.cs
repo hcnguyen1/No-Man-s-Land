@@ -8,6 +8,8 @@ using UnityEngine.EventSystems;
 
 namespace Inventory.UI
 {
+    // This class overall manipulates the mouse pointer to handle the drag and drops. 
+    // It is very comprehensive as it needs to make sure each action is being understood and processed to the classes such as InventoryPage and InventorySO.
     public class InventoryItem : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IEndDragHandler, IDropHandler, IDragHandler
     {
 
@@ -24,11 +26,10 @@ namespace Inventory.UI
         private Image borderImage; // the border to select 
 
         public event Action<InventoryItem> OnItemClicked, OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag, OnRightMouseBtnClick; // interactions with items using mouse
-                                                                                                                                 // OnItemClick interacts with item, onItemDroppedOn will allow is to set the destination, OnItemBeginDrag allows start of movement of item, 
-                                                                                                                                 // end is the ending of that, right mouse gives us 2 options.
+        // OnItemClick interacts with item, onItemDroppedOn will allow is to set the destination, OnItemBeginDrag allows start of movement of item, 
+        // end is the ending of that, right mouse gives us 2 options.
 
         private bool isEmpty = true; // if the slot is empty, then cannot use Actions above. 
-
 
         public void Awake()
         {
@@ -105,7 +106,7 @@ namespace Inventory.UI
 
         public void OnDrag(PointerEventData eventData)
         {
-
+            // logic got moved to mouseFollower
         }
     }
 

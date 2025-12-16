@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-// main .cs script file that lets us equip items, but they all will implement other .cs files related to the weapon/equipment being equipped. 
+// This class is the equippable item SO where it takes the ItemSOs classes and also enforces whether the item can be equipped upon right click.
 
 namespace Inventory.Model
 {
     [CreateAssetMenu]
-    public class EquippableItemSO : ItemSO, IDestroyableItem, IItemAction
+    public class EquippableItemSO : ItemSO, IDestroyableItem, IItemAction // Idestroyable allows the item to be destroyed as well as allow Item to perform inventory actions. 
     {
         [SerializeField]
         private List<ModifierData> modifiersData = new List<ModifierData>();

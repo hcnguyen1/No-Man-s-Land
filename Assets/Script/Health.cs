@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Health.cs has its own value to manipulate the players health and whether they take damage,
+// but it can also be placed in player.cs for simplicity. 
+// we can get the players current health, max health, or call Die() if player receives fatal damage. 
 public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;

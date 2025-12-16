@@ -5,6 +5,9 @@ using System;
 
 namespace Inventory.UI
 {
+    // The inventoryPage itself connects with the InventoryDescription where we want to control the entire UI of the inventory on the left panel.
+    // Just like with hotbarUI, we need to be able to control the interactions between anything that goes in and out of the inventory itself.
+    // this can range from shops, crafting, hotbar, and even outside of those classes such as dropping and picking up. 
     public class InventoryPage : MonoBehaviour
     {
 
