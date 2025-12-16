@@ -48,6 +48,9 @@ namespace Inventory
         [SerializeField]
         private Transform playerTransform; // Reference to player for drop position
 
+        private ShopController shopController; // Reference to shop controller
+        private CraftingBench craftingBench; // Reference to crafting bench
+
         public List<InventoryEntry> initialItems = new List<InventoryEntry>(); // for the start inventoryData
 
         // Cross-inventory transfer tracking
@@ -119,6 +122,26 @@ namespace Inventory
                 else
                 {
                     inventoryUI.Hide();
+                    
+                    // Close shop if it's open when inventory closes
+                    if (shopController == null)
+                    {
+                        shopController = FindObjectOfType<ShopController>();
+                    }
+                    if (shopController != null && shopController.IsShopOpen())
+                    {
+                        shopController.CloseShop();
+                    }
+                    
+                    // Close crafting bench if it's open when inventory closes
+                    if (craftingBench == null)
+                    {
+                        craftingBench = FindObjectOfType<CraftingBench>();
+                    }
+                    if (craftingBench != null && craftingBench.IsCraftingOpen())
+                    {
+                        craftingBench.CloseCrafting();
+                    }
                 }
             }
 

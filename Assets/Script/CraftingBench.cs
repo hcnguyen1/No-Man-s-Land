@@ -151,7 +151,7 @@ public class CraftingBench : MonoBehaviour
         }
     }
 
-    private void CloseCrafting()
+    public void CloseCrafting()
     {
         if (craftingUI != null)
         {
@@ -180,6 +180,11 @@ public class CraftingBench : MonoBehaviour
     public bool IsPlayerNearby()
     {
         return playerNearBench;
+    }
+
+    public bool IsCraftingOpen()
+    {
+        return isCraftingOpen;
     }
 
     public List<CraftingRecipe> GetAvailableRecipes()
