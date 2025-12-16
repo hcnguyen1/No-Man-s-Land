@@ -1,10 +1,11 @@
 using UnityEngine;
 using TMPro;
 
-public class MerchantNPC : MonoBehaviour
-{
+
     // This class checks if the player is near the proximity of the merchant and therefore allow the merchant to 
     // be interactable. If the Player is indeed nearby, we can trade by pressing F.
+public class MerchantNPC : MonoBehaviour
+{
     [SerializeField]
     private ShopController shopController;
 
