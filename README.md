@@ -22,10 +22,6 @@ This game is a 2D Top-Down Survival game where you wander in the open land inhab
 - Pause Menu: Escape
 - Dodge: Spacebar
 
-# Challenges & Fixes
-- Mob Attack Combat: Mobs deals damage twice as uninteded, fixed by adding a cooldown timer to mob attack script.
-- Inventory System: Complex UI interactions causing bugs, fixed by organizing UI elements and simplifying interaction logic.
-
 # Contributors
 - Chi Hao Nugyen
 - Toni Liang
