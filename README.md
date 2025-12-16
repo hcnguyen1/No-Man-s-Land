@@ -7,6 +7,8 @@ This game is a 2D Top-Down Survival game where you wander in the open land inhab
 2. To open the project, open ur CLI and choose where in the directory you want this project to be at, type "git clone [The URL(Make sure it is HTTPS) at the green button]"
 3. On your Unity Hub, click [Open] and click on the folder you recently added "No Man's Land"
 
+Play the game in WebGL: https://play.unity.com/en/games/ecfb7c6c-6a80-4acd-bfa3-19121aa36f3a/no-mans-land
+
 ## Features
 - Player: Wander | Resource Gathering | Combat | Crafting | Survival Mechanics
 - Enemies: AI Targeting, Combat
