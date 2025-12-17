@@ -10,6 +10,7 @@ TagManager:
   - CraftingBench
   - Tree
   - Herb
+  - Stone
   layers:
   - Default
   - TransparentFX

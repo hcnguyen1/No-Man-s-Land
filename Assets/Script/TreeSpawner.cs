@@ -11,7 +11,7 @@ public class TreeSpawner : MonoBehaviour
     private void Start()
     {
         SpawnInitialTrees();
-        StartCoroutine(SpawnTreeWithInterval());
+        StartCoroutine(SpawnTreePerSecond());
     }
 
     private void SpawnInitialTrees()
@@ -59,7 +59,7 @@ public class TreeSpawner : MonoBehaviour
 
 
     }
-    IEnumerator SpawnTreeWithInterval()
+    IEnumerator SpawnTreePerSecond()
     {
         while (true)
         {

@@ -7,7 +7,7 @@ public class Tree : Entity
 {
     // Item to drop when destroyed
     [SerializeField] ItemSO itemToDrop;
-    float currentHealth; // Check when tree has taken damage to drop item
+    private float currentHealth; // Check when tree has taken damage to drop item
 
     // Sound effects
     [SerializeField] private AudioClip choppingSFX;
