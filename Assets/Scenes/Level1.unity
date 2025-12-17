@@ -1184,8 +1184,8 @@ GameObject:
   m_Component:
   - component: {fileID: 562893764}
   - component: {fileID: 562893767}
-  - component: {fileID: 562893766}
   - component: {fileID: 562893765}
+  - component: {fileID: 562893768}
   m_Layer: 0
   m_Name: Stone1
   m_TagString: Stone
@@ -1234,27 +1234,6 @@ MonoBehaviour:
   item: {fileID: 0}
   miningSFX: {fileID: 0}
   stoneFallSFX: {fileID: 0}
---- !u!65 &562893766
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562893763}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.58061934, z: 0.2}
-  m_Center: {x: 0, y: -0.20969033, z: 0}
 --- !u!212 &562893767
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1307,6 +1286,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &562893768
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562893763}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.14090586}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7181883}
+  m_EdgeRadius: 0
 --- !u!1 &654529593
 GameObject:
   m_ObjectHideFlags: 0
@@ -20191,7 +20215,8 @@ GameObject:
   m_Component:
   - component: {fileID: 750270608}
   - component: {fileID: 750270610}
-  - component: {fileID: 750270609}
+  - component: {fileID: 750270611}
+  - component: {fileID: 750270612}
   m_Layer: 0
   m_Name: Stone4
   m_TagString: Stone
@@ -20214,27 +20239,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2065019953}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &750270609
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750270607}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.61874485, z: 0.2}
-  m_Center: {x: 0, y: -0.19062757, z: 0}
 --- !u!212 &750270610
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20287,6 +20291,77 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &750270611
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750270607}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.16439033}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.67121935}
+  m_EdgeRadius: 0
+--- !u!114 &750270612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750270607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed28fde38edb33e41b06537929f4ccfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  health: 0
+  attackPower: 0
+  movementSpeed: 0
+  attackCooldown: 0
+  attackRange: 0
+  getHitSFX: {fileID: 0}
+  getHitVolume: 1
+  deathSFX: {fileID: 0}
+  deathVolume: 1
+  spriteRenderer: {fileID: 0}
+  item: {fileID: 0}
+  miningSFX: {fileID: 0}
+  stoneFallSFX: {fileID: 0}
 --- !u!1001 &786544902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20681,7 +20756,6 @@ GameObject:
   m_Component:
   - component: {fileID: 854285009}
   - component: {fileID: 854285008}
-  - component: {fileID: 854285007}
   - component: {fileID: 854285010}
   m_Layer: 0
   m_Name: DayNightManager
@@ -20690,79 +20764,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &854285007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 854285006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72317077c10001d48b7479ceb36ab27f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  light2D: {fileID: 854285008}
-  dayColor:
-    r: 1
-    g: 0.9529412
-    b: 0.7607843
-    a: 1
-  nightColor:
-    r: 0.2901961
-    g: 0.3607843
-    b: 0.6666667
-    a: 1
-  dayIntensity: 1
-  nightIntensity: 0.25
-  dayDuration: 25
-  nightDuration: 20
-  isDay: 1
-  timer: 0
-  transitionDuration: 5
-  transitionTimer: 0
-  isTransitioning: 0
-  targetColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 0
-  targetIntensity: 0
-  initialColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 0
-  initialIntensity: 0
-  lastLoggedSecond: -1
-  merchantNPC: {fileID: 0}
-  dayCount: 1
-  nightCount: 0
-  mobSpawnDelay: 1
-  animalSpawnChance: 0.1
-  animalSpawnTimer: 0
-  animalSpawnInterval: 1
-  initialAnimalSpawnCount: 15
-  animalPrefabs:
-  - {fileID: 1806484770}
-  nightOneEnemyPrefabs:
-  - {fileID: 5804737237844173118, guid: f1673017b945e624b9783826311e58fc, type: 3}
-  - {fileID: 5804737237844173118, guid: f1673017b945e624b9783826311e58fc, type: 3}
-  - {fileID: 5804737237844173118, guid: f1673017b945e624b9783826311e58fc, type: 3}
-  - {fileID: 5804737237844173118, guid: f1673017b945e624b9783826311e58fc, type: 3}
-  - {fileID: 5804737237844173118, guid: f1673017b945e624b9783826311e58fc, type: 3}
-  nightOneEnemiesPerSpawn: 1
-  nightOneSpawnAmount: 3
-  nightTwoEnemiesPerSpawn: 2
-  nightTwoSpawnAmount: 3
-  nightThreeEnemiesPerSpawn: 3
-  nightThreeSpawnAmount: 3
-  nightFourEnemiesPerSpawn: 4
-  nightFourSpawnAmount: 4
-  nightFiveEnemiesPerSpawn: 5
-  nightFiveSpawnAmount: 5
-  nightSixEnemiesPerSpawn: 6
-  nightSixSpawnAmount: 10
 --- !u!114 &854285008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20840,7 +20841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e1daea89f7a544c865ac54a88815c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light2D: {fileID: 0}
+  light2D: {fileID: 854285008}
   dayColor: {r: 1, g: 0.9529412, b: 0.7607843, a: 1}
   nightColor: {r: 0.2901961, g: 0.3607843, b: 0.6666667, a: 1}
   dayIntensity: 1
@@ -47205,7 +47206,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1465709278}
   - component: {fileID: 1465709280}
-  - component: {fileID: 1465709279}
+  - component: {fileID: 1465709281}
+  - component: {fileID: 1465709282}
   m_Layer: 0
   m_Name: Stone3
   m_TagString: Stone
@@ -47228,27 +47230,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2065019953}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1465709279
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1465709277}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.61874485, z: 0.2}
-  m_Center: {x: 0, y: -0.19062757, z: 0}
 --- !u!212 &1465709280
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -47301,6 +47282,77 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1465709281
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465709277}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.14090586}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7181883}
+  m_EdgeRadius: 0
+--- !u!114 &1465709282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465709277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed28fde38edb33e41b06537929f4ccfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  health: 0
+  attackPower: 0
+  movementSpeed: 0
+  attackCooldown: 0
+  attackRange: 0
+  getHitSFX: {fileID: 0}
+  getHitVolume: 1
+  deathSFX: {fileID: 0}
+  deathVolume: 1
+  spriteRenderer: {fileID: 0}
+  item: {fileID: 0}
+  miningSFX: {fileID: 0}
+  stoneFallSFX: {fileID: 0}
 --- !u!4 &1471014992 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8052797636050857475, guid: 54155938228b72b429bfb8bc93b5196c,
@@ -53314,12 +53366,6 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!1 &1806484770 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1135402366753657670, guid: b818b9ac68e6b5546ae7d182e442f25c,
-    type: 3}
-  m_PrefabInstance: {fileID: 4495958802004427089}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1817818987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53534,7 +53580,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2003799339}
   - component: {fileID: 2003799341}
-  - component: {fileID: 2003799340}
+  - component: {fileID: 2003799342}
+  - component: {fileID: 2003799343}
   m_Layer: 0
   m_Name: Stone2
   m_TagString: Stone
@@ -53557,27 +53604,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2065019953}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2003799340
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2003799338}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.885623, y: 0.6378076, z: 0.2}
-  m_Center: {x: 0.05718851, y: -0.1810962, z: 0}
 --- !u!212 &2003799341
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53630,6 +53656,77 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2003799342
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003799338}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.12916374}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7416725}
+  m_EdgeRadius: 0
+--- !u!114 &2003799343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003799338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed28fde38edb33e41b06537929f4ccfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  health: 0
+  attackPower: 0
+  movementSpeed: 0
+  attackCooldown: 0
+  attackRange: 0
+  getHitSFX: {fileID: 0}
+  getHitVolume: 1
+  deathSFX: {fileID: 0}
+  deathVolume: 1
+  spriteRenderer: {fileID: 0}
+  item: {fileID: 0}
+  miningSFX: {fileID: 0}
+  stoneFallSFX: {fileID: 0}
 --- !u!1 &2065019952
 GameObject:
   m_ObjectHideFlags: 0

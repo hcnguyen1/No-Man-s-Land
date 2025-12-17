@@ -330,7 +330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2607949436108241828}
   - component: {fileID: 1404747643398572338}
-  - component: {fileID: 384778438167501913}
+  - component: {fileID: 4219108603321119317}
   m_Layer: 0
   m_Name: OrcAttackHitbox
   m_TagString: Untagged
@@ -398,7 +398,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.7858307, y: 1.2831513}
   m_EdgeRadius: 0
---- !u!114 &384778438167501913
+--- !u!114 &4219108603321119317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -407,6 +407,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8013588586526902773}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc658aaa406005d4ebd542b9e2250513, type: 3}
+  m_Script: {fileID: 11500000, guid: 87b2ad27ae13dea4fb06bbda21d7cbb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
