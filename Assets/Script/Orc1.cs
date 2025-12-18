@@ -50,7 +50,7 @@ public class Orc1 : Entity
     private void FixedUpdate()
     {
         if (playerTransform == null) return;
-        
+
         // Attack if in range
         float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
         if (distanceToPlayer <= attackRange && canAttack && !noHealth)
@@ -75,7 +75,7 @@ public class Orc1 : Entity
 
             animator.SetFloat("MoveX", dir.x);
             animator.SetFloat("MoveY", dir.y);
-            
+
             animator.SetBool("isWalking", !isAttacking);
         }
         else
@@ -90,7 +90,7 @@ public class Orc1 : Entity
     // Turn on isAttacking when animation starts, turn off when animation ends
     public void StartAttackWindow()
     {
-        if(isAttacking) return;
+        if (isAttacking) return;
         isAttacking = true;
         canAttack = false;
         animator.SetBool("isAttacking", true);
@@ -103,7 +103,7 @@ public class Orc1 : Entity
         isAttacking = false;
         animator.SetBool("isAttacking", false);
     }
-    
+
     private IEnumerator AttackCooldown()
     {
         yield return new WaitForSeconds(attackCooldown);
@@ -157,6 +157,9 @@ public class Orc1 : Entity
 
     protected override void Die()
     {
+        // Prevent multiple calls to Die() because of BlendTrees
+        if (hasDied) return;
+
         // Spawn gold coin on death
         if (goldCoinPrefab != null)
         {
@@ -165,6 +168,7 @@ public class Orc1 : Entity
         }
 
         // Call base Die() to handle death sound and destruction
+        Debug.Log($"Going into Entity.Die() for {gameObject.name}");
         base.Die();
     }
 }

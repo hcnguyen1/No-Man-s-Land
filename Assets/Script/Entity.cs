@@ -14,10 +14,10 @@ public class Entity : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] protected AudioClip getHitSFX;
-    [SerializeField] [Range(0f, 1f)] protected float getHitVolume = 1f;
+    [SerializeField][Range(0f, 1f)] protected float getHitVolume = 1f;
     [SerializeField] protected AudioClip deathSFX;
-    [SerializeField] [Range(0f, 1f)] protected float deathVolume = 1f;
-    
+    [SerializeField][Range(0f, 1f)] protected float deathVolume = 1f;
+
     public SpriteRenderer spriteRenderer;
     private AudioSource _audioSource;
     protected AudioSource audioSource
@@ -25,10 +25,14 @@ public class Entity : MonoBehaviour
         get
         {
             if (_audioSource == null)
+            {
                 _audioSource = GetComponent<AudioSource>();
+            }
             return _audioSource;
         }
     }
+
+    private Coroutine flashCoroutine;
 
     protected virtual void Awake()
     {
@@ -48,13 +52,22 @@ public class Entity : MonoBehaviour
     {
         health -= damage;
         PlayGetHitSFX();
-        
+
         if (health <= 0)
         {
+            Debug.Log($"{gameObject.name} is now dying.");
             OnZeroHealth();
         }
 
-        StartCoroutine(TakeDamageFlash());
+        if (flashCoroutine != null)
+        {
+            StopCoroutine(flashCoroutine);
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = Color.white;
+            }
+        }
+        flashCoroutine = StartCoroutine(TakeDamageFlash());
     }
 
     protected virtual void PlayGetHitSFX()
@@ -74,7 +87,6 @@ public class Entity : MonoBehaviour
 
     protected virtual void Die()
     {
-        // Debug log of that entity's name has died
         if (health <= 0 && !hasDied)
         {
             hasDied = true;
@@ -83,15 +95,8 @@ public class Entity : MonoBehaviour
             {
                 AudioSource.PlayClipAtPoint(deathSFX, transform.position, deathVolume);
             }
-            
             Destroy(gameObject);
         }
-    }
-
-    // Animation Event entry point to finish death
-    public void OnDeathAnimationComplete()
-    {
-        Die();
     }
 
     // Getter for attackPower
@@ -106,9 +111,22 @@ public class Entity : MonoBehaviour
     // Flashes red when taking damage (In case there is no take damage animation)
     private IEnumerator TakeDamageFlash()
     {
+        if (spriteRenderer == null) yield break;
+
         Color originalColor = spriteRenderer.color;
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.1f);
-        spriteRenderer.color = originalColor;
+        
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = originalColor;
+        }
+        flashCoroutine = null;
+    }
+
+    // For animation event call only!
+    public void DestroyOnDeath()
+    {
+        Die();
     }
 }

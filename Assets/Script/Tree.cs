@@ -7,28 +7,14 @@ public class Tree : Entity
 {
     // Item to drop when destroyed
     [SerializeField] ItemSO itemToDrop;
-    private float currentHealth; // Check when tree has taken damage to drop item
 
     // Sound effects
-    [SerializeField] private AudioClip choppingSFX;
     [SerializeField] private AudioClip treeFallSFX;
-
-    void Start()
-    {
-        currentHealth = health;
-    }
 
     protected override void OnZeroHealth()
     {
-        Debug.Log("[Tree] OnZeroHealth called - Tree is dying");
         // Drop items before dying
         DropItem();
-        
-        // Play tree fall sound at position (independent of GameObject)
-        if (treeFallSFX != null)
-        {
-            AudioSource.PlayClipAtPoint(treeFallSFX, transform.position);
-        }
         
         // Now call Die to destroy the tree
         Die();
@@ -75,17 +61,6 @@ public class Tree : Entity
         if (Input.GetKeyDown(KeyCode.K))
         {
             TakeDamage(1);
-        }
-        // Play chopping sound when tree takes damage (but don't drop item yet)
-        if (health < currentHealth)
-        {
-            currentHealth = health;
-
-            // Play chopping sound when tree takes damage
-            if (audioSource != null && choppingSFX != null)
-            {
-                audioSource.PlayOneShot(choppingSFX);
-            }
         }
     }
 }

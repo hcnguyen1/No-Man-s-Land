@@ -6,11 +6,9 @@ using UnityEngine;
 // it is in charge of the destruction of the prefab and its audio source. 
 public class CurrencyItem : MonoBehaviour
 {
-    [SerializeField]
-    private int currencyValue = 100; // How much currency this item gives
-    
-    [SerializeField]
-    private AudioClip pickupSound; // Sound to play when picked up
+    [SerializeField] int currencyValue = 1; // How much currency this item gives
+
+    [SerializeField] private AudioClip pickupSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -30,13 +28,18 @@ public class CurrencyItem : MonoBehaviour
 
     private IEnumerator AnimateCurrencyPickup()
     {
+        PlayPickUpSound();
+
+        Destroy(gameObject);
+        yield return null;
+    }
+
+    private void PlayPickUpSound()
+    {
         // Play pickup sound
         if (pickupSound != null)
         {
             AudioSource.PlayClipAtPoint(pickupSound, transform.position);
         }
-        
-        Destroy(gameObject);
-        yield return null;
     }
 }
