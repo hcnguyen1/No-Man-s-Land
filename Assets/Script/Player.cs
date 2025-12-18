@@ -202,7 +202,7 @@ public class Player : Entity
         hunger = Mathf.Clamp(hunger, 0, maxHunger);
         thirst = Mathf.Clamp(thirst, 0, maxThirst);
 
-        if(hunger <= 0 && !isTakingNoHungerDamage)
+        if(health > 1 && hunger <= 0 && !isTakingNoHungerDamage)
         {
             StartCoroutine(NoHungerDamageOverTime());
         }

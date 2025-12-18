@@ -17,7 +17,7 @@ public class DayNightManager : MonoBehaviour
     public float dayDuration = 15f;
     public float nightDuration = 15f;
 
-    private bool isDay = true;
+    public bool isDay = true;
     private float timer = 0f;
     private float transitionDuration = 5f;
     private float transitionTimer = 0f;

@@ -140,7 +140,6 @@ public class PlayerUIManager : MonoBehaviour
         Time.timeScale = 1f;
 
         // Destroy the rest of the DontDestroyOnLoad objects except the main menu manager
-        GameObject dontDestroyOnLoadRoot = null;
         foreach (GameObject obj in GameObject.FindObjectsOfType<GameObject>())
         {
             if (obj.scene.name == null || obj.scene.name == "DontDestroyOnLoad")

@@ -14,8 +14,6 @@ public class Animal : Entity
     private Rigidbody2D rb;
     protected Animator animator;
 
-    // Sprite Renderer
-    
     protected override void Awake()
     {
         base.Awake();

@@ -51,15 +51,35 @@ public class Orc1 : Entity
     {
         if (playerTransform == null) return;
 
-        // Attack if in range
-        float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
-        if (distanceToPlayer <= attackRange && canAttack && !noHealth)
+        if (ShouldAttack() && canAttack && !noHealth)
         {
             StartAttackWindow();
         }
 
         // Chase Player
         ChasePlayer();
+    }
+
+    // Attack valid targets
+    private bool ShouldAttack()
+    {
+        // Attack Player
+        float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
+        if (distanceToPlayer <= attackRange)
+        {
+            return true;
+        }
+
+        // Attack any collidable objects like Trees or Stones within range
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, attackRange);
+        foreach (Collider2D collider in hitColliders)
+        {
+            if (collider.CompareTag("Tree") || collider.CompareTag("Stone") || collider.CompareTag("Animal"))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void ChasePlayer()

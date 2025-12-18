@@ -15,7 +15,7 @@ public class Orc1AttackHitbox : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") || collision.CompareTag("Tree"))
+        if (collision.CompareTag("Player") || collision.CompareTag("Tree") || collision.CompareTag("Animal") || collision.CompareTag("Stone"))
         {
             Entity target = collision.GetComponent<Entity>();
             if (target != null)
