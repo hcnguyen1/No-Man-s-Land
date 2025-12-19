@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2eb735ce124e4ed419a10b9da4a20fdb, type: 3}
-  m_Name: HP1
+  m_Name: Health Potion
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 99
@@ -19,7 +19,8 @@ MonoBehaviour:
     situation. Can be used to restore 15 hp. '
   <ItemImage>k__BackingField: {fileID: -1839679319, guid: f6b7412a347acc4488bd6615e70e9a65,
     type: 3}
-  <PickupSound>k__BackingField: {fileID: 0}
+  <PickupSound>k__BackingField: {fileID: 8300000, guid: 1f4aaf6642aeb3b418138de1a67f2d37,
+    type: 3}
   <DefaultParametersList>k__BackingField: []
   <Price>k__BackingField: 0
   modifiersData:
